@@ -136,13 +136,111 @@ body{
     display: block;
 }
 
+/* tessssttttt */
 
+  /* #carousel .carousel-item.boat{
+    background-image:url("../assets/slider/slider1.jpg");
+  } */
+  #carousel .carousel-item.sea{
+    background-image:url("../assets/slider/slider2.jpg");
+   
+  }
+  /* #carousel .carousel-item.river{
+    background-image:url("../assets/slider/slider3.jpg");
+   
+  }  */
+  
+  #carousel .carousel-item{
+    height:80vh;
+    width:100%;
+    min-height:350px;
+    background:no-repeat center center scroll;
+    background-size:cover;
+  } 
+  /* #carousel .carousel-inner .carousel-item{
+    transition:-webkit-transform 2s ease;
+    transition:transform 2s ease;
+    transition:transform 2s ease, -webkit-transform 2s ease;
+  } */
+  #carousel .carousel-item .carousel-caption{
+   border:4px solid green;
+    padding:40px;
+    color:white;
+    box-shadow: 1px 1px 2px red,-1px -1px 2px solid red;
+   
+  }
+  .delicious-btn{
+    display: inline-block;
+    min-width:160px;
+    height:60px;
+    color:#fff;
+    border:none;
+    border-left:3px solid #CE4445;
+    border-radius: 0;
+    padding:0 30px;
+    font-size:16px;
+    line-height:58px;
+    font-weight:600;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    text-transform: capitalize;
+    background:#CE4445;
+  }
+  .delicious-btn:hover,
+  .delicious-btn:active,
+  .delicious-btn:focus{
+    font-size:16px;
+    font-weight: 600;
+    color:#fff;
+    background:#1c8314;
+    border-color:#40ba37
+  }
+  #carousel .caption h2{
+   font-weight: bold;
+   color: whitesmoke;
+  }
+
+  .carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    opacity: .7;
+    z-index: 1;
+  }
+  
+  .caption {
+    z-index: 100;
+  }
 /* showcase */
-.carousel-item img{
+/* 
+ 
+  
+  #carousel .caption h2{
+    animation-duration: 1s;
+    animation-delay: 2s;
+  }
+  #carousel .caption p{
+    animation-duration: 1s;
+    animation-delay: 2.2s;
+  }
+  
+  #carousel .caption a{
+    animation-duration: 1s;
+    animation-delay: 2.4s;
+  }
+
+   */
+  
+/* .carousel-item img{
     width: 100vw;
     height: 80vh;
     overflow: hidden;
-}
+} */
 
     .carousel-item:after {
         content:"";
@@ -152,7 +250,7 @@ body{
         bottom:0;
         left:0;
         right:0;
-        background:rgba(0,0,0,0.75);
+        background:rgba(0,0,0,0.6);
     }
 
 
