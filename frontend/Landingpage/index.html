@@ -11,6 +11,12 @@
     <!-- fontawesome link -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- animate css link -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  /> 
+    
 
     <!-- linking CSS file -->
     <link rel="stylesheet" href="./index.css">
@@ -41,7 +47,7 @@
            <!-- </div> -->
          
             <!-- navbar -->
-            <nav class="navbar navbar-expand-md navs py-3">
+            <nav class="navbar navbar-expand-md navs ">
                 <a href="./index.html" class="navbar-brand"><img src="../assets/csitlogo.png" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -50,7 +56,7 @@
                   <ul class="navbar-nav ml-auto">
                        <!-- Home Link -->
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Home </a>
+                      <a class="nav-link" href="# ">Home </a>
                     </li>
                     <!-- About Link with DropDown -->
                     <li class="nav-item dropdown">
@@ -140,9 +146,21 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    <script>
      $('.carousel').carousel({
-       interval:2000,
-       pause:false
+       interval:5000,
+       pause:false,
+       
      });
+
+
+    //  hover in dropdown
+    $(document).ready(function(){
+    $(".dropdown").hover(function(){
+        var dropdownMenu = $(this).children(".dropdown-menu");
+        if(dropdownMenu.is(":visible")){
+            dropdownMenu.parent().toggleClass("open");
+        }
+    });
+});  
    </script>
 </body>
 </html>
