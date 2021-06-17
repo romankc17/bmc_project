@@ -213,7 +213,7 @@ body{
     z-index: 1;
   }
   
-  .caption {
+  .carousel-caption {
     z-index: 100;
   }
 /* showcase */
@@ -242,7 +242,7 @@ body{
     overflow: hidden;
 } */
 
-    .carousel-item:after {
+    /* .carousel-item:after {
         content:"";
         display:block;
         position:absolute;
@@ -251,7 +251,7 @@ body{
         left:0;
         right:0;
         background:rgba(0,0,0,0.6);
-    }
+    } */
 
 
 
