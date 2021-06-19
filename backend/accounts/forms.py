@@ -15,7 +15,7 @@ class ExtendedUserCreationForm(UserCreationForm):
         user.email = self.cleaned_data['email']
         
         if commit:
-            user.save():
+            user.save()
         return user
 
 
