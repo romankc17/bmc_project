@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSIT ASSOCIATION</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Hello World !! </h1>
-    <h2>Csit Association Of Butwal Multiple Campus</h2>
-    <h4>Under developement</h4>
+    <form method="POST">
+        {%csrf_token%}
+        {{user_form.as_p}}
+        {{profile_form.as_p}}
+        <input type="submit"/>
+    </form>
 </body>
 </html>

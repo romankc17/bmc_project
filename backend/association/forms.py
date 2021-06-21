@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Event
+from .models import Event,Team
 
 from django.utils import timezone
 
@@ -29,6 +29,8 @@ class EventForm(ModelForm):
 
     def save(self):
         data = self.cleaned_data
+        print('here')
+        print(data['image'])
         event = Event(
             title=data['title'],
             description=data['description'],
@@ -39,10 +41,13 @@ class EventForm(ModelForm):
         )
         event.save()
 
-
-
-
     # def clean_title(self):
     #     title =  self.cleaned_data['title']
     #     if 'event' not in title:
     #         raise forms.ValidationError("invalid title")
+
+class TeamForm(forms.ModelForm):
+    class Meta:
+        model=Team
+        fields=['category','position','facebook_url','linkdin_url']
+
