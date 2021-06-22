@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Form List {% endblock %}
+
+{% block content %}
+<h1>Notes are here:</h1>
+
+{% for item in form %}
+<div style="margin: 1rem; padding: 1rem; border: 0.1rem solid black;">
+
+<h2>{{ item.title }}| {{ item.subject }}</h2>
+
+<i style="display: inline-block;margin-top: -30px; font-size: 16px;">{{ item.timestamp }}</i>
+  <a href="delete/{{item.id}}" style="float:right; color: red;">Delete</a>   <a href="update/{{item.id}}" style="float:right; margin-right: 20px;">Update</a>
+
+
+<!--   ------------  Owner of notes only ------------- -->
+<!--    {{ item.user }} {{ request.user }}-->
+<!--    {% if item.user == request.user.username %}-->
+<!--     <a href="update/{{item.id}}" style="float:right">update</a>-->
+
+<!--    {% else %}-->
+<!--        <a href="update/{{item.id}}" style="float:right">No </a>-->
+<!--    {% endif %}-->
+
+<p><b>{{ item.user }}| {{ item.get_semester_display }}</b></p>
+
+<p>{{ item.description }}</p>
+
+<p>File here: <a href="{{ item.file.url }}" >View</a> <a href="{{item.file.url}}" style="margin-left: 20px;" download>Download</a> </p>
+</div>
+{% endfor %}
+
+
+{% endblock %}
