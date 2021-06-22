@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Note(models.Model):
+
     note_of_subject = models.CharField(max_length=50, blank=False, null=False)
     note_of_semester = models.CharField(max_length=50, blank=False, null=False)
     note_title = models.CharField(max_length=220, blank=False, null=False)
