@@ -2,6 +2,8 @@
 *.log
 *.pyc
 __pycache__
+db.sqlite3
+media
 
 # If you are using PyCharm # 
 .idea/**/workspace.xml 
@@ -33,5 +35,5 @@ __pycache__
 env/ 
 venv/ 
 ENV/ 
-env.bak/ 
-venv.bak/ 
+env.bak/
+venv.bak/

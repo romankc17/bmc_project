@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h2>Your are going to delete {{ object.title }}!</h2>
+<form method="POSt" action=".">
+    {% csrf_token %}
+    <h4>Are you sure to delete??</h4>
+    <input type="submit" value="Yes" />
+    <a href="/notes/" role="button">Cancel</a>
+</form>
+
+</body>
+</html>
