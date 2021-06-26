@@ -35,11 +35,12 @@
    <header id="header-section">
        <div class="container-fluid">
            <div class="row">
+             
                <div class="top-wrapper">
             
                 <div class="contact">
                 <ul>
-                    <li><i class="fas fa-phone"></i>&nbsp;&nbsp;+071-25-83748</li>
+                    <li><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+071-25-83748</li>
                     <li><i class="fas fa-envelope"></i> <a href="#">&nbsp;info@example.com</a></li>
                 </ul>
                 </div>
@@ -51,10 +52,10 @@
            </div>
 
            </div>
-           <!-- </div> -->
+          
          
             <!-- navbar -->
-            <nav class="navbar navbar-expand-md navs ">
+            <nav class="navbar navbar-expand-md navbar-light bg-white navs ">
                 <a href="./index.html" class="navbar-brand"><img src="../assets/logo.png" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -63,7 +64,7 @@
                   <ul class="navbar-nav ml-auto">
                        <!-- Home Link -->
                     <li class="nav-item">
-                      <a class="nav-link" href="# ">Home </a>
+                      <a class="nav-link" href="./index.html">Home </a>
                     </li>
                     <!-- About Link with DropDown -->
                     <li class="nav-item dropdown">
@@ -98,7 +99,7 @@
                        Posts
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Blogs</a>
+                        <a class="dropdown-item" href="./blog.html">Blogs</a>
                         <a class="dropdown-item" href="#">Vlogs</a>
                         
                       </div>
@@ -163,7 +164,7 @@
                     <div class="carousel-caption">
                       <h2 class="display-4">Boat Excursions</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
-                      <a class=" delicious-btn" href="#">Learn more</a>
+                      <a class=" delicious-btn text-decoration-none" href="#">Learn more</a>
                     </div>
                   </div>
                 </div>
@@ -185,20 +186,26 @@
 
     <!-- Why to choose CSIT -->
     <!-- Why to choose CSIT -->
-    <div class="container-fluid mt-5">
+    <div class="container-fluid  whyCsit-wrapper">
       <div class="row no-gutters">
       <div class="col-md-3">
       <section>
         
           <div class="row ">
           
-              <div class="col-md-12 ">
-                <div id="vedio-play">
-                <a href="#" class="video" data-vedio="https://www.youtube.com/embed/HnwsG9a5riA" data-toggle="modal" data-target="#videoModal">
-                <i class="fas fa-play fa-3x"></i></a>
+             <div id="vedio-play-card">
+               <div class="vedio-card card-front">
+                 
+                <h1>You want to know more about CSIT?</h1>
+               </div>
+
+               <div class="vedio-card card-back">
+               <a href="#" class="video" data-video="https://www.youtube.com/embed/QvgaCWrVdyw" data-toggle="modal" data-target="#videoModal">
+              <i class="fas fa-play fa-3x"></i></a>
                 <h1>See About CSIT</h1>
-              </div>
-            </div>
+               </div>
+             </div>
+               
            
          
         <!-- video Modal -->
@@ -746,7 +753,7 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
 
         <div class="col-md-3 our-location">
           <h1>Our Location</h1>
-          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp" width="380" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
         </div>
       </div>
       </div>
@@ -799,8 +806,8 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
 });  
 
 
- // Video Play
- $(function () {
+   // Video Play
+   $(function () {
       // Auto play modal video
       $(".video").click(function () {
         var theModal = $(this).data("target"),

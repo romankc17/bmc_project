@@ -81,9 +81,15 @@ body,html{
     /* height: 10rem; */
     
 }
-.navbar-brand img{
+.navs .navbar-brand{
+margin-left:50px;
+}
+.navs .navbar-brand img{
     width: 100px;
     height: 50px;
+}
+.navbar-toggler{
+  font-size: rrem;
 }
  .navs  .nav-link{
     color: #001147 !important ;
@@ -167,9 +173,10 @@ body,html{
     font-size: 14px;
   }
   .delicious-btn{
-    display: inline-block;
+    display: flex;
     justify-content: center;
-    min-width:160px;
+    align-items: center;
+    width: 180px;
     height:4rem;
     color:#fff;
     border:none;
@@ -184,6 +191,7 @@ body,html{
     transition-duration: 500ms;
     text-transform: capitalize;
     background:#CE4445;
+    text-decoration: none;
   }
   .delicious-btn:hover,
   .delicious-btn:active,
@@ -191,8 +199,8 @@ body,html{
     font-size:16px;
     font-weight: 600;
     color:#fff;
-    background:#1c8314;
-    border-color:#40ba37
+    background:#cc5e5e;
+    border-color:#d86262;
   }
   #carousel .caption h2{
    font-weight: bold;
@@ -218,12 +226,18 @@ body,html{
 
 
   /* Why CSIT  */
-
-  #vedio-play{
-    min-height: 424px;
-    background: url('../assets/slider/slider4.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+  .whyCsit-wrapper{
+    margin-top: 100px;
+  }
+  #vedio-play-card{
+    height:78.5vh;
+    width:96%;
+    perspective: 1500px;
+    -moz-perspective:1500px;
+    position: relative;
+  }
+  .vedio-card{
+    height: 100%;
     text-align: center;
     width: 100%;
     color: white;
@@ -231,6 +245,37 @@ body,html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all .8s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+  }
+
+  .card-front{
+   
+    background: url('../assets/slider/slider4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+   
+ 
+
+  }
+  /* when vedio play card section hoverd then card front rotate */
+  #vedio-play-card:hover .card-front{
+    
+ transform: rotateY(180deg);
+  }
+  .card-back{
+   
+    transform:rotateY(180deg) ;
+    background-image: linear-gradient(to right bottom ,#768dda,#5f77c7) ;
+
+
+  }
+  #vedio-play-card:hover .card-back{
+    transform: rotateY(0deg);
   }
   .tab{
     display: flex;
@@ -250,22 +295,6 @@ body,html{
     background-color: white;
   }
 
-  /* .nav-tabs .nav-item .nav-link{
-    width:auto;
-    font-size: 2.5rem;
-    padding: 15px 20px;
-  } */
-  /* .tabcontent{
-    background-image: url('../assets/logo.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 300px 300px;
-    width: 100%;
-    height:60vh;
-    padding: 20px;
-    color: rgb(20, 14, 14);
-   
-  } */
 
   .dark-overlays::before{
     content: "";
@@ -284,7 +313,7 @@ body,html{
     position: relative;
     background-image: url('../assets/logo.png');
     width: 100%;
-    height:50vh;
+    height:70vh;
     background-position:750px 20px;
     background-repeat: no-repeat;
     background-size: 300px 200px;
@@ -335,12 +364,13 @@ body,html{
    border-bottom: 4px solid #CE4445;
   } */
   .collegeImg .clzImg{
-    width: 38%;
+    width: 45%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     position: absolute;
     transition: all .5s;
     outline-offset: 1rem;
+    height: 250px;
 
     
   }
@@ -612,7 +642,7 @@ body,html{
 /* Footer section */
 /* First column */
 .foot-section{
-  padding: 10rem 3rem;
+  padding: 6rem 3rem;
   background-color: #001147;
   color: white;
 }
@@ -629,7 +659,7 @@ body,html{
   font-size: 1.7rem;
   line-height: 1.5;
   text-align: justify;
-  margin:4rem 1rem ;
+  margin:3rem 1rem ;
 
 }
 .foot-section .first-col .social-icon i{
@@ -650,7 +680,7 @@ body,html{
   border-bottom: 2px solid #fff;
 }
 .foot-section .services-link li{
-  padding: 1rem 0;
+  padding: 0.7rem 0;
 }
 .foot-section .services-link li a{
  font-size: 2rem;
