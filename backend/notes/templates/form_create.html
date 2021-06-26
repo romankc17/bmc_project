@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Form Create{% endblock title %}
+
+{% block content %}
+        <form method="POST" action="." enctype="multipart/form-data" >{% csrf_token %}
+            <div>{{ form.title.label }} {{ form.title }}</div>
+            <div>{{ form.semester.label }} {{ form.semester }}</div>
+            <div>{{ form.subject.label }} {{form.subject }}</div>
+            <div>{{ form.description.label }} {{ form.description }}</div>
+            <div>{{ form.file.label }} {{ form.file }}</div>
+        <input type="submit" value="search" />
+        </form>
+{% endblock content %}
+
+

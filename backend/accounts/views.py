@@ -44,11 +44,12 @@ def login(request):
     if request.method =='POST':
         username= request.POST['username']
         password= request.POST['password']
-        print("hello")
+       
 
         user= auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request,user)
+            print (user)
             return redirect("/")
         else:
             messages.error(request,"username or password not correct")

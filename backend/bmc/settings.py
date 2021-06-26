@@ -45,7 +45,8 @@ INSTALLED_APPS = [
 
     'college',
     'association',
-    
+
+    'notes',
 ]
 
 MIDDLEWARE = [
