@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  padding: 0;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+header {
+  background: url("./imgs/zongnan-bao-deagK9-Dmt0-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  color: #fff;
+  position: relative;
+  z-index: -1;
+}
+
+header h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 10%;
+  left: 8%;
+  z-index: 2;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.intro-text {
+  display: grid;
+  place-items: center;
+}
+.intro-text h2 {
+  color: #130f40;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.intro-text p {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+.intro-image img {
+  width: 100%;
+  height: 350px;
+}
+
+.team h2 {
+  text-align: center;
+  color: #130f40;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 2fr;
+  row-gap: 3rem;
+  place-items: center;
+}
+
+.member {
+  width: 250px;
+  height: 200px;
+  background-color: #ecf0f1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.member h2 {
+  margin-top: 3rem 0;
+  text-transform: none;
+  font-size: 16px;
+}
+
+.member p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.image {
+  width: 130px;
+  height: 130px;
+  background-color: #0abde3;
+  border-radius: 50%;
+  position: absolute;
+  top: -25%;
+  left: 20%;
+}
+
+.image img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 8%;
+  top: 5%;
+}
+
+.social-icons a {
+  margin: 0 5px;
+}
+
+.social-icons a i {
+  font-size: 17px;
+  color: #d63031;
+}
