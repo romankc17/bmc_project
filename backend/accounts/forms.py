@@ -18,4 +18,4 @@ class ExtendedUserCreationForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('name','batch', 'roll_no','address')
+        fields = ('name','batch', 'roll_no',)
