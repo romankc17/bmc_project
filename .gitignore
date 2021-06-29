@@ -35,11 +35,5 @@ media
 env/ 
 venv/ 
 ENV/ 
-<<<<<<< HEAD
-env.bak/ 
-venv.bak/ 
-db.sqlite3
-=======
 env.bak/
 venv.bak/
->>>>>>> fd04d6afe3d0edd5b13c004e8b5147e0d279030e
