@@ -1,0 +1,81 @@
+.React_button {
+  margin-left: 50px;
+  margin-top: -30px;
+}
+.React_button i {
+  margin-right: 20px;
+}
+
+.comment {
+  display: block;
+  transition: all 1s;
+}
+#app {
+  margin-top: -30px;
+  margin-left: 25px;
+}
+
+.commentClicked {
+  min-height: 0px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  background: #e8e8e8;
+  padding: 5px 10px;
+  height: 50%;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 2px solid #016ba8;
+  transition: all 0.5s;
+  margin-top: 15px;
+}
+
+button.primaryContained {
+  background: #1a1c88;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+  transition: 1s all;
+  font-size: 10px;
+}
+
+button.primaryContained:hover {
+  background: #9201a8;
+}
+@media screen and (max-width: 950px) {
+  #like_cmnt {
+    margin-top: -60px;
+    margin-left: -25px;
+  }
+  .col-md-7 p {
+    margin-left: 0px;
+  }
+  .para {
+    padding: 0px 0px 10px 20px !important;
+    margin-top: -20px !important;
+  }
+  .head {
+    padding: 20px 0px 15px 20px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #like_cmnt {
+    margin-top: 40px;
+    margin-left: -30px !important;
+  }
+  .commment {
+    margin-top: 50px;
+  }
+  .para {
+    margin-left: -20px !important;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        /* Initially, hide the extra text that
+            can be revealed with the button */
+        #moreText {
+  
+            /* Display nothing for the element */
+            display: none;
+        }
+    </style>
+</head>
+  
+<body>
+    <h1 style="color: green;" class="p-5">
+        LinkedIn
+    </h1>
+      
+  
+    <p class="p-5">
+        So, you want to create a blog that will draw in tons of readers and eventually make you a profit
+        . Good call. With people spending more time online than ever before, a high-quality blog that tackles    <br/>
+         an in-demand topic could be a very successful endeavor. That said, unless you’re breaking ground     <br/>
+         on a very new or different topic, there’s probably quite a bit of competition out there. With this in mind,    <br/> 
+         it’s really important that you consider which blogging niches will help you cut through the noise. Let’s talk about why narrowing your focus is so important and then take a look at 120 most profitable blog niche ideas you can write about.
+        
+        <br/>
+        What is a blog niche?
+        
+        A blog niche is a specialized topic area that you’ll be focusing on when writing content. Blogging niches allow you to narrow down your audience and craft content that is much more relevant for them.    <br/>
+        As a result, readers are more likely to become blog subscribers and you’ll be able to build authority and position yourself as a thought leader.     <br/>Plus, you’ll be making it much easier for search engines to identify what your blog is about and increase your chances of ranking on high positions, which in turn will bring even more readers.
+        
+        
+        There are many types of blogs you can choose to focus on, ranging from the highly technical to the more personal or creative.    <br/> Some of the most common ways of brainstorming blog niche ideas include:
+        
+        
+        Industry based, such as a cryptocurrency or freelancing.
+     
+        
+        
+        <span id="points">...</span>
+  
+        <!-- Define the text that would be 
+            hidden by default and only shown 
+            when clicked on the button -->
+        <span id="moreText"> This necessity was
+            as personal to me as it was universal.
+            This need combined with my passion for
+            teaching resulted in GeeksforGeeks as
+            we know today. My message to you, in
+            our inaugural edition of Geeks Digest,
+            would be that if you are looking for
+            a problem to work on, you don’t need
+            to look very far for it. All you should
+            do is to look around yourself.
+        </span>
+    </p>
+  
+  
+    <!-- Trigger toggleText() when the 
+        button is clicked -->
+
+        <button class="btn btn-primary m-5"  onclick="toggleText()" id="textButton">READ MORE</button>
+
+   
+    <script>
+        function toggleText() {
+  
+            // Get all the elements from the page
+            var points = 
+                document.getElementById("points");
+  
+            var showMoreText =
+                document.getElementById("moreText");
+  
+            var buttonText =
+                document.getElementById("textButton");
+  
+            // If the display property of the dots 
+            // to be displayed is already set to 
+            // 'none' (that is hidden) then this 
+            // section of code triggers
+            if (points.style.display === "none") {
+  
+                // Hide the text between the span
+                // elements
+                showMoreText.style.display = "none";
+  
+                // Show the dots after the text
+                points.style.display = "inline";
+  
+                // Change the text on button to 
+                // 'Show More'
+                buttonText.innerHTML = "Show More";
+            }
+  
+            // If the hidden portion is revealed,
+            // we will change it back to be hidden
+            else {
+  
+                // Show the text between the
+                // span elements
+                showMoreText.style.display = "inline";
+  
+                // Hide the dots after the text
+                points.style.display = "none";
+  
+                // Change the text on button
+                // to 'Show Less'
+                buttonText.innerHTML = "Show Less";
+            }
+        }
+    </script>
+</body>
+  
+</html>
