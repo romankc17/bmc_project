@@ -119,11 +119,11 @@ header h1 {
 }
 
 .image img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   position: relative;
-  left: 10%;
-  top: 5%;
+  left: 15%;
+  top: 10%;
 }
 
 .social-icons a {
@@ -133,4 +133,75 @@ header h1 {
 .social-icons a i {
   font-size: 17px;
   color: #d63031;
+}
+
+.social-icons a i:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+#prakash {
+  margin-bottom: 3rem;
+  position: relative;
+  left: 35%;
+}
+
+@media screen and (max-width: 768px) {
+  .member {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .members {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+
+  .member {
+    width: 250px;
+  }
+
+  #prakash {
+    left: 3%;
+  }
 }
