@@ -1,5 +1,6 @@
-{% extends "base.html" %}
 
+{% extends "base.html" %}
+{% load widget_tweaks %}
 {% block title %}Form Create{% endblock title %}
 
 {% block content %}
@@ -9,7 +10,7 @@
             <div>{{ form.subject.label }} {{form.subject }}</div>
             <div>{{ form.description.label }} {{ form.description }}</div>
             <div>{{ form.file.label }} {{ form.file }}</div>
-        <input type="submit" value="search" />
+        <input type="submit" value="submit" />
         </form>
 {% endblock content %}
 
