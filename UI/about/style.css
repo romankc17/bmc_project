@@ -19,7 +19,7 @@
   z-index: 1;
 }
 header {
-  background: url("./imgs/zongnan-bao-deagK9-Dmt0-unsplash.jpg");
+  background: url("./imgs/ion-sipilov-f5j-a8M1KEw-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 50vh;
@@ -68,6 +68,10 @@ header h1 {
   text-transform: uppercase;
   font-size: 22px;
   font-weight: bolder;
+}
+
+.team-title {
+  margin-bottom: 4rem;
 }
 
 .members {
