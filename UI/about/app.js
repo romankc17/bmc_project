@@ -64,6 +64,25 @@ const membersInfo = [
     }
 ]
 
+const fakeMember = [
+    {
+        name: "Prakash BL Dhakal",
+        position: "President",
+        img: "./imgs/Prakash-removebg-preview.png"
+    },
+    {
+        name: "Mahendra Kandel",
+        position: "Vice President",
+        img: "./imgs/Prakash-removebg-preview.png"
+    },
+    
+    {
+        name: "Kiran Kafle",
+        position: "Secretary",
+        img: "./imgs/Keron-removebg-preview.png"
+    },
+]
+
 const team = document.querySelector(".members");
 
 const ourTeam = membersInfo.map(member => {
