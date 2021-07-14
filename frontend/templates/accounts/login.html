@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 {%load static%}
 {%load widget_tweaks%}
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,8 +36,8 @@
                 {%csrf_token%}
                 <div class="group">
                     <label for="usr"><i class="far fa-user"></i></label>
-                    <!--            <input type="text" class="" id="usr" placeholder="Username">-->
                     {%render_field form.username id="usr" placeholder="Username" required="true"%}
+                     <!--            <input type="text" class="" id="usr" placeholder="Username">-->
                 </div>
                 <div class="group pass">
                     <label for="pwd">
@@ -64,6 +64,6 @@
     </div>
 
 </div>
-<script src="{%static 'account/js/login.js'%}"></script>
+<script src="{%static 'accounts/js/login.js'%}"></script>
 </body>
 </html>
