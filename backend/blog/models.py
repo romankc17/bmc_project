@@ -9,14 +9,15 @@ class Blog(models.Model):
     slug = models.SlugField()
     content = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to="blog/%Y/%m/%d/")
+    updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to="blogs/%Y/%m/%d/",default = 'blogs/default.jpg')
 
     def __str__(self):
         return self.title
 
-    def save(self,*args, **kwargs):
+    def save(self,*args,**kwargs):
         self.slug = slugify(self.title)
-        super().save(*args,**kwargs)
+        super(Blog,self).save(*args,**kwargs)
 
 class Comment(models.Model):
     blog = models.ForeignKey(Blog,on_delete=models.CASCADE,related_name='comments')

@@ -24,7 +24,8 @@ urlpatterns = [
     path('college/',include('college.urls')),
     path('assoc/',include('association.urls')),
     path('accounts/',include('accounts.urls')),
-    path('notes/', include('notes.urls'))
+    path('notes/', include('notes.urls')),
+    path('blogs/', include('blog.urls')),
 ]
 
 

@@ -17,8 +17,9 @@ from django.views.generic import (
 
 class BlogListView(ListView):
     model = Blog
-    template_name = "blog/blogs.html"
+    template_name = "blog/index.html"
     context_object_name = "blogs"
+    paginate_by = 5
 
     # adding extra context
     def get_context_data(self, **kwargs):
