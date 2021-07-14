@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- animate css link -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
     <!--bootstrap css file -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -11,13 +16,17 @@
     <!-- fontawesome link -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-- animate css link -->
-    <!-- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />  -->
+ 
     
+<!-- font family kausan link -->
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+
+<!-- another family -->
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
 
   <!-- owl carousel styling CDN link -->
  
@@ -27,12 +36,14 @@
 
     <!-- linking CSS file -->
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="../responsiveCSS/reponsive.css">
     <title>CSIT ASSOCIATION OF BMC</title>
     
 </head>
 <body>
     <!-- top most section -->
    <header id="header-section">
+  
        <div class="container-fluid">
            <div class="row">
              
@@ -55,7 +66,7 @@
           
          
             <!-- navbar -->
-            <nav class="navbar navbar-expand-md navbar-light bg-white navs ">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white navs ">
                 <a href="./index.html" class="navbar-brand"><img src="../assets/logo.png" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -134,11 +145,11 @@
             <div class="carousel-item drk active boat">
               <div class="container-fluid h-100 d-md-block">
                 <div class="row align-items-center h-100">
-                  <div class="col-12 col-md-9 col-lg-9 col-xl-6">
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-8">
                     <div class="carousel-caption">
-                      <h2 class="display-4">Boat Excursions</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
-                      <a class=" delicious-btn" href="#">Learn more</a>
+                      <h2 class="display-4 animate__animated animate__fadeInDown animate__delay-1s animate__repeat-1">Boat Excursions</h2>
+                      <p class="animate__animated animate__fadeInLeft animate__delay-2s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                      <a class=" delicious-btn animate__animated animate__fadeIn animate__delay-3s animate__repeat-0" href="#">Learn more</a>
                     </div>
                   </div>
                 </div>
@@ -147,11 +158,11 @@
             <div class="carousel-item drk  sea">
               <div class="container-fluid h-100 d-md-block">
                 <div class="row d-flex align-items-center  h-100">
-                  <div class="col-12 col-md-9 col-lg-9 col-xl-6">
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-6col-sm-8">
                     <div class="carousel-caption">
                       <h2 class="display-4">Boat Excursions</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
-                      <a class=" delicious-btn" href="#">Learn more</a>
+                      <a class=" delicious-btn " href="#">Learn more</a>
                     </div>
                   </div>
                 </div>
@@ -160,7 +171,7 @@
             <div class="carousel-item drk  river">
               <div class="container-fluid h-100 w-100 d-md-block">
                 <div class="row d-flex align-items-center  h-100">
-                  <div class="col-12 col-md-9 col-lg-9 col-xl-6">
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-6col-sm-8">
                     <div class="carousel-caption">
                       <h2 class="display-4">Boat Excursions</h2>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
@@ -376,15 +387,29 @@
 
        <section class="aboutClz">
         <div class="row">
-          <div class="col-md-7">
-            <div class="collegeImg">
+          <div class="col-lg-7 col-md-12 not-slider">
+            <div class="collegeImg text-md-center">
              <img src="../assets/pexels-element-digital-1370298.jpg" alt="Photo1" class="clzImg clzImg-1">
              <img src="../assets/pexels-meliani-driss-2982449.jpg" alt="Photo2" class="clzImg clzImg-2">
              <img src="../assets/pexels-pixabay-289740.jpg" alt="Photo3" class="clzImg clzImg-3">
             </div>
           
           </div>
-          <div class="col-md-5">
+          <div class="col-12 d-none show-slider ">
+            <div class="owl-carousel owl-carousel3 owl-theme">
+             
+                <div class="item active"><img src="../assets/pexels-meliani-driss-2982449.jpg" alt="Photo2" class="clzImg clzImg-1"></div>
+
+                <div class="item">
+                 <img src="../assets/pexels-element-digital-1370298.jpg" alt="Photo1" class="clzImg clzImg-2"></div>
+
+           
+
+              <div class="item"><img src="../assets/pexels-pixabay-289740.jpg" alt="Photo3" class="clzImg clzImg-3"></div>
+             
+          </div>
+          </div>
+          <div class="col-lg-5 col-md-12">
             <div class="clzDescription">
              <h1>ABOUT OUR COLLEGE </h1>
 
@@ -416,7 +441,7 @@
            <div class="row">
 
            
-           <div class="col-md-4">
+           <div class="col-lg-4 col-md-6 news-wrapper">
             
                 <div class="latest-News">
                   <header>
@@ -433,15 +458,15 @@
           
              <!-- news Grid -->
              <div class="row">
-              <div class="news-Grid ml-2">
+              <div class="news-Grid ml-2 ml-md-1">
                
                
-                  <div class="col-md-12 mt-5">
+                  <div class="col-lg-12 mt-5">
                     <div class="row no-gutters">
-                      <div class="col-md-4 mr-4">
+                      <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
                         <img src="../assets/slider/slider4.jpg" alt="">
                       </div>
-                      <div class="col-md-7">
+                      <div class="col-lg-7 col-md-6">
                         <!-- Date Section -->
                         <section class="news_Grid-Date">July 22,2021</section>
 
@@ -453,12 +478,12 @@
                     
                   </div>
                   <!-- another news -->
-                  <div class="col-md-12 mt-3">
+                  <div class="col-lg-12 mt-3 ">
                     <div class="row no-gutters">
-                      <div class="col-md-4 mr-4">
+                      <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
                         <img src="../assets/slider/slider4.jpg" alt="">
                       </div>
-                      <div class="col-md-7">
+                      <div class="col-lg-7 col-md-6">
                         <!-- Date Section -->
                         <section class="news_Grid-Date">July 22,2021</section>
 
@@ -474,7 +499,7 @@
             </div>
           
            <!-- lastest Events -->
-           <div class="col-md-8">
+           <div class="col-lg-7 col-md-6">
              <div class="latest-Events">
               
                 <header>
@@ -489,12 +514,12 @@
              </div>
              <!-- Latest Event Grid -->
              <div class="events-Grid pl-4 ">
-             <div class="row">
+             <div class="row no-gutters">
              
-                <div class="col-md-6 mt-5">
+                <div class="col-lg-6 col-md-12 mt-5 d-lg-block">
                   <img src="../assets/slider/slider1.jpg" alt="">
                    <!-- Date Section -->
-                   <section class="news_Grid-Date">July 22,2021</section>
+                   <section class="news_Grid-Date">July 20,2021</section>
 
                    <!-- demo news word -->
                    <section class="news_Grid-Describe">LondonMet International Scholarship 
@@ -502,7 +527,7 @@
 
                  </div>
                  <!-- another -->
-                 <div class="col-md-6 mt-5">
+                 <div class="col-lg-6 col-md-6 d-lg-block  d-md-none mt-5">
                   <img src="../assets/slider/slider1.jpg" alt="">
                    <!-- Date Section -->
                    <section class="news_Grid-Date">July 22,2021</section>
@@ -541,7 +566,7 @@
           <h1 class="display-3">&nbsp;&nbsp;300+</h1>
           <h2 class="display-4">Volunters</h2>
          </section>
-         <section class="volunters">
+         <section class="volunters ">
           <i class="fas fa-users fa-7x"></i>
           <h1 class="display-3">&nbsp;&nbsp;300+</h1>
           <h2 class="display-4">Participants</h2>
@@ -569,32 +594,38 @@
 
 
 <!-- MESSAGE FROM ACHIVERS -->
-   <div class="container-fluid achivers">
-    
-    <h1>Message From  Achivers</h1>
-    <hr>
+   <div class="container-fluid achivers p-0">
+    <div class="achivers-head">
+      <h1>Message From  Great Achivers</h1>
+    </div>
+   
+   
     <div class="owl-carousel owl-carousel1 owl-theme">
     
       
       
         <div class="item">
-          <div class="row no-gutters">
+          <div class="row">
        
       
-        <div class="col-md-2">
+        <!-- <div class="col-lg-2 offset-lg-0 offset-md-5 offset-sm-4 offset-3 offset-0"> -->
+           <div class="col-lg-2 img-row">
      
       
           
             <div class="achivers-image">
             
-              <img src="../assets/pexels-element-digital-1370298.jpg" alt="img">
-            </div>
-          
+              <img src="../assets/developers/roman.png" alt="img">
+              <figcaption class="achivers-caption">
+                <i class="fab fa-facebook-square"></i>
          
-       
+          <i class="fab fa-github-square"></i>
+          <i class="fab fa-linkedin"></i>
+              </figcaption>
+            </div>
        
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-10 col-md-12">
           <p class="achivers-para">
           <i class="fas fa-quote-left"></i>
           Butwal Multiple Campus (BMC) is the non  private engineering college, affiliated 
@@ -618,7 +649,7 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
            </div>
            
             <div class="read-more">
-              <button href="#" class="btn btn-outline-info">Read The Full Message</button>
+              <button href="#" class="btn btn-outline-danger">Read The Full Message</button>
             </div>
            
   
@@ -641,65 +672,165 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
 
   <!-- dEVELOPERS TEAM -->
   <div class="container-fluid developers">
-    <h1>THANKS TO DEVELOPERS</h1>
+    <h1 class="thanks">THANKS TO DEVELOPERS</h1>
 
     <div class="owl-carousel owl-carousel2 owl-theme">
-      <!-- anjana -->
+      <!-- shrish karki -->
       <div class="item ">
-        <div class="developer-img">
-          <img src="../assets/developers/shrish-removebg-preview.png" alt="anjana">
+        <div class="wrapper">
+
+      
+        <div class="developer-img-wrapper">
+          <div class="developer-img img-1">
+            <img src="../assets/developers/shrish.png" alt="shrish">
+          </div>
+        </div>
         </div>
         <h2 class="developer-name">Shrish Karki</h2>
         <h3 class="developer-skill">Frontend Developer</h3>
         <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis beatae hic quibusdam?</p>
+        
 
         <div class="developer-socialMedia">
-          
+          <i class="fab fa-facebook-square"></i>
+         
+          <i class="fab fa-github-square"></i>
+          <i class="fab fa-linkedin"></i>
         </div>
       </div>
 
 
 <!-- 2nd developer -->
       <div class="item">
-        
-          <div class="developer-img">
-            <img src="../assets/developers/anjana-removebg-preview.png" alt="anjana">
+        <div class="wrapper">
+
+       
+        <div class="developer-img-wrapper">
+          <div class="developer-img img-2">
+            <img src="../assets/developers/anjana.png" alt="anjana">
           </div>
+          </div>
+        </div>
           <h2 class="developer-name">Anjana Poudel</h2>
           <h3 class="developer-skill">Frontend Developer</h3>
           <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis beatae hic quibusdam?</p>
   
           <div class="developer-socialMedia">
-            
+            <i class="fab fa-facebook-square"></i>
+         
+          <i class="fab fa-github-square"></i>
+          <i class="fab fa-linkedin"></i>
         
         </div>
       </div>
 
       <!-- 3rd developer -->
       <div class="item">
-       
-          <div class="developer-img">
-            <img src="../assets/pexels-meliani-driss-2982449.jpg" alt="anjana">
+        <div class="wrapper">
+
+      
+        <div class="developer-img-wrapper">
+          <div class="developer-img img-3">
+            <img src="../assets/developers/kisan.png" alt="kisan pic">
           </div>
-          <h2 class="developer-name">Anjana</h2>
-          <h3 class="developer-skill">Frontend Developer</h3>
+          </div>
+        </div>
+          <h2 class="developer-name">Kisan Basyal</h2>
+          <h3 class="developer-skill">Frontend Developer
+           & UI/UX  Designer</h3>
           <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis beatae hic quibusdam?</p>
   
           <div class="developer-socialMedia">
-            
+            <i class="fab fa-facebook-square"></i>
+         
+          <i class="fab fa-github-square"></i>
+          <i class="fab fa-linkedin"></i>
          
         </div>
       </div>
-      <div class="item"><h4>4</h4></div>
-      <div class="item"><h4>5</h4></div>
-      <div class="item"><h4>6</h4></div>
-     
-  </div>
+
+      <!-- 4th developer -->
+      <div class="item">
+        <div class="wrapper">
+
+      
+        <div class="developer-img-wrapper">
+          <div class="developer-img img-4">
+            <img src="../assets/developers/samir.png" alt="kisan pic">
+          </div>
+          </div>
+        </div>
+          <h2 class="developer-name">Samir Thapa</h2>
+          <h3 class="developer-skill">Frontend Developer &
+           Backend Developer</h3>
+          <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis beatae hic quibusdam?</p>
+  
+          <div class="developer-socialMedia">
+            <i class="fab fa-facebook-square"></i>
+         
+          <i class="fab fa-github-square"></i>
+          <i class="fab fa-linkedin"></i>
+         
+        </div>
+      </div>
+      <!-- 5th developer -->
+      <div class="item">
+        <div class="wrapper">
+
+      
+        <div class="developer-img-wrapper">
+          <div class="developer-img img-5">
+            <img src="../assets/developers/roman.png" alt="developers pic">
+          </div>
+          </div>
+        </div>
+          <h2 class="developer-name">Roman K.C</h2>
+          <h3 class="developer-skill">Python Developer</h3>
+          <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis beatae hic quibusdam?</p>
+  
+          <div class="developer-socialMedia">
+            <a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+           
+         
+            <a href=""><i class="fab fa-github-square"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- 6th developer -->
+      <div class="item">
+        <div class="wrapper">
+
+      
+        <div class="developer-img-wrapper">
+          <div class="developer-img img-6">
+            <img src="../assets/developers/darsan.png" alt="developers pic">
+          </div>
+          </div>
+        </div>
+          <h2 class="developer-name">Darsan Sharma</h2>
+          <h3 class="developer-skill">Python Developer</h3>
+          <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis beatae hic quibusdam?</p>
+  
+          <div class="developer-socialMedia">
+            <a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+           
+         
+            <a href=""><i class="fab fa-github-square"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
 
   </div>
 
+  </div>
 
 
+
+
+
+
+ 
   <!-- footer -->
 
   <footer >
@@ -707,7 +838,7 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
     <div class="container-fluid">
       <div class="row">
         <!-- for logo column -->
-        <div class="col-md-4 first-col">
+        <div class=" col-lg-4 col-md-6  first-col">
           <div class="foot-logo">
             <img src="../assets/logo.png" alt="logo">
           </div>
@@ -725,7 +856,7 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
             </div>
 
         </div>
-        <div class="col-md-2 second-col text-justify">
+        <div class="col-lg-2 col-md-3 second-col text-justify">
           <h1>Services</h1>
 
           <ul class="services-link">
@@ -737,7 +868,7 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
           </ul>
         </div>
 
-        <div class="col-md-2 second-col text-justify">
+        <div class="col-lg-2 col-md-3 second-col text-justify">
           <h1>Useful Links</h1>
 
           <ul class="services-link">
@@ -751,9 +882,9 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
           </ul>
         </div>
 
-        <div class="col-md-3 our-location">
+        <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 our-location">
           <h1>Our Location</h1>
-          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp" width="380" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+          <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
         </div>
       </div>
       </div>
@@ -770,14 +901,15 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
         </div>
   
   </footer>
+ 
 
-   
-
+     <!-- go-to-top icon -->
+  <button class="gotoTop"><i class="fas fa-arrow-up"></i></button>>
 
      
 <!-- testing -->
 
-    <script src="./indexTabs.js"></script>
+  
    
 
 
@@ -787,9 +919,10 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <script src="./indexTabs.js"></script>
    <script>
      $('.carousel').carousel({
-       interval:5000,
+       interval:6300,
        pause:false,
        
      });
@@ -828,6 +961,9 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
  
  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+ <!-- cdn link for mousewheel -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
  <!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
 
@@ -841,6 +977,9 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
     loop:true,
     margin:10,
     nav:true,
+    // autoplay:true,
+    dots:false,
+   
     navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
    
      
@@ -856,6 +995,20 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
         }
     }
 })
+
+
+
+// for mousewheel
+// var owl = $('.owl-carousel1');
+
+// owl.on('mousewheel', '.owl-stage', function (e) {
+//     if (e.deltaY>0) {
+//         owl.trigger('next.owl');
+//     } else {
+//         owl.trigger('prev.owl');
+//     }
+//     e.preventDefault();
+// });
  </script>
 
  <!-- OWL CAROUSEL FOR DEVELOPERS TEAM -->
@@ -865,6 +1018,80 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
    loop:true,
    margin:10,
    nav:true,
+   dots:false,
+   
+   navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+  
+   
+  
+  
+    
+   responsive:{
+       0:{
+           items:1
+       },
+       700:{
+           items:2
+       },
+       1000:{
+           items:3
+       }
+   }
+})
+
+// for about clz section
+
+$('.owl-carousel1').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    // autoplay:true,
+    dots:false,
+   
+    
+   
+     
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+
+
+// for mousewheel
+// var owl = $('.owl-carousel1');
+
+// owl.on('mousewheel', '.owl-stage', function (e) {
+//     if (e.deltaY>0) {
+//         owl.trigger('next.owl');
+//     } else {
+//         owl.trigger('prev.owl');
+//     }
+//     e.preventDefault();
+// });
+ </script>
+
+ <!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
+
+ <script>
+  $('.owl-carousel3').owlCarousel({
+   loop:true,
+   margin:10,
+   nav:false,
+  //  stagePadding:50,
+  //  dots:false,
+   
+  //  navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+  
+   
   
   
     
@@ -873,11 +1100,9 @@ place that promotes freedom of thought, innovation and creativity. BMC  continui
            items:1
        },
        600:{
-           items:2
+           items:1
        },
-       1000:{
-           items:3
-       }
+     
    }
 })
 </script>

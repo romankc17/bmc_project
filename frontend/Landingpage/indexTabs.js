@@ -1,3 +1,5 @@
+
+
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -14,3 +16,26 @@ function openCity(evt, cityName) {
   
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
+
+
+  // GO TO TOP ICON
+
+
+const topIcon=document.querySelector('.gotoTop');
+ topIcon.addEventListener('click',()=>{
+  window.scrollTo({
+    top:0,
+    left:0,
+    behavior:"smooth"
+  });
+ })
+
+window.addEventListener("scroll",()=>{
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+   topIcon.classList.add("show");
+  }
+ else{
+   topIcon.classList.remove("show");
+ }
+})
+ 

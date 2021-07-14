@@ -89,7 +89,8 @@ margin-left:50px;
     height: 50px;
 }
 .navbar-toggler{
-  font-size: rrem;
+  font-size: 5rem;
+  text-align: center;
 }
  .navs  .nav-link{
     color: #001147 !important ;
@@ -168,6 +169,7 @@ margin-left:50px;
   .carousel-item .carousel-caption h2{
     /* font-size:30px; */
     font-weight: bold;
+  
   }
   .carousel-item .carousel-caption p{
     font-size: 14px;
@@ -193,6 +195,35 @@ margin-left:50px;
     background:#CE4445;
     text-decoration: none;
   }
+  
+  /* .delicious-btn {background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%)}
+   .delicious-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height:4rem;
+    padding:0 30px;
+    font-size:16px;
+    text-align: center;
+    
+  
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 20px #eee;
+     border-radius: 10px;
+     display: block;
+     text-decoration: none;
+   } */
+
+   /* .delicious-btn:hover {
+     background-position: right center; 
+     color: #fff;
+     text-decoration: none;
+   } */
+  
   .delicious-btn:hover,
   .delicious-btn:active,
   .delicious-btn:focus{
@@ -344,7 +375,7 @@ margin-left:50px;
   .aboutClz{
     /* background-color: #1B3792; */
     background-color:#3a52a0; ;
-    position: relative;
+   
     /* background-color: #ccc; */
     padding: 4rem 8rem;
     color: white;
@@ -352,17 +383,18 @@ margin-left:50px;
     height: 80vh;
     
     width: 100%;
-    position: relative;
+   
     border-bottom: 1rem solid #CE4445;
     
   }
 
-  /* .aboutClz img{
-    width:30%;
-    height: 30rem;
-   transform: translateY(-8rem);
-   border-bottom: 4px solid #CE4445;
-  } */
+.collegeImg{
+ 
+  position: relative;
+  width: 100%;
+  height: 25rem;
+  
+}
   .collegeImg .clzImg{
     width: 45%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
@@ -371,6 +403,7 @@ margin-left:50px;
     transition: all .5s;
     outline-offset: 1rem;
     height: 250px;
+    
 
     
   }
@@ -396,8 +429,12 @@ margin-left:50px;
     left: 40rem;
     top: -2rem;
   }
+  
   .aboutClz .clzDescription p{
+   
     font-size: 1.3rem;
+    width: 100%;
+    height: auto;
     /* line-height: 1rem; */
 
   }
@@ -490,8 +527,8 @@ margin-left:50px;
     width: 100%;
     height: auto;
     position: relative;
-    min-height: 40rem;
-    padding-top: 3rem;
+    height: 40rem;
+    /* padding-top: 3rem; */
     
     
 
@@ -532,25 +569,82 @@ margin-left:50px;
 
 /* message from achivers */
 .achivers{
-  padding: 10rem 2rem;
+  background-color: rgb(230, 221, 221);
+  position: relative;
+  margin-top: 10rem;
+ 
+ 
 }
+.achivers .owl-carousel{
+  padding: 3rem 2rem;
+ 
+}
+.achivers .achivers-head{
+  height: 8rem;
+  display: flex;
+  align-items: center;
+}
+.achivers h1{
 
-.achivers .achivers-image img{
+align-items: center;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 3rem;
+  padding: 0rem 2rem;
+border-left: 5px solid #970F0F;
+margin-left: 1.5rem;
+}
+.achivers .achivers-image{
+  position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 4px solid green;
+  border: 6px solid #970F0F;
+  overflow: hidden;
+  
+}
+.achivers .achivers-image img{
+  height: 100%;
+  /* width: 200px;
+  height: 200px;
+  border-radius: 50%; */
+  transition: all .3s;
+ 
+}
+.achivers-image .achivers-caption{
+  position: absolute;
+  top: 42%;
+  left: 11%;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.achivers-image:hover .achivers-caption{
+  opacity: 1;
+}
+.achivers-image:hover img{
+ 
+  transform:scale(0.95);
+  filter: blur(2px)  brightness(100%);
+}
+
+.achivers-image .achivers-caption i{
+  font-size: 3rem;
+  margin: 1rem;
+  color: red;
 }
 .achivers .item{
   padding-top: 2rem;
 }
 .achivers .achivers-para{
-  font-size: 2rem;
-  padding-right: 10rem;
+  font-size: 2.5rem;
+  padding:5rem 5rem;
+  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Viaoda Libre', cursive;
 }
 .achivers .achivers-para i{
   font-size: 2.5rem;
-  color: green;
+  color: #CE4445;
+
 
 }
 .achivers .position{
@@ -565,43 +659,60 @@ margin-left:50px;
 .achivers .position .achivers-name{
   font-size: 2.8rem;
   margin: 0 !important;
+  font-family: 'Akaya Kanadaka', cursive;
 }
 .achivers .position .achivers-skill{
   font-size: 2.5rem;
   margin: 0 !important;
+  font-family: 'Akaya Kanadaka', cursive;
 }
 .achivers .position .read-more button{
   font-size: 2rem;
   border-radius: 100px;
   padding: 0.8rem 2rem;
+  font-family: 'Akaya Kanadaka', cursive;
 }
 /* positioning prev and next button */
 .achivers .owl-nav{
-  transform: translate(600px ,-440px);
+  position: absolute;
+  top: -70px;
+  right: 100px;
+  
+
+  
   
 }
 
 .achivers .owl-nav button {
  
   background-color: white !important;
-  border: none;
+  
  
  
+}
+.achivers .owl-nav button .nav-button{
+  text-decoration: none;
 }
 .achivers .owl-nav button .nav-button i{
   width: 100%;
   height: 100%;
   font-size: 30px;
   text-align: center;
- color: greenyellow;
+ color: #970F0F;
  margin: 1rem;
+ text-decoration: none;
+ 
  
 }
+.owl-next:focus, .owl-prev:focus {outline: none;}
 .owl-theme .owl-nav [class*=owl-]{
-  background-color: white !important;
+  background-color: rgb(230, 221, 221);
   padding: 0 !important;
-  border: none;
+
   margin: 0 !important;
+}
+.owl-theme .owl-nav .nav-button:hover{
+  background-color: rgb(230, 221, 221) !important;
 }
 
 
@@ -614,35 +725,133 @@ margin-left:50px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* width: 200px;
-  height: 200px;
-  background-color: greenyellow; */
+  position: relative;
+  
+}
+.developers h1{
+  font-family: 'Kaushan Script', cursive;
+  margin-top: 2rem;
+  font-size: 3rem;
+  padding:0rem 2rem;
+  border-left: 10px solid #011864;
+}
+.developers .wrapper{
+  border-radius: 50%;
+  border: 10px solid #970F0F;
 }
 .developers .developer-img{
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  height:280px;
-  border: 10px solid #CE4445;
+  
+  width: 270px;
+  height:270px;
+  border: 15px solid white;
   border-radius: 50%;
+  box-shadow: inset 0 0 0.15rem black;
+  overflow: hidden;
+
  
 }
 .developers .developer-img img{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 10px solid white;
-  box-shadow: inset 0 0 0 0.1rem rgb(99, 96, 96);
-  
-  
-  
+  transition: all 1s;
+}
+.developers .developer-img img:hover{
+  transform: scale(1.1);
 }
 
+/* shrish image */
+.developers .img-1 img{
+  transform: scale(1.8) translate(-5px,40px);
+}
+.developers .img-1 img:hover{
+  transform: scale(2) translate(-5px,40px); 
+}
+/* kisan image */
+.developers .img-3 img{
+  transform: scale(1.7) translate(-5px,60px);
+}
+.developers .img-3 img:hover{
+  transform: scale(1.9) translate(-5px,60px); 
+}
+/* samir image */
+.developers .img-4 img{
+  transform:scale(0.95) translate(15px,20px);
+}
+.developers .img-4 img:hover{
+  transform:scale(1.1) translate(15px,20px);
+}
+
+/* roman image */
+.developers .img-5 img{
+  transform:scale(1.3) translate(11px,25px);
+}
+.developers .img-5 img:hover{
+  transform:scale(1.5) translate(11px,25px);
+}
+/* darsan img */
+.developers .img-6 img{
+  transform:scale(1.5) translate(-24px,28px);
+}
+.developers .img-6 img:hover{
+  transform:scale(1.7) translate(-24px,28px);
+}
+
+.developers .item .developer-name{
+  background-color: #970F0F;
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 3px;
+  padding: 0.8rem 1.5rem;
+  transform: translateY(-10px);
+}
+.developers .item .developer-skill{
+  color: #9e6363;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #970F0F;
+  text-align: center;
+}
+.developers .item .about-dev{
+  color: #9e6363;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0rem 3rem;
+  font-weight: 500;
+}
+.developers .developer-socialMedia i{
+ font-size: 3rem;
+ color: #011864;
+ margin: 0rem 1.5rem;
+}
+
+/* styling the owl-nav */
+
+
+.developers .owl-theme .owl-nav i{
+  color: #001147;
+  font-size: 4rem;
+ 
+}
+.developers .owl-theme .owl-nav .owl-prev{
+  
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  
+  background-color: #fff !important;
+  
+}
+.developers .owl-theme .owl-nav .owl-next{
+  
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  background-color: #fff !important;
+  
+}
 
 /* Footer section */
 /* First column */
 .foot-section{
-  padding: 6rem 3rem;
+  padding: 6rem 2rem;
   background-color: #001147;
   color: white;
 }
@@ -666,10 +875,16 @@ margin-left:50px;
   font-size: 3rem;
  margin: 1rem;
 }
+/* google map */
+
+.our-location iframe{
+  width: 100%;
+  height: 280px;
+}
 
 /* second column */
 .foot-section .second-col{
-  margin-left: 5rem;
+  margin-left: 0rem;
 }
 .foot-section .second-col h1{
   display: inline-block;
@@ -704,9 +919,42 @@ margin-left:50px;
 }
 .copyright-section p{
 padding-top: 0.4rem;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 2rem;
   letter-spacing: 0.2rem;
 }
+
+
+/* go to top icon */
+.gotoTop{
+  position: fixed;
+  
+  right: 10px;
+  bottom:12px;
+  z-index: 555;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #970F0F;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  color: #ffffff;
+  border: none;
+  outline:none;
+  cursor: pointer;
+display: none;
+
+}
+.gotoTop:focus{
+ outline: none;
+}
+.gotoTop:active{
+  background-color: #8d2c2c;
+}
+.show{
+  display: block;
+}
+
+
+
   
 
