@@ -22,6 +22,7 @@ header {
   background: url("./imgs/zongnan-bao-deagK9-Dmt0-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: top center;
   height: 50vh;
   color: #fff;
   position: relative;
@@ -33,14 +34,15 @@ header h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   left: 8%;
   z-index: 2;
 }
 
 .intro {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
 }
 
 .intro-text {
@@ -61,6 +63,42 @@ header h1 {
   width: 100%;
   height: 350px;
 }
+.bottom__line::after{
+  border-top: 0.2rem solid black;
+  width: 100px;
+  content: "";
+  display: block;
+}
+
+.bottom__line__first::after{
+  border-top: 0.2rem solid black;
+  width: 90px;
+  content: "";
+  display: block;
+}
+.meet_title{
+  margin-bottom: 3rem;
+}
+
+.meet_title::after{
+  content: "";
+  display: block;
+  width: 150px;
+  margin: auto;
+  height: 10px;
+  border-bottom: 0.2rem solid black;
+  
+}
+
+@media screen and (max-width: 767px) {
+  .intro{
+    grid-template-columns: 1fr;
+
+  }
+  .intro-image{
+    display: none;
+  }
+}
 
 .team h2 {
   text-align: center;
@@ -72,13 +110,13 @@ header h1 {
 
 .members {
   display: grid;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 2fr;
-  row-gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
   place-items: center;
 }
 
 .member {
-  width: 250px;
+  min-width: 230px;
   height: 200px;
   background-color: #ecf0f1;
   position: relative;
@@ -133,4 +171,28 @@ header h1 {
 .social-icons a i {
   font-size: 17px;
   color: #d63031;
+}
+@media screen and (max-width: 992px){
+  .members{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 545px){
+  .members{
+    grid-template-columns: 1fr;
+  }
+  .member{
+    min-width: 300px;
+    
+  }
+  .image{
+    left: 27%;
+  }
+}
+
+@media screen and (max-width: 340px){
+  .member{
+    min-width: 250px;
+  }
 }
