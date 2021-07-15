@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+{% load static %}
+{%load widget_tweaks%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--------------bootstrap css--------------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!---------------------fontAwesome--------------------->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-------------------Note List title---------->
+    <title>Notes | CSIT</title>
+
+    <!-----------------------css----------->
+    <link rel="stylesheet" href="{% static 'notes/css/notesDisplaystyle.css' %}">
+</head>
+
+<body>
+    <!---------------------------------Edit Note Modal------------------------->
+    <section class="editNotehere">
+        <div class="modalContent">
+            <h5 class="modal__title">
+                <strong>Edit Note</strong>
+            </h5>
+            <div class="modal-body__">
+                <form method="post" enctype="multipart/form-data" id="form">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="hidden" name="noteId" id="noteId" />
+                        <label for="edit_title">Title</label>
+                        <input type="text" class="form-control" id="edit_title" placeholder="Note title" required>
+                    </div>
+                    <div data-aos = "fade-up" class="note__filter__input__container form-group"   data-aos-duration="1500">
+                        Choose<br />
+                        <select name="note__semester form-control" id="note__edit__semester" required>
+                            <option>Semester...</option>
+                            <option value="1">First Semester</option>
+                            <option value="2">Second Semester</option>
+                            <option value="3">Third Semester</option>
+                            <option value="4">Fourth Semester</option>
+                            <option value="5">Fifth Semester</option>
+                            <option value="6">Sixth Semester</option>
+                            <option value="7">Seventh Semester</option>
+                            <option value="8">Eighth Semester</option>
+                        </select>
+                        <!-- <select name="note__subject form-control" id="note__edit__subject" required>
+                            <option>Choose Subject...</option>
+                        </select> -->
+                        <span style="display: block; margin-top: 1rem;">Subject</span>
+                        <input type="text" class="form-control" id="note__edit__subject" placeholder="Note Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <div>Choose your note</div>
+                        <label for="edit__noteFile" class="first__label">
+                           <span class="first__span">Choose file</span><span id="fileName"></span>
+                        </label>
+                        <input name="fileName" type="file" class="form-control-file passive__edit__noteFile" id="edit__noteFile" />
+                    </div>
+                    <div class="form-group">
+                        <label for="edit__description">Note description</label>
+                        <textarea class="form-control" id="edit__description" rows="3" required></textarea>
+                    </div>
+                    <a id="acnr">View</a>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger">Cancel</button>
+                        <input type="submit" name="submit" id= "edit_note" class="btn btn-primary" role="button" value="Edit Note" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------Delete Note Modal ------------------------->
+
+    <section class="deleteNoteHere">
+        <div class="modalContent">
+            <h5 class="modal__title">
+                <strong>Want to delete your note?</strong>
+            </h5>
+            <section class="modal-body__">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="c_note_delete">Cancel</button>
+                        <input type="button" name="submit" id="delete_note" role="button" class="btn btn-danger" value="confirm"/>
+                    </div>
+            </section>
+        </div>
+    </section>
+
+    <!--------------------------------Note create and Display Section----------------------->
+    <section class="notes__display__root__container">
+        <header class="notes__display__header"></header>
+        <header class="notes__display__header__container">
+            <strong data-aos="fade-down" data-aos-duration="1500">Notes | Bsc CSIT</strong>
+            <br />
+            <section class="notes__display__form">
+                <div class="note__search__input_container" data-aos="fade-right" data-aos-duration="1500">
+                    <input type="search" name="note_search" id="note_search" tabindex="1" placeholder="Search..." />
+                </div>
+                <div data-aos = "fade-up" class="note__filter__input__container" data-aos-duration="1500">
+                    <select name="note__semester" id="note__semester">
+                        <option>Semester...</option>
+                        <option value="First">First Semester</option>
+                        <option value="Second">Second Semester</option>
+                        <option value="Third">Third Semester</option>
+                        <option value="Fourth">Fourth Semester</option>
+                        <option value="Fifth">Fifth Semester</option>
+                        <option value="Sixth">Sixth Semester</option>
+                        <option value="Seventh">Seventh Semester</option>
+                        <option value="Eighth">Eighth Semester</option>
+                    </select>
+                    <select name="note__subject" id="note__subject">
+                        <option>Choose Subject...</option>
+                    </select>
+                    <!-- <input type="submit" name="submit" id="submit" /> -->
+                </div>
+            </section>
+        </header>
+
+        <!-------------------Notes main body---------------->
+        <div class="container">
+            <!----------------------Create Note------------>
+            <div class="create__note__action">
+                <button type="button" class="note__create__button" data-toggle="modal" data-target="#noteCreateModal">
+                    <i class="fas fa-edit"></i>  Create Note
+                </button>
+                <div class="modal fade" id="noteCreateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                              <form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+                                  <div class="form-group">
+                                    <label for="title">Title</label>
+<!--                                    <input type="text" class="form-control" id="title" placeholder="Note title" required>-->
+                                  {% render_field form.title id="title" class+="form-control" placeholder="Note title" required="true" %}
+                                  </div>
+                                  <div data-aos = "fade-up" class="note__filter__input__container form-group"   data-aos-duration="1500">
+                                      Choose<br />
+<!--                                      <select name="note__semester form-control" id="note__input__semester" required>-->
+<!--                                          <option>Semester...</option>-->
+<!--                                          <option value="First">First Semester</option>-->
+<!--                                          <option value="Second">Second Semester</option>-->
+<!--                                          <option value="Third">Third Semester</option>-->
+<!--                                          <option value="Fourth">Fourth Semester</option>-->
+<!--                                          <option value="Fifth">Fifth Semester</option>-->
+<!--                                          <option value="Sixth">Sixth Semester</option>-->
+<!--                                          <option value="Seventh">Seventh Semester</option>-->
+<!--                                          <option value="Eighth">Eighth Semester</option>-->
+<!--                                      </select>-->
+                                      {% render_field form.semester name="note__semester" id="note__input__semester" required="true" %}
+                                      <!-- <select name="note__subject form-control" id="note__input__subject" required>
+                                          <option>Choose Subject...</option>
+                                      </select> -->
+                                      <span style="display: block; margin-top: 1rem;">Subject</span>
+<!--                                      <input type="text" class="form-control" id="note__input_subject" placeholder="Note Subject" required>-->
+                                      {% render_field form.subject class+="form-control" id="note__input_subject" placeholder="Note Subject" required="true" %}
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="noteFile">Choose your note</label>
+<!--                                      <input type="file" class="form-control-file" id="noteFile" required>-->
+                                      {% render_field form.file class+="form-control-file" id="noteFile" required="true" %}
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="description">Note description</label>
+<!--                                      <textarea class="form-control" id="description" rows="3" required></textarea>-->
+                                      {% render_field form.description class+="form-control" id="description" rows="3" required="true" %}
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                      <button type="submit" name="submit" class="btn btn-primary">Save</button>
+                                  </div>
+                              </form>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <span>
+                    <i style = "color: red; font-size: 1.4rem; cursor: pointer;" class="fas fa-arrow-alt-circle-left"></i>
+                    <i style = "color: red; font-size: 1.4rem; cursor: pointer;" class="fas fa-arrow-alt-circle-right"></i>
+                </span>
+            </div>
+
+            <!-------------------Main Note-------->
+            <main class="notes__here">
+                <!-----------------Individual notes container--------------->
+                <section class="notes__display__section" id="dynamic_note">
+                    <!------------------------Individual notes--------->
+
+                    <!------------------model data------------------->
+                    {% for note in fetchData %}
+                    <article class="individual__note__container">
+                        <header class="individual__note__title">
+                            <strong>
+                                <span class="note__display__title">{{ note.title }}</span>
+                                | {{ note.subject }}
+                            </strong>
+                            <span>
+                                <button class="edit-btn" data-id="edit1" data-sid="{{note.id}}">
+                                    <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
+                                </button>
+                                <button class="delete-btn" data-id="delete1" data-sid="{{note.id}}">
+                                    <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
+                                </button>
+                            </span>
+                        </header>
+                        <section class="individual__note__body">
+                            <div>
+                                <strong><i class="fas fa-user-circle"></i> {{ note.user }}</strong> | <time>{{ note.timestamp }}</time>
+                            </div>
+                            <div class="notes__display__description">
+                                {{ note.description }}
+                            </div>
+                            <div>
+                                <button><a href="{{ note.file.url }}">View</a> </button>
+                                <button><a href="{{ note.file.url }}" download>Download</a></button>
+                            </div>
+                        </section>
+                    </article>
+                    {% endfor %}
+
+                    <!-------------------Hard code data------------------------------>
+                    <article class="individual__note__container">
+                        <header class="individual__note__title">
+                            <strong>
+                                <span class="note__display__title">Smoothing Frequency Domain Filters</span>
+                                | Image Processing
+                            </strong>
+                            <span>
+                                <button class="edit-btn" data-id="edit1">
+                                    <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
+                                </button>
+                                <button class="delete-btn" data-id="delete1">
+                                    <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
+                                </button>
+                            </span>
+                        </header>
+                        <section class="individual__note__body">
+                            <div>
+                                <strong><i class="fas fa-user-circle"></i> Weng Cheng</strong> | <time>January 01, 2020</time>
+                            </div>
+                            <div class="notes__display__description">
+
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur dicta eveniet adipisci a, ipsam dignissimos voluptas incidunt eum optio!
+                            </div>
+                            <div>
+                                <button>View</button> <button>Download</button>
+                            </div>
+                        </section>
+                    </article>
+                    <article class="individual__note__container">
+                        <header class="individual__note__title">
+                            <strong>
+                                <span class="note__display__title">Smoothing Frequency Domain Filters</span>
+                                | Image Processing
+                            </strong>
+                            <!------------------Action Note---------------->
+                            <span>
+                                <button class="edit-btn" data-id="edit2">
+                                    <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
+                                </button>
+                                <button class="delete-btn" data-id="delete2">
+                                    <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
+                                </button>
+                            </span>
+                        </header>
+                        <section class="individual__note__body">
+                            <div>
+                                <strong><i class="fas fa-user-circle"></i> Weng Cheng</strong> | <time>January 01, 2020</time>
+                            </div>
+                            <div class="notes__display__description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur dicta eveniet adipisci a, ipsam dignissimos voluptas incidunt eum optio!
+                            </div>
+                            <div>
+                                <button>View</button> <button>Download</button>
+                            </div>
+                        </section>
+                    </article>
+                    <article class="individual__note__container">
+                        <header class="individual__note__title">
+                            <strong>
+                                <span class="note__display__title">Smoothing Frequency Domain Filters</span>
+                                | Image Processing
+                            </strong>
+                            <span>
+                                <button class="edit-btn" data-id="edit3">
+                                    <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
+                                </button>
+                                <button class="delete-btn" data-id="delete3">
+                                    <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
+                                </button>
+                            </span>
+                        </header>
+                        <section class="individual__note__body">
+                            <div>
+                                <strong><i class="fas fa-user-circle"></i> Weng Cheng</strong> | <time>January 01, 2020</time>
+                            </div>
+                            <div class="notes__display__description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consequuntur dicta eveniet adipisci a, ipsam dignissimos voluptas incidunt eum optio!
+                            </div>
+                            <div>
+                                <button>View</button> <button>Download</button>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+                <!--------------------Recent posted Notes section---------------->
+                <section class="notes__display__recent__post">
+                    <header class="notes__recent__post__header">Recent Notes</header>
+                    <section class="notes__recent__post__body">
+                        <ul id="_recent_note">
+                            {% for recent_note in fetchData|slice:":8" %}
+                            <li>
+                                <a href="{{ recent_note.file.url }}">{{ recent_note.title }} | {{ recent_note.subject }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </section>
+            </main>
+        </div>
+    </section>
+
+<!-----------------vanilla js------------->
+    <script src="{%static 'notes/js/notesDisplayControl.js' %}"></script>
+    <script src="{%static 'notes/js/notescrud.js' %}"></script>
+
+    <!-----------------jquery, popper.js, bootstrap.js------------>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-----------fade animation------->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+          $('#myInput').trigger('focus')
+        })
+    </script>
+
+    <!------------Delete Note ---------------->
+    <script>
+        $("body").on("click", ".delete-btn", function(){
+            let nId = $(this).attr("data-sid");
+            noteThis = this;
+            $("#delete_note").on("click", function(){
+                let csr = $("input[name=csrfmiddlewaretoken]").val();
+                noteData = { nId: nId, csrfmiddlewaretoken: csr };
+                lastNoteThis = noteThis;
+                $.ajax({
+                    url: "{% url 'note_delete' %}",
+                    method: "POST",
+                    data: noteData,
+                    success: function(response){
+                       if(response.status === 1){
+                           $(lastNoteThis).closest("article").fadeOut()
+                       }
+                    }
+                });
+
+                $('.deleteNoteHere').removeClass("active");
+            })
+        });
+    </script>
+
+    <!---------Edit note---------------->
+    <script>
+        $("body").on("click", ".edit-btn", function(){
+            let nId = $(this).attr("data-sid");
+            noteThis = this;
+            let csr = $("input[name= csrfmiddlewaretoken]").val();
+                noteData = { nId: nId, csrfmiddlewaretoken: csr };
+                lastNoteThis = noteThis;
+                $.ajax({
+                    url: "{% url 'note_edit' %}",
+                    method: "POST",
+                    data: noteData,
+                    content: "Application/json",
+                    success: function(data){
+
+                        const response = data.note
+
+                        $('#noteId').val(response.id);
+
+                        $('#edit_title').val(response.title);
+                        $('#note__edit__subject').val(response.subject);
+
+                        $('#edit__description').val(response.description);
+                        $('#note__edit__semester').val(response.semester);
+
+                        var filename = response.file.split('/').pop();
+                        $("#edit__noteFile").attr("value",response.file);
+                        $('#fileName').html(filename);
+
+                    }
+                });
+            $("#edit_note").click(function(event){
+                event.preventDefault();
+                noteList = "";
+                var data = new FormData()
+                data.append('noteId',$("#noteId").val());
+                data.append('title', $("#edit_title").val());
+                data.append('subject', $('#note__edit__subject').val());
+                data.append('description', $('#edit__description').val());
+                data.append('semester', $('#note__edit__semester').val());
+                data.append('file', $('#edit__noteFile')[0].files[0]);
+
+
+                data.append('csrfmiddlewaretoken', $("input[name= csrfmiddlewaretoken]").val());
+
+                console.log(data);
+
+                $.ajax({
+                   url: "{% url "note_edit_save" %}",
+                   method: "POST",
+                   processData: false,
+                   contentType: false,
+                   data: data,
+                   success: function(response){
+                       if( response.status == 200){
+                           console.log("data edited successfully");
+                           let nd = response.noteData;
+                           console.log(nd)
+                           for( i=0; i<nd.length; i++){
+                               noteList +=
+                               `<article class="individual__note__container">
+                                   <header class="individual__note__title">
+                                   <strong>
+                                      <span class="note__display__title">${nd[i].title}</span>
+                                      | ${nd[i].subject}
+                                   </strong>
+                                   <span>
+                                       <button class="edit-btn" data-id="edit1" data-sid="${nd[i].id}">
+                                          <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
+                                       </button>
+                                       <button class="delete-btn" data-id="delete1" data-sid="${nd[i].id}">
+                                          <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
+                                       </button>
+                                   </span>
+                                   </header>
+                                   <section class="individual__note__body">
+                                   <div>
+                                       <strong><i class="fas fa-user-circle"></i> ${ nd[i].user_id }</strong> | <time>${ nd[i].timestamp }</time>
+                                   </div>
+                                   <div class="notes__display__description">
+                                       ${ nd[i].description }
+                                   </div>
+                                   <div>
+                                       <button><a href="/document/${ nd[i].file }">View</a> </button>
+                                       <button><a href="/document/${ nd[i].file }" download>Download</a></button>
+                                   </div>
+                                  </section>
+                               </article> `
+                           }
+                           $('#dynamic_note').html(noteList)
+                       }
+                   }
+               })
+               $('.editNotehere').removeClass("active");
+            })
+        });
+    </script>
+
+    <!----------------Edit toggler-------------------->
+    <script>
+        //Edit note file toggle
+        document.getElementById('edit__noteFile').onchange = function() {
+            document.querySelector(".first__label").classList.add("passive__edit__noteFile");
+            this.classList.remove("passive__edit__noteFile");
+        };
+    </script>
+
+
+</body>
+
+</html>
