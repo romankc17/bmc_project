@@ -38,7 +38,7 @@ class BlogDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         form = CommentForm()
         context['comment_form']=form
-        return form
+        return context
 
 
 class BlogCreateView(LoginRequiredMixin, CreateView):

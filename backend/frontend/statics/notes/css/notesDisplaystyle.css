@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&family=Unna&display=swap');
+
+:root{
+    --colorRed: red;
+    --colorDenseBlue: darkBlue;
+    --colorWhite: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Philosopher', sans-serif;
+}
+body,html{
+    list-style: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+}
+
+.notes__display__root__container{
+    background-color: #d3d3d3;
+}
+
+.notes__display__header{
+    width: 100%;
+    height: 18rem;
+    padding-top: 2rem;
+    background-image: url("../img/464143.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.45);
+    -webkit-filter: brightness(0.45);
+    font-size: 1.2rem;
+    color: var(--colorWhite);
+
+}
+.notes__display__header__container{
+    color: var(--colorWhite);
+    margin-top: -14rem;
+    margin-left: 7.8rem;
+
+}
+.notes__display__header__container > strong{
+    font-size: 3rem;
+    display: inline-block;
+}
+.notes__display__header__container > .notes__display__form  input:first-child{
+    height: 2.8rem;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 0.6rem;
+    margin-top: 1rem;
+    width: 22.9rem;
+
+}
+
+.notes__display__header__container > .notes__display__form  input:first-child::placeholder{
+    opacity: 1;
+}
+
+.notes__display__header__container > .notes__display__form input:first-child:focus,
+.notes__display__header__container > .notes__display__form  input:first-child:active{
+    background-color: rgb(211, 208, 208);
+}
+
+.notes__display__header__container > .notes__display__form select{
+    height: 2.5rem;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+    max-width: 20rem;
+    padding: 0.4rem;
+
+}
+/*  */
+.notes__display__header__container > .notes__display__form select:nth-child(2){
+    margin-left: 0.5rem;
+}
+
+.notes__display__header__container > .notes__display__form > .note__filter__input__container  input{
+    height: 2.5rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 5rem;
+    background-color: var(--colorRed);
+    color: var(--colorWhite);
+    margin-left: 0.5rem;
+    transition: all 400ms ease-in-out;
+}
+.notes__display__header__container > .notes__display__form > .note__filter__input__container  input:hover{
+    transform: scale(1.1);
+    box-shadow: 0 1px 10px rgba(250, 248, 248, 0.3);
+    background-color: rgb(247, 82, 82);
+    color: rgb(243, 237, 237);
+}
+
+@media screen and (max-width:830px) {
+    .notes__display__header__container{
+        margin-left: 2rem;
+
+    }
+}
+
+
+
+@media screen and (max-width: 616.5px) {
+    .notes__display__header__container > .notes__display__form > .note__filter__input__container  input{
+        margin-top: 0.8rem;
+    }
+    .notes__display__header{
+        height: 25rem;
+        padding-top: 0;
+    }
+    .notes__display__header__container{
+        max-height: 25rem;
+    }
+}
+
+@media screen and (max-width: 561px) and (min-width:370px){
+    .notes__display__header__container > .notes__display__form select{
+       max-width: 10rem;
+    }
+}
+@media screen and (max-width: 523.5px) {
+    .notes__display__header__container > .notes__display__form select:nth-child(2){
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 420.5px) {
+    .notes__display__header__container > .notes__display__form > .note__filter__input__container  input{
+        margin-left: 0;
+    }
+    .notes__display__header__container > .notes__display__form input:first-child{
+         width: 20rem;
+    }
+    .notes__display__header__container > .notes__display__form select{
+        font-size: 1rem;
+    }
+    .notes__display__header__container{
+        margin-left: 1rem;
+
+    }
+}
+
+@media screen and (max-width: 361.5px) {
+    .notes__display__header__container{
+        margin-top: -20rem;
+    }
+    .notes__display__header__container > strong{
+        font-size: 2.3rem;
+    }
+    .notes__display__header__container > .notes__display__form select{
+        font-size: 1rem;
+        width: 15rem;
+        height: 2rem;
+    }
+    .notes__display__header__container > .notes__display__form input:first-child{
+        font-size: 1rem;
+        width: 15rem;
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 338px) {
+    .notes__display__header{
+        height: 20rem;
+    }
+    .notes__display__header__container{
+        margin-top: -16rem;
+    }
+
+    .notes__display__form{
+        margin-top: 2.5rem;
+    }
+
+}
+
+@media screen and (max-width: 286px) {
+    .notes__display__header__container > strong{
+        font-size: 2.1rem;
+    }
+}
+
+
+
+/******* notes whole body ***********/
+.notes__display__header__container + .container{
+    background-color: #d3d3d3;
+    padding-top: 2rem;
+}
+
+.notes__here{
+    background-color: #d3d3d3;
+    padding: 0.5rem 0;
+    display: grid;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: 2.5fr 1.5fr;
+}
+.create__note__action > span{
+    float: right;
+
+}
+.create__note__action > span::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.individual__note__title > span{
+    float: right;
+}
+.individual__note__container{
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+}
+.individual__note__container > .individual__note__title > strong{
+    font-size: 1.2rem;
+}
+.individual__note__container > .individual__note__title{
+    margin-bottom: 0.1rem;
+}
+.individual__note__container > .individual__note__body button{
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--colorDenseBlue);
+    color: var(--colorWhite);
+    border-radius: 0.2rem;
+}
+.individual__note__container > .individual__note__body button a{
+    color: white;
+}
+@media screen and (max-width:370px) and (min-width: 335px) {
+    .notes__display__header__container{
+        margin-top: -16rem;
+    }
+    .notes__display__header__container + .container{
+        padding-top: 3rem;
+
+    }
+
+}
+
+/*********recent post *******************/
+.notes__display__recent__post{
+    background-color: white;
+    padding: 1.4rem;
+    max-height: 28rem;
+}
+.notes__display__description{
+    margin: 0.2rem 0;
+    padding: 0.4rem;
+}
+.notes__display__recent__post > .notes__recent__post__header{
+    font-weight: bold;
+    font-size: 1.35rem;
+}
+.notes__display__recent__post > .notes__recent__post__body > ul{
+    list-style: none;
+
+}
+.notes__recent__post__body > ul li{
+    margin-bottom: 0.3rem;
+}
+.notes__recent__post__body > ul > li > a{
+    color: var(--colorDenseBlue);
+    font-size: 1.03rem;
+}
+
+@media screen and (max-width: 767px) {
+    .notes__here{
+        display: block;
+    }
+    .notes__display__recent__post{
+        margin-top: 2rem;
+    }
+}
+#note__input__semester, #note__input__subject{
+    border: none;
+    outline: none;
+    height: 2rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    border: 0.1rem solid rgb(198, 198, 199);
+    max-width: 10rem;
+    margin-top: 0.2rem;
+}
+.create__note__action{
+    margin-top: 2.5rem;
+}
+
+.modal-dialog{
+    padding-right: 0.8rem;
+}
+#noteCreateModal{
+    width: 100% !important;
+}
+.modal-open{
+    padding-right: 0px !important;
+}
+.modal-content{
+    left: 2% !important;
+}
+.btn-primary{
+    background-color: darkblue !important;
+    border: none !important;
+    outline: none !important;
+}
+.note__create__button{
+    padding: 0.3rem 0.5rem;
+    border: none;
+    outline: none;
+    background-color: var(--colorRed);
+    color: white;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+.note__create__button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.25);
+    outline: none;
+
+}
+
+/***************Edit and Delete Note here ******************/
+.edit__note{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.25);
+    position: fixed;
+    z-index: 9999;
+    top: 5%;
+}
+.editNotehere{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.596);
+    width: 100%;
+    min-height: 100vh;
+    z-index: 9999999;
+    position: fixed !important;
+    transition: all 500ms ease-in-out;
+
+}
+
+.modalContent{
+    background-color: var(--colorWhite);
+    padding: 1.5rem;
+    width: 60% !important;
+    margin: 2rem auto;
+    border-radius: 0.2rem;
+    overflow-x: hidden;
+
+}
+
+.deleteNoteHere > .modalContent{
+    width: 40% !important;
+}
+
+@media screen and (max-width:870px) {
+    .deleteNoteHere > .modalContent{
+        width: 60% !important;
+    }
+}
+@media screen and (max-width:665px) {
+    .deleteNoteHere > .modalContent{
+        width: 90% !important;
+    }
+}
+
+.edit__close_btn{
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+.modalContent > div:nth-child(1)::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.modal-footer > button{
+    transition: all 400ms ease;
+}
+.modal-footer > button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.596);
+}
+#note__edit__semester, #note__edit__subject{
+    border: 0.12rem solid rgb(119, 118, 118);
+    outline: none;
+    padding: 0.3rem 0.1rem;
+    border-radius: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+span > .edit-btn, span > .delete-btn{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: all 400ms ease-in-out;
+}
+span > .edit-btn:hover, span > .delete-btn:hover{
+    transform: scale(1.2);
+
+}
+@media screen and (max-width:660px) {
+    .modalContent{
+        width: 95% !important;
+    }
+}
+.deleteNoteHere{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.596);
+    width: 100%;
+    min-height: 100vh;
+    z-index: 9999999;
+    position: fixed !important;
+    transition: all 500ms ease-in-out;
+
+}
+.active{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+/* mobile height view */
+@media screen and (max-height:610px) {
+    .modalContent{
+        overflow-y: scroll;
+        max-height: 450px;
+
+    }
+}
+
+
+.first__label > .first__span{
+   font-size:15px;
+   padding: 0.3rem 0.3rem;
+   cursor:pointer;
+   border-radius: 0.1rem;
+   border: 0.1rem solid rgba(0,0,0,0.56);
+}
+
+.passive__edit__noteFile{
+    display: none;
+}
+.active__edit__noteFile{
+   display: block;
+}

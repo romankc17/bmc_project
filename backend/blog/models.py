@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 
 class Blog(models.Model):
@@ -18,6 +19,9 @@ class Blog(models.Model):
     def save(self,*args,**kwargs):
         self.slug = slugify(self.title)
         super(Blog,self).save(*args,**kwargs)
+
+    def get_absolute_url(self):
+        return reverse('blog_detail', kwargs={'slug':self.slug})
 
 class Comment(models.Model):
     blog = models.ForeignKey(Blog,on_delete=models.CASCADE,related_name='comments')
