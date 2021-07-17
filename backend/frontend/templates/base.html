@@ -42,10 +42,11 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <!-- linking CSS file -->
-    <link rel="stylesheet" href="{%static 'home/css/index.css' %}">
+    {%block head%}{%endblock%}
+
+    <link rel="stylesheet" href="{%static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
 
-    {%block head%}{%endblock%}
 
     <title>
         {%block title%}
@@ -81,7 +82,7 @@
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white navs ">
-        <a href="./index.html" class="navbar-brand"><img src="{% static 'home/logo.png' %}" alt="logo"></a>
+        <a href="{%url 'home' %}" class="navbar-brand"><img src="{% static 'home/logo.png' %}" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -239,39 +240,27 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-<script src="{% static 'home/js/indexTabs.js' %}"></script>
 <script>
-     $('.carousel').carousel({
-       interval:6300,
-       pause:false,
-
-     });
+      // GO TO TOP ICON
 
 
-    //  hover in dropdown
-    $(document).ready(function(){
-    $(".dropdown").hover(function(){
-        var dropdownMenu = $(this).children(".dropdown-menu");
-        if(dropdownMenu.is(":visible")){
-            dropdownMenu.parent().toggleClass("open");
-        }
-    });
-});
+const topIcon=document.querySelector('.gotoTop');
+ topIcon.addEventListener('click',()=>{
+  window.scrollTo({
+    top:0,
+    left:0,
+    behavior:"smooth"
+  });
+ })
 
-
-   // Video Play
-   $(function () {
-      // Auto play modal video
-      $(".video").click(function () {
-        var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal + ' button.close').click(function () {
-          $(theModal + ' iframe').attr('src', videoSRC);
-        });
-      });
-    });
+window.addEventListener("scroll",()=>{
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+   topIcon.classList.add("show");
+  }
+ else{
+   topIcon.classList.remove("show");
+ }
+})
 
 </script>
 
@@ -287,151 +276,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
         integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-<!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
-
-<!-- OWL CAROUSEL FOR MESSAGE FROM GREATE ACHIVERS  -->
-<script>
-   $('.owl-carousel1').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    // autoplay:true,
-    dots:false,
-
-    navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
-
-
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
-
-
-
-// for mousewheel
-// var owl = $('.owl-carousel1');
-
-// owl.on('mousewheel', '.owl-stage', function (e) {
-//     if (e.deltaY>0) {
-//         owl.trigger('next.owl');
-//     } else {
-//         owl.trigger('prev.owl');
-//     }
-//     e.preventDefault();
-// });
-
-</script>
-
-<!-- OWL CAROUSEL FOR DEVELOPERS TEAM -->
-
-<script>
-  $('.owl-carousel2').owlCarousel({
-   loop:true,
-   margin:10,
-   nav:true,
-   dots:false,
-
-   navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
-
-
-
-
-
-   responsive:{
-       0:{
-           items:1
-       },
-       700:{
-           items:2
-       },
-       1000:{
-           items:3
-       }
-   }
-})
-
-// for about clz section
-
-$('.owl-carousel1').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    // autoplay:true,
-    dots:false,
-
-
-
-
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
-
-
-
-// for mousewheel
-// var owl = $('.owl-carousel1');
-
-// owl.on('mousewheel', '.owl-stage', function (e) {
-//     if (e.deltaY>0) {
-//         owl.trigger('next.owl');
-//     } else {
-//         owl.trigger('prev.owl');
-//     }
-//     e.preventDefault();
-// });
-
-</script>
-
-<!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
-
-<script>
-  $('.owl-carousel3').owlCarousel({
-   loop:true,
-   margin:10,
-   nav:false,
-  //  stagePadding:50,
-  //  dots:false,
-
-  //  navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
-
-
-
-
-
-   responsive:{
-       0:{
-           items:1
-       },
-       600:{
-           items:1
-       },
-
-   }
-})
-
-</script>
 
 
 </body>
