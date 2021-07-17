@@ -1,6 +1,10 @@
 {%extends 'base.html' %}
 {%load static%}
 
+{%block head%}
+    <link rel="stylesheet" href="{%static 'home/css/index.css' %}">
+{%endblock%}
+
 {%block content%}
 <!-- Showcase -->
 
@@ -718,5 +722,189 @@
     </div>
 
 </div>
+
+<!--JavaScriptFile-->
+<script>
+     $('.carousel').carousel({
+       interval:6300,
+       pause:false,
+
+     });
+
+
+    //  hover in dropdown
+    $(document).ready(function(){
+    $(".dropdown").hover(function(){
+        var dropdownMenu = $(this).children(".dropdown-menu");
+        if(dropdownMenu.is(":visible")){
+            dropdownMenu.parent().toggleClass("open");
+        }
+    });
+});
+
+
+   // Video Play
+   $(function () {
+      // Auto play modal video
+      $(".video").click(function () {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+      });
+    });
+
+
+</script>
+
+<!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+
+<!-- OWL CAROUSEL FOR MESSAGE FROM GREATE ACHIVERS  -->
+<script>
+   $('.owl-carousel1').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    // autoplay:true,
+    dots:false,
+
+    navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
+
+
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+
+
+// for mousewheel
+// var owl = $('.owl-carousel1');
+
+// owl.on('mousewheel', '.owl-stage', function (e) {
+//     if (e.deltaY>0) {
+//         owl.trigger('next.owl');
+//     } else {
+//         owl.trigger('prev.owl');
+//     }
+//     e.preventDefault();
+// });
+
+
+</script>
+
+<!-- OWL CAROUSEL FOR DEVELOPERS TEAM -->
+
+<script>
+  $('.owl-carousel2').owlCarousel({
+   loop:true,
+   margin:10,
+   nav:true,
+   dots:false,
+
+   navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+
+
+
+
+
+   responsive:{
+       0:{
+           items:1
+       },
+       700:{
+           items:2
+       },
+       1000:{
+           items:3
+       }
+   }
+})
+
+// for about clz section
+
+$('.owl-carousel1').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    // autoplay:true,
+    dots:false,
+
+
+
+
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+
+
+// for mousewheel
+// var owl = $('.owl-carousel1');
+
+// owl.on('mousewheel', '.owl-stage', function (e) {
+//     if (e.deltaY>0) {
+//         owl.trigger('next.owl');
+//     } else {
+//         owl.trigger('prev.owl');
+//     }
+//     e.preventDefault();
+// });
+
+
+</script>
+
+<!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
+
+<script>
+  $('.owl-carousel3').owlCarousel({
+   loop:true,
+   margin:10,
+   nav:false,
+  //  stagePadding:50,
+  //  dots:false,
+
+  //  navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+
+
+
+
+
+   responsive:{
+       0:{
+           items:1
+       },
+       600:{
+           items:1
+       },
+
+   }
+})
+
+
+</script>
 {%endblock%}
 
