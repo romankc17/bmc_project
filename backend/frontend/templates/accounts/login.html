@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{%load static%}
+{%load widget_tweaks%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{%static 'accounts/css/login.css'%}">
+    <title>Login Form</title>
+</head>
+<body>
+<div class="overlay"></div>
+
+<div class="container d-flex justify-content-center mt-5 wrap">
+    <div class="circle">
+        <i class="fas fa-sign-in-alt"></i>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <h4 class="title">Already have an account? Login</h4>
+            <form method="post">
+                {%csrf_token%}
+                <div class="group">
+                    <label for="usr"><i class="far fa-user"></i></label>
+                    {%render_field form.username id="usr" placeholder="Username" required="true"%}
+                     <!--            <input type="text" class="" id="usr" placeholder="Username">-->
+                </div>
+                <div class="group pass">
+                    <label for="pwd">
+                        <i class="fas fa-lock"></i>
+                    </label>
+                    <!--            <input type="password" class="" id="pwd" placeholder="Password">-->
+                    {% render_field form.password id="pwd" placeholder="Password" %}
+                    <span class="eye-icons">
+                <i class="far fa-eye" id="open"></i>
+                <i class="far fa-eye-slash" id="close"></i>
+             </span>
+                </div>
+                <div class="custom-control custom-checkbox check">
+                    <input type="checkbox" class="custom-control-input" id="customCheck" name="">
+                    <label class="custom-control-label check-label remember" for="customCheck">Remember me</label>
+                </div>
+                <input type="submit" value="LOGIN" class="btn btn-block button">
+                <div class="below-part">
+                    <p>Create an account? <span><a href="{%url 'register' %}">Sign Up</a></span></p>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script src="{%static 'accounts/js/login.js'%}"></script>
+</body>
+</html>

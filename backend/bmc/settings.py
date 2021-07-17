@@ -63,7 +63,7 @@ ROOT_URLCONF = 'bmc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR.parents[0],'frontend/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'frontend/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +128,7 @@ USE_TZ = True
 
 STATIC_URL = '/statics/'
 # <<<<<<< note1
-STATICFILES_DIRS = [os.path.join(BASE_DIR.parents[0],'frontend/statics')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'frontend/statics')]
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # =======
 # STATICFILES_DIRS = [os.path.join(BASE_DIR.parents[0], 'frontend/statics')]
