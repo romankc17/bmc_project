@@ -85,9 +85,9 @@ input.error {
     padding: 8px;
   }
 
-  .rollNo {
-    background-color: #3498db;
-    width: 10px;
+  input#rollno{
+    width: 200px;
+    margin-right: 5px;
   }
   .select {
     gap: 2px;
@@ -98,9 +98,9 @@ input.error {
     width: 300px;
   }
 
-  form {
-    place-items: center;
-  }
+ .form-group label{
+   width: 150px;
+ }
 
   .title {
     font-size: 16px;
@@ -121,15 +121,32 @@ input.error {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .small-container{
+  width: 400px;
+  }
+
+  .select select{
+   margin-left: 0;
+  }
+
+  .batch-select{
+    width: 150px;
+    margin-left: 4rem;
+  }
+ input#rollno{
+   margin:0;
+ }
+
+ .form-group label{
+   width: 150px;
+ }
   .form-group input {
     width: 400px;
   }
   .custom-file,
   .btn {
     width: 400px;
-  }
-
-  .title {
-    margin-left: 12rem;
-  }
+  } 
 }
+
+
