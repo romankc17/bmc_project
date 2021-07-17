@@ -43,6 +43,10 @@ body {
   margin: 0;
 }
 
+select {
+  cursor: pointer;
+  outline: none;
+}
 span {
   font-size: small;
 }
@@ -67,7 +71,27 @@ input.error {
   letter-spacing: 1px;
 }
 
+.rollNo {
+  width: 20px;
+}
+
+.select {
+  display: flex;
+  gap: 2rem;
+}
+
 @media screen and (max-width: 500px) {
+  .wrap {
+    padding: 8px;
+  }
+
+  .rollNo {
+    background-color: #3498db;
+    width: 10px;
+  }
+  .select {
+    gap: 2px;
+  }
   .form-group input,
   .custom-file,
   .btn {
