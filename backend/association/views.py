@@ -112,3 +112,9 @@ def update_team(request, team_id):
     context={'form':form}
 
     return render(request, template_name, context)
+
+def about(request):
+    context = {
+        'members':Team.objects.all()
+    }
+    return render(request, 'about/about.html', context)

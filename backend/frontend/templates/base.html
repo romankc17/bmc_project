@@ -47,7 +47,6 @@
     <link rel="stylesheet" href="{%static 'base.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
 
-
     <title>
         {%block title%}
         HOME | CSIT ASSOCIATION OF BMC
@@ -91,9 +90,15 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Home Link -->
                 <li class="nav-item">
-                    <a class="nav-link" href="./index.html">Home </a>
+                    <a class="nav-link" href="{%url 'home' %}">Home </a>
                 </li>
                 <!-- About Link with DropDown -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'about' %}">About</a>
+                </li>
+
+                <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -105,6 +110,8 @@
 
                     </div>
                 </li>
+                -->
+
                 <!-- Events -->
                 <li class="nav-item">
                     <a class="nav-link" href="#">Events</a>
@@ -123,16 +130,23 @@
                     </div>
                 </li>
                 <!-- Posts -->
+
+                <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Posts
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="./blog.html">Blogs</a>
+                        <a class="dropdown-item" href="{%url 'blogs' %}">Blogs</a>
                         <a class="dropdown-item" href="#">Vlogs</a>
 
                     </div>
+                </li>
+                 -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'blogs' %}">Blogs</a>
                 </li>
 
                 <li class="nav-item">
