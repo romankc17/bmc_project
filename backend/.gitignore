@@ -5,7 +5,7 @@ __pycache__
 db.sqlite3
 media
 
-/staticfiles/
+staticfiles
 
 # If you are using PyCharm # 
 .idea/**/workspace.xml 
