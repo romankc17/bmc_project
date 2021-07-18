@@ -44,19 +44,22 @@
         <section class="team mb-5">
             <h2 class="mb-5 meet_title">Meet Our Team</h2>
             <div class="members">
+
+            {%for member in members%}
                 <div class="member mt-3">
                     <div class="image">
-                        <img src="{%static 'about/imgs/Keron-removebg-preview.png' %}" alt="fahsljdfa"/>
+                        <img src="{{member.profile.image.url}}" alt="fahsljdfa"/>
                     </div>
-                    <h2 class="mt-5">John</h2>
-                    <p>Hello</p>
+                    <h2 class="mt-5">{{member.profile.name}}</h2>
+                    <p>{{member.position}}</p>
                     <div class="social-icons">
-                        <a href=""> <i class="fab fa-facebook"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""> <i class="fab fa-github"></i></a>
-                        <a href=""> <i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{member.facebook_url}}"> <i class="fab fa-facebook"></i></a>
+                        <a href="{{member.instagram_url}}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{memeber.github_url}}"> <i class="fab fa-github"></i></a>
+                        <a href="{{member.linkdin_url}}"> <i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+                {%endfor%}
 
 
             </div>

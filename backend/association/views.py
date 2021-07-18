@@ -114,4 +114,7 @@ def update_team(request, team_id):
     return render(request, template_name, context)
 
 def about(request):
-    return render(request, 'about/about.html', )
+    context = {
+        'members':Team.objects.all()
+    }
+    return render(request, 'about/about.html', context)
