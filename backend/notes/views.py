@@ -25,7 +25,7 @@ def notes_view_list(request):
 
 
 # create note
-def notes_create_view(request):
+def notes(request):
     obj1 = Note.objects.all()
     template = "notes/notes_create_view.html"
     if request.method == 'POST':

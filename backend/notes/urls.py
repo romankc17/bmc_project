@@ -4,8 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-                  path('', views.notes_view_list, name="notes_list"),
-                  path('create/', views.notes_create_view, name="create_list"),
+                  path('', views.notes, name="create_list"),
+                  path('/create', views.notes_view_list, name="notes_list"),
                   path('delete/', views.notes_delete_view, name="note_delete"),
                   path('edit/', views.notes_edit_view, name="note_edit"),
                   path('edit/save', views.notes_edit_save_view, name="note_edit_save"),

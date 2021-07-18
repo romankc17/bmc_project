@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
 {%load widget_tweaks%}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% block head %}
+<!-------------------Note List title---------->
 
     <!--------------bootstrap css--------------->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,14 +12,15 @@
     <!---------------------fontAwesome--------------------->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <!-------------------Note List title---------->
     <title>Notes | CSIT</title>
 
     <!-----------------------css----------->
     <link rel="stylesheet" href="{% static 'notes/css/notesDisplaystyle.css' %}">
-</head>
 
-<body>
+{% endblock %}
+
+
+{% block content %}
     <!---------------------------------Edit Note Modal------------------------->
     <section class="editNotehere">
         <div class="modalContent">
@@ -51,7 +50,7 @@
                         <!-- <select name="note__subject form-control" id="note__edit__subject" required>
                             <option>Choose Subject...</option>
                         </select> -->
-                        <span style="display: block; margin-top: 1rem;">Subject</span>
+                        <span style="display: block; margin-top: 1rem;font-size: 18px;">Subject</span>
                         <input type="text" class="form-control" id="note__edit__subject" placeholder="Note Subject" required>
                     </div>
                     <div class="form-group">
@@ -65,7 +64,6 @@
                         <label for="edit__description">Note description</label>
                         <textarea class="form-control" id="edit__description" rows="3" required></textarea>
                     </div>
-                    <a id="acnr">View</a>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger">Cancel</button>
                         <input type="submit" name="submit" id= "edit_note" class="btn btn-primary" role="button" value="Edit Note" />
@@ -85,7 +83,7 @@
             <section class="modal-body__">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" id="c_note_delete">Cancel</button>
-                        <input type="button" name="submit" id="delete_note" role="button" class="btn btn-danger" value="confirm"/>
+                        <input type="button" name="submit" id="delete_note" role="button" class="btn btn-danger" value="Confirm"/>
                     </div>
             </section>
         </div>
@@ -126,7 +124,7 @@
             <!----------------------Create Note------------>
             <div class="create__note__action">
                 <button type="button" class="note__create__button" data-toggle="modal" data-target="#noteCreateModal">
-                    <i class="fas fa-edit"></i>  Create Note
+                    <i style="font-size:1.8rem;" class="fas fa-edit"></i>  Create Note
                 </button>
                 <div class="modal fade" id="noteCreateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -184,10 +182,10 @@
                         </div>
                     </div>
                 </div>
-                <span>
-                    <i style = "color: red; font-size: 1.4rem; cursor: pointer;" class="fas fa-arrow-alt-circle-left"></i>
-                    <i style = "color: red; font-size: 1.4rem; cursor: pointer;" class="fas fa-arrow-alt-circle-right"></i>
-                </span>
+<!--                <span>-->
+<!--                    <i style = "color: red; font-size: 1.4rem; cursor: pointer;" class="fas fa-arrow-alt-circle-left"></i>-->
+<!--                    <i style = "color: red; font-size: 1.4rem; cursor: pointer;" class="fas fa-arrow-alt-circle-right"></i>-->
+<!--                </span>-->
             </div>
 
             <!-------------------Main Note-------->
@@ -206,16 +204,16 @@
                             </strong>
                             <span>
                                 <button class="edit-btn" data-id="edit1" data-sid="{{note.id}}">
-                                    <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
+                                    <i style="color: darkblue; cursor: pointer; font-size: 1.6rem;" class="fas fa-edit"></i>
                                 </button>
                                 <button class="delete-btn" data-id="delete1" data-sid="{{note.id}}">
-                                    <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
+                                    <i style="color: red; cursor:pointer; font-size: 1.6rem;" class="fas fa-trash-alt"></i>
                                 </button>
                             </span>
                         </header>
                         <section class="individual__note__body">
-                            <div>
-                                <strong><i class="fas fa-user-circle"></i> {{ note.user }}</strong> | <time>{{ note.timestamp }}</time>
+                            <div class="author_note">
+                                <strong><i style="font-size: 1.8rem;" class="fas fa-user-circle"></i> {{ note.user }}</strong> | <time>{{ note.timestamp }}</time>
                             </div>
                             <div class="notes__display__description">
                                 {{ note.description }}
@@ -245,7 +243,7 @@
                             </span>
                         </header>
                         <section class="individual__note__body">
-                            <div>
+                            <div class="author_note">
                                 <strong><i class="fas fa-user-circle"></i> Weng Cheng</strong> | <time>January 01, 2020</time>
                             </div>
                             <div class="notes__display__description">
@@ -274,7 +272,7 @@
                             </span>
                         </header>
                         <section class="individual__note__body">
-                            <div>
+                            <div class="author_note">
                                 <strong><i class="fas fa-user-circle"></i> Weng Cheng</strong> | <time>January 01, 2020</time>
                             </div>
                             <div class="notes__display__description">
@@ -301,7 +299,7 @@
                             </span>
                         </header>
                         <section class="individual__note__body">
-                            <div>
+                            <div class="author_note">
                                 <strong><i class="fas fa-user-circle"></i> Weng Cheng</strong> | <time>January 01, 2020</time>
                             </div>
                             <div class="notes__display__description">
@@ -334,10 +332,8 @@
     <script src="{%static 'notes/js/notesDisplayControl.js' %}"></script>
     <script src="{%static 'notes/js/notescrud.js' %}"></script>
 
-    <!-----------------jquery, popper.js, bootstrap.js------------>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-----------fade animation------->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -484,7 +480,4 @@
         };
     </script>
 
-
-</body>
-
-</html>
+{% endblock %}
