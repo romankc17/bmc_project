@@ -130,7 +130,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel" style="font-size: 23px;">Modal title</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
@@ -159,7 +159,7 @@
                                       <!-- <select name="note__subject form-control" id="note__input__subject" required>
                                           <option>Choose Subject...</option>
                                       </select> -->
-                                      <span style="display: block; margin-top: 1rem;">Subject</span>
+                                      <span style="display: block; margin-top: 1rem;font-size: 18px;">Subject</span>
 <!--                                      <input type="text" class="form-control" id="note__input_subject" placeholder="Note Subject" required>-->
                                       {% render_field form.subject class+="form-control" id="note__input_subject" placeholder="Note Subject" required="true" %}
                                   </div>
@@ -328,6 +328,9 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block script %}
 <!-----------------vanilla js------------->
     <script src="{%static 'notes/js/notesDisplayControl.js' %}"></script>
     <script src="{%static 'notes/js/notescrud.js' %}"></script>
@@ -479,5 +482,4 @@
             this.classList.remove("passive__edit__noteFile");
         };
     </script>
-
 {% endblock %}
