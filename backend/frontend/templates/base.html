@@ -42,10 +42,11 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <!-- linking CSS file -->
+    {%block head%}{%endblock%}
     <link rel="stylesheet" href="{%static 'home/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
 
-    {%block head%}{%endblock%}
+
 
     <title>
         {%block title%}
@@ -81,7 +82,7 @@
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white navs ">
-        <a href="./index.html" class="navbar-brand"><img src="{% static 'home/logo.png' %}" alt="logo"></a>
+        <a href="{%url 'home' %}" class="navbar-brand"><img src="{% static 'home/logo.png' %}" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -90,9 +91,15 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Home Link -->
                 <li class="nav-item">
-                    <a class="nav-link" href="./index.html">Home </a>
+                    <a class="nav-link" href="{%url 'home' %}">Home </a>
                 </li>
                 <!-- About Link with DropDown -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{%url 'about' %}">About</a>
+                </li>
+
+                <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -104,6 +111,8 @@
 
                     </div>
                 </li>
+                -->
+
                 <!-- Events -->
                 <li class="nav-item">
                     <a class="nav-link" href="#">Events</a>
@@ -128,7 +137,7 @@
                         Posts
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="./blog.html">Blogs</a>
+                        <a class="dropdown-item" href="{%url 'blogs' %}">Blogs</a>
                         <a class="dropdown-item" href="#">Vlogs</a>
 
                     </div>
