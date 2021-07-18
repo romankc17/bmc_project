@@ -25,7 +25,7 @@ def notes_view_list(request):
 
 
 # create note
-def notes_create_view(request):
+def notes(request):
     obj1 = Note.objects.all()
     template = "notes/notes_create_view.html"
     if request.method == 'POST':
@@ -35,7 +35,7 @@ def notes_create_view(request):
             note.user = request.user
             note.save()
 
-            return HttpResponseRedirect('/notes/create/')
+            return HttpResponseRedirect('/notes/')
     else:
         form = NoteModelForm()
         context = {
@@ -84,19 +84,24 @@ def notes_edit_save_view(request):
         note_form = NoteModelForm(request.POST, request.FILES, instance=note_obj)
         if note_form.is_valid():
             note_form.save()
-            note_all = Note.objects.values()
+            # note_all = Note.objects.values()
 
-        if filename is None:
+        if filename is None and not note_form.is_valid():
             print(note_obj.file)
             print(note_obj.timestamp)
             note = Note(id=id, user=request.user, title=title, semester=semester, subject=subject,
                                       file=note_obj.file, description=description, timestamp=note_obj.timestamp)
             note.save()
             note_all = Note.objects.values()
+        notes = Note.objects.filter(id=id)
+        note = notes.values()[0]
+        note['author_name']=notes[0].user.userprofile.name
 
-        note_all_data = list(note_all)
 
-        return JsonResponse({"status": 200, 'noteData': note_all_data})
+
+        print(note)
+
+        return JsonResponse({"status": 200, 'noteData': note})
 
 
 def note_details(request):
