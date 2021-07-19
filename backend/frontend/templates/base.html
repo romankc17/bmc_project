@@ -1,23 +1,19 @@
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- animate css link -->
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!--bootstrap css file -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
     <!-- fontawesome link -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
     <!-- font family kausan link -->
@@ -32,14 +28,11 @@
 
     <!-- owl carousel styling CDN link -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 
     <!-- linking CSS file -->
     {%block head%}{%endblock%}
@@ -48,57 +41,57 @@
     <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
 
     <title>
-        {%block title%}
-        HOME | CSIT ASSOCIATION OF BMC
-        {%endblock%}
+        {%block title%} HOME | CSIT ASSOCIATION OF BMC {%endblock%}
     </title>
 
 </head>
+
 <body>
-<!-- top most section -->
-<header id="header-section">
+    <!-- top most section -->
+    <header id="header-section">
 
-    <div class="container-fluid">
-        <div class="row">
+        <div class="container-fluid">
+            <div class="row">
 
-            <div class="top-wrapper">
+                <div class="top-wrapper">
 
-                <div class="contact">
-                    <ul>
-                        <li><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+071-25-83748</li>
-                        <li><i class="fas fa-envelope"></i> <a href="#">&nbsp;info@example.com</a></li>
-                    </ul>
+                    <div class="contact">
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+071-25-83748</li>
+                            <li><i class="fas fa-envelope"></i> <a href="#">&nbsp;info@example.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="login-btn">
+                        {%if user.is_authenticated %}
+                        <a style="color:inherit" href="{%url 'logout' %}" class=""><i class="fas fa-sign-in-alt"></i>&nbsp;Logout</a> {%else%}
+                        <a style="color:inherit" href="{%url 'login' %}" class=""><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a> {%endif%}
+                    </div>
                 </div>
-                <div class="login-btn">
-                    <a class=""><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
-                </div>
+
             </div>
 
         </div>
 
-    </div>
 
-
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white navs ">
-        <a href="{%url 'home' %}" class="navbar-brand"><img src="{% static 'home/logo.png' %}" alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white navs ">
+            <a href="{%url 'home' %}" class="navbar-brand"><img src="{% static 'home/logo.png' %}" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <!-- Home Link -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'home' %}">Home </a>
-                </li>
-                <!-- About Link with DropDown -->
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Home Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'home' %}">Home </a>
+                    </li>
+                    <!-- About Link with DropDown -->
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'about' %}">About</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'about' %}">About</a>
+                    </li>
 
-                <!--
+                    <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -112,25 +105,25 @@
                 </li>
                 -->
 
-                <!-- Events -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Events</a>
-                </li>
+                    <!-- Events -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
 
-                <!-- notes -->
-                <li class="nav-item">
-                    <a href="{%url 'notes' %}" class="nav-link ">
+                    <!-- notes -->
+                    <li class="nav-item">
+                        <a href="{%url 'notes' %}" class="nav-link ">
                         Notes
                     </a>
-<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-<!--                        <a class="dropdown-item" href="#">1sem</a>-->
-<!--                        <a class="dropdown-item" href="#">2nd sem</a>-->
+                        <!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+                        <!--                        <a class="dropdown-item" href="#">1sem</a>-->
+                        <!--                        <a class="dropdown-item" href="#">2nd sem</a>-->
 
-<!--                    </div>-->
-                </li>
-                <!-- Posts -->
+                        <!--                    </div>-->
+                    </li>
+                    <!-- Posts -->
 
-                <!--
+                    <!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
@@ -144,344 +137,330 @@
                 </li>
                  -->
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{%url 'blogs' %}">Blogs</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'blogs' %}">Blogs</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Examination</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Examination</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
 
-</header>
-<!--End Of Header-->
+    </header>
+    <!--End Of Header-->
 
-{%block content%}{%endblock%}
+    {% if messages %} {%for message in messages%}
+    <!-- <div  class="container alert alert-{{message.tags}}">
+        {{message}}
+    </div> -->
+    <div style="font-size:16px;text-align:center;font-weight:bold;z-index: 1;margin-top:-10px;" class="container alert alert-warning alert-dismissible fade show alert-{{message.tags}}" role="alert">
+        {{message}}
+        <button style="padding:0;background:white;padding:1px 20px;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span style="font-size:30px;font-weight:bold;" aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {%endfor%} {%endif%} {%block content%}{%endblock%}
 
-<!-- Start of footer -->
-<footer>
-    <div class="foot-section">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- for logo column -->
-                <div class=" col-lg-4 col-md-6  first-col">
-                    <div class="foot-logo">
-                        <img src="{%static 'home/logo.png' %}" alt="logo">
+    <!-- Start of footer -->
+    <footer>
+        <div class="foot-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- for logo column -->
+                    <div class=" col-lg-4 col-md-6  first-col">
+                        <div class="foot-logo">
+                            <img src="{%static 'home/logo.png' %}" alt="logo">
+                        </div>
+
+                        <p class="foot-description">We are Open platform for the learners to learn and trainers to transfer their learning to learners are the group of Young people uniting all the IT students and professionals under the same roof for the technological revolutions.</p>
+                        <div class="social-icon">
+                            <i class="fab fa-facebook-square"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-github-square"></i>
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-2 col-md-3 second-col text-justify">
+                        <h1>Services</h1>
+
+                        <ul class="services-link">
+                            <li><a href="#">Provathons</a></li>
+                            <li><a href="#">Intership</a></li>
+                            <li><a href="#">Workshops</a></li>
+                            <li><a href="#">Entrance Preparation</a></li>
+                            <li><a href="#">Job Placements</a></li>
+                        </ul>
                     </div>
 
-                    <p class="foot-description">We are Open platform for the learners to learn
-                        and trainers to transfer their learning to learners
-                        are the group of Young people uniting all the
-                        IT students and professionals under the same
-                        roof for the technological revolutions.</p>
-                    <div class="social-icon">
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-github-square"></i>
-                        <i class="fab fa-linkedin"></i>
+                    <div class="col-lg-2 col-md-3 second-col text-justify">
+                        <h1>Useful Links</h1>
+
+                        <ul class="services-link">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Posts</a></li>
+                            <li><a href="#">Notes</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Our Impact</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
                     </div>
 
-                </div>
-                <div class="col-lg-2 col-md-3 second-col text-justify">
-                    <h1>Services</h1>
-
-                    <ul class="services-link">
-                        <li><a href="#">Provathons</a></li>
-                        <li><a href="#">Intership</a></li>
-                        <li><a href="#">Workshops</a></li>
-                        <li><a href="#">Entrance Preparation</a></li>
-                        <li><a href="#">Job Placements</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 second-col text-justify">
-                    <h1>Useful Links</h1>
-
-                    <ul class="services-link">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Posts</a></li>
-                        <li><a href="#">Notes</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Our Impact</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 our-location">
-                    <h1>Our Location</h1>
-                    <p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp"
+                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 our-location">
+                        <h1>Our Location</h1>
+                        <p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp"
                                 style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="copyright-section">
+        <div class="copyright-section">
 
 
-        <div class="row">
-            <div class="col-md-12 ">
-                <p>Copyright &copy; 2021 All rights reserved by CSIT ASSCOCIATION OF BMC</p>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <p>Copyright &copy; 2021 All rights reserved by CSIT ASSCOCIATION OF BMC</p>
+                </div>
             </div>
+
         </div>
 
-    </div>
-
-</footer>
+    </footer>
 
 
-<!-- go-to-top icon -->
-<button class="gotoTop"><i class="fas fa-arrow-up"></i></button>
+    <!-- go-to-top icon -->
+    <button class="gotoTop"><i class="fas fa-arrow-up"></i></button>
 
 
 
-<!-- testing -->
+    <!-- testing -->
 
-<!-- js boot file -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <!-- js boot file -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-<script>
-// GO TO TOP ICON
+    <script>
+        // GO TO TOP ICON
 
-const topIcon=document.querySelector('.gotoTop');
- topIcon.addEventListener('click',()=>{
-  window.scrollTo({
-    top:0,
-    left:0,
-    behavior:"smooth"
-  });
- })
+        const topIcon = document.querySelector('.gotoTop');
+        topIcon.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        })
 
-window.addEventListener("scroll",()=>{
-  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-   topIcon.classList.add("show");
-  }
- else{
-   topIcon.classList.remove("show");
- }
-})
-
-</script>
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+                topIcon.classList.add("show");
+            } else {
+                topIcon.classList.remove("show");
+            }
+        })
+    </script>
 
 
 
 
-<!----------------------home.html -------------------------->
-<!-- CDN link for owl carousel -->
+    <!----------------------home.html -------------------------->
+    <!-- CDN link for owl carousel -->
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- cdn link for mousewheel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
-        integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- cdn link for mousewheel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 
-<script>
-     $('.carousel').carousel({
-       interval:6300,
-       pause:false,
+    <script>
+        $('.carousel').carousel({
+            interval: 6300,
+            pause: false,
 
-     });
-
-
-    //  hover in dropdown
-    $(document).ready(function(){
-    $(".dropdown").hover(function(){
-        var dropdownMenu = $(this).children(".dropdown-menu");
-        if(dropdownMenu.is(":visible")){
-            dropdownMenu.parent().toggleClass("open");
-        }
-    });
-});
-
-
-   // Video Play
-   $(function () {
-      // Auto play modal video
-      $(".video").click(function () {
-        var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal + ' button.close').click(function () {
-          $(theModal + ' iframe').attr('src', videoSRC);
         });
-      });
-    });
 
 
-</script>
-
-<!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
-
-<!-- OWL CAROUSEL FOR MESSAGE FROM GREATE ACHIVERS  -->
-<script>
-   $('.owl-carousel1').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    // autoplay:true,
-    dots:false,
-
-    navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
+        //  hover in dropdown
+        $(document).ready(function() {
+            $(".dropdown").hover(function() {
+                var dropdownMenu = $(this).children(".dropdown-menu");
+                if (dropdownMenu.is(":visible")) {
+                    dropdownMenu.parent().toggleClass("open");
+                }
+            });
+        });
 
 
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
+        // Video Play
+        $(function() {
+            // Auto play modal video
+            $(".video").click(function() {
+                var theModal = $(this).data("target"),
+                    videoSRC = $(this).attr("data-video"),
+                    videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+                $(theModal + ' iframe').attr('src', videoSRCauto);
+                $(theModal + ' button.close').click(function() {
+                    $(theModal + ' iframe').attr('src', videoSRC);
+                });
+            });
+        });
+    </script>
+
+    <!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 
+    <!-- OWL CAROUSEL FOR MESSAGE FROM GREATE ACHIVERS  -->
+    <script>
+        $('.owl-carousel1').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            // autoplay:true,
+            dots: false,
 
-// for mousewheel
-// var owl = $('.owl-carousel1');
-
-// owl.on('mousewheel', '.owl-stage', function (e) {
-//     if (e.deltaY>0) {
-//         owl.trigger('next.owl');
-//     } else {
-//         owl.trigger('prev.owl');
-//     }
-//     e.preventDefault();
-// });
+            navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
 
 
-</script>
-
-<!-- OWL CAROUSEL FOR DEVELOPERS TEAM -->
-
-<script>
-  $('.owl-carousel2').owlCarousel({
-   loop:true,
-   margin:10,
-   nav:true,
-   dots:false,
-
-   navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
 
 
 
+        // for mousewheel
+        // var owl = $('.owl-carousel1');
 
+        // owl.on('mousewheel', '.owl-stage', function (e) {
+        //     if (e.deltaY>0) {
+        //         owl.trigger('next.owl');
+        //     } else {
+        //         owl.trigger('prev.owl');
+        //     }
+        //     e.preventDefault();
+        // });
+    </script>
 
-   responsive:{
-       0:{
-           items:1
-       },
-       700:{
-           items:2
-       },
-       1000:{
-           items:3
-       }
-   }
-})
+    <!-- OWL CAROUSEL FOR DEVELOPERS TEAM -->
 
-// for about clz section
+    <script>
+        $('.owl-carousel2').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
 
-$('.owl-carousel1').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    // autoplay:true,
-    dots:false,
-
-
-
-
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
-
-
-
-// for mousewheel
-// var owl = $('.owl-carousel1');
-
-// owl.on('mousewheel', '.owl-stage', function (e) {
-//     if (e.deltaY>0) {
-//         owl.trigger('next.owl');
-//     } else {
-//         owl.trigger('prev.owl');
-//     }
-//     e.preventDefault();
-// });
-
-
-</script>
-
-<!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
-
-<script>
-  $('.owl-carousel3').owlCarousel({
-   loop:true,
-   margin:10,
-   nav:false,
-  //  stagePadding:50,
-  //  dots:false,
-
-  //  navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+            navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
 
 
 
 
 
-   responsive:{
-       0:{
-           items:1
-       },
-       600:{
-           items:1
-       },
+            responsive: {
+                0: {
+                    items: 1
+                },
+                700: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
 
-   }
-})
+        // for about clz section
 
-</script>
+        $('.owl-carousel1').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            // autoplay:true,
+            dots: false,
 
 
-{% block script %}
 
-{% endblock %}
+
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+
+
+
+        // for mousewheel
+        // var owl = $('.owl-carousel1');
+
+        // owl.on('mousewheel', '.owl-stage', function (e) {
+        //     if (e.deltaY>0) {
+        //         owl.trigger('next.owl');
+        //     } else {
+        //         owl.trigger('prev.owl');
+        //     }
+        //     e.preventDefault();
+        // });
+    </script>
+
+    <!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
+
+    <script>
+        $('.owl-carousel3').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            //  stagePadding:50,
+            //  dots:false,
+
+            //  navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
+
+
+
+
+
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+
+            }
+        })
+    </script>
+
+
+    {% block script %} {% endblock %}
 
 
 </body>
+
 </html>

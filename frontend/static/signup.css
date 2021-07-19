@@ -6,19 +6,31 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  font-size: 10px;
+}
 body {
   font-family: "Roboto", sans-serif;
+}
+.wrap{
+  font-size: 1.6rem;
+  margin: 3rem auto;
+}
+.card{
+  box-shadow: 0 0.2px 5px rgba(0,0,0,0.3);
+  border-radius: 1rem;
+  
+}
+.card-header,
+.card-body{
+  padding: 2rem;
 }
 
 .title {
   text-align: center;
-  text-transform: uppercase;
-  font-family: "Chewy", cursive;
-  /* font-family: "Teko", sans-serif; */
+  text-transform: capitalize;
   margin: 20px 0;
-  font-size: 1rem;
-  /* font-size: 18px; */
+  font-size: 2rem;
   letter-spacing: 1px;
   font-weight: 500;
   color: #3498db;
@@ -69,6 +81,7 @@ input.error {
 
 .btn {
   letter-spacing: 1px;
+  font-size: 1.8rem;
 }
 
 .rollNo {
@@ -79,12 +92,12 @@ input.error {
   display: flex;
   gap: 2rem;
 }
+.info_id_photo{
+  font-size: 1.3rem;
+  opacity: 0.6;
+}
 
 @media screen and (max-width: 500px) {
-  .wrap {
-    padding: 8px;
-  }
-
   .rollNo {
     background-color: #3498db;
     width: 10px;
@@ -92,16 +105,7 @@ input.error {
   .select {
     gap: 2px;
   }
-  .form-group input,
-  .custom-file,
-  .btn {
-    width: 300px;
-  }
-
-  form {
-    place-items: center;
-  }
-
+  
   .title {
     font-size: 16px;
     text-align: center;
@@ -114,22 +118,4 @@ input.error {
     width: 90px;
   }
 
-  form {
-    display: grid;
-    place-items: center;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .form-group input {
-    width: 400px;
-  }
-  .custom-file,
-  .btn {
-    width: 400px;
-  }
-
-  .title {
-    margin-left: 12rem;
-  }
 }
