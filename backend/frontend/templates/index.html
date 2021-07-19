@@ -2,7 +2,7 @@
 {%load static%}
 
 {%block head%}
-    <link rel="stylesheet" href="{%static 'home/css/index.css' %}">
+<link rel="stylesheet" href="{%static 'home/css/index.css' %}">
 {%endblock%}
 
 {%block content%}
@@ -288,10 +288,12 @@
                                               class="clzImg clzImg-1"></div>
 
                 <div class="item">
-                    <img src="{%static 'home/pexels-element-digital-1370298.jpg' %}" alt="Photo1" class="clzImg clzImg-2"></div>
+                    <img src="{%static 'home/pexels-element-digital-1370298.jpg' %}" alt="Photo1"
+                         class="clzImg clzImg-2"></div>
 
 
-                <div class="item"><img src="{%static 'home/pexels-pixabay-289740.jpg' %}" alt="Photo3" class="clzImg clzImg-3">
+                <div class="item"><img src="{%static 'home/pexels-pixabay-289740.jpg' %}" alt="Photo3"
+                                       class="clzImg clzImg-3">
                 </div>
 
             </div>
@@ -724,17 +726,11 @@
 </div>
 
 
-<!-- js boot file -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-<script src="{%static 'home/js/indexTabs.js' %}"></script>
+{%endblock%}
+
+{%block script%}
+
+
 <script>
      $('.carousel').carousel({
        interval:6300,
@@ -768,6 +764,7 @@
       });
     });
 
+
 </script>
 
 
@@ -778,10 +775,6 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- cdn link for mousewheel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
-        integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 <!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
@@ -828,6 +821,7 @@
 //     e.preventDefault();
 // });
 
+
 </script>
 
 <!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
@@ -858,7 +852,10 @@
 })
 
 
+
 </script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 
 <script src="{%static 'home/js/indexTabs.js' %}"></script>
 {%endblock%}
