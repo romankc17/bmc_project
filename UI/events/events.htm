@@ -29,8 +29,8 @@
             <!---------------------------Event Filter large width----->
             <div class="container">
                 <div class="filter_btn_container" id="filter_btn_container_frst">
-                    <input type="button" data-id="upcoming" class="events_filter_btn filter_btn_visited" value="Upcoming Events" aria-selected="true">
-                    <input type="button" data-id="prev" class="events_filter_btn" value="Previous Events">
+                    <input type="button" data-id="upcoming" class="events_filter_btn filter_btn_visited" value="Upcoming Events" />
+                    <input type="button" data-id="prev" class="events_filter_btn" value="Previous Events" />
                 </div>
             </div>
         </div>
@@ -53,97 +53,100 @@
                         </ul>
                     </div>
                     
-                    <!---------------Filter contaiener----------------->
-                    <article class="filter_date_name filter_content_visited" id="prev">
-                        <strong>Upcoming Events</strong>
-                        <span>
-                            <span>Jump to Day<input type="date" placeholder="Jump to date"></span>
-                            <span>
-                                <i style="color: red; cursor: pointer;" class="fas fa-arrow-circle-left"></i>
-                                <i style="color: red; cursor:pointer" class="fas fa-arrow-circle-right"></i>
-                            </span>
-                        </span>
-                    </article>
-                    <article  class="filter_date_name" id="upcoming">
-                        <strong>Previous Events</strong>
-                        <span>
-                            <span>Jump to Day<input type="date" placeholder="Jump to date"></span>
-                            <span>
-                                <i style="color: red; cursor: pointer;" class="fas fa-arrow-circle-left"></i>
-                                <i style="color: red; cursor:pointer" class="fas fa-arrow-circle-right"></i>
-                            </span>                          
-                        </span>
+                    <!---------------Filter container----------------->
+                    <article class="filter_date_name filter_content_visited" id="upcoming">
+                        <strong><strong>Upcoming</strong> Events</strong>
+                    </article> 
+                    <article  class="filter_date_name" id="prev">
+                        <strong><strong>Previous</strong> Events</strong>
                     </article>                  
                 </div>
 
                 <!-----------------------------------event Detailes---------------------->
                 <div class="events_content_container">
+                    <!-----------------------------upcoming events--------------->
                     <div class="filter_content filter_content_visited"  id="upcomingContent">
                         <div class="item__flex">
-                        <article class="common__article" >  
-                            <div class="events__img">
-                                <img src="./media/events.jpg" alt="img" />
-                            </div>
-                            <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                            <br />
-                            <strong>Central Asia 2020: Challenges</strong>
-                            <p>
-                               Today content Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            </p>
-                            <strong class="read_more">READ MORE</strong>
-                        </article>
-                        <article  class="common__article">
-                            <div class="events__img">
-                                <img src="./media/events.jpg" alt="img" />
-                            </div>
-                            <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                            <br />
-                            <strong>Central Asia 2020: Challenges</strong>
-                            <p>
-                             Today content Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            </p>
-                            <strong class="read_more">READ MORE</strong>
-                        </article>
+                            <article class="common__article" >  
+                                <div class="events__img">
+                                    <img src="./media/events.jpg" alt="img" />
+                                </div>
+                                <strong>
+                                    <a href="#">Central Asia 2020: Challenge</a>
+                                </strong>
+                                <div class="common_article_margin">
+                                    <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                    <time>January 3, 2019 </time>
+                                </div>
+                                <p>
+                                    <strong>Venue:</strong> Butwal Multiple Campus Hall
+                                </p>                         
+                            </article>
+                            <article  class="common__article">
+                                <div class="events__img">
+                                    <img src="./media/events.jpg" alt="img" />
+                                </div>
+                                <strong>
+                                    <a href="#">Pro Code Hackthon 2022 </a>
+                                </strong>
+                                <div class="common_article_margin">
+                                    <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                    <time>January 3, 2021 </time>
+                                </div>
+                                <p>
+                                    <strong>Venue:</strong> Butwal Multiple Campus Hall
+                                </p>
+                            </article>
                         </div>
                     </div>
 
-                    <!------------------All Events--------------------->
+                    <!------------------Previous events--------------------->
                     <div class="filter_content"  id="prevContent">
                         <div class="item__flex">
                             <article class="common__article" >
                                 <div class="events__img">
                                     <img src="./media/events.jpg" alt="img" />
                                 </div>
-                                <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong><br />
-                                <strong>Central Asia 2020: Challenges</strong>
+                                <strong>
+                                    <a href="#">Central Asia 2020: Challenge</a>
+                                </strong>
+                                <div class="common_article_margin">
+                                    <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                    <time>January 3, 2019 </time>
+                                </div>
                                 <p>
-                                   Today content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, dolorem!
+                                    <strong>Venue:</strong> Butwal Multiple Campus Hall
                                 </p>
-                                <strong class="read_more">READ MORE</strong>
                             </article>
                             <article  class="common__article" >
                                 <div class="events__img">
                                     <img src="./media/events.jpg" alt="img" />
                                 </div>
-                                <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                                <br />
-                                <strong>Central Asia 2020: Challenges</strong>
+                                <strong>
+                                    <a href="#">Central Asia 2020: Challenge</a>
+                                </strong>
+                                <div class="common_article_margin">
+                                    <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                    <time>January 3, 2019 </time>
+                                </div>
                                 <p>
-                                    Day Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, dolorem!
+                                    <strong>Venue:</strong> Butwal Multiple Campus Hall
                                 </p>
-                                <strong class="read_more">READ MORE</strong>
                             </article>
                             <article  class="common__article" >
                                 <div class="events__img">
                                     <img src="./media/events.jpg" alt="img" />
                                 </div>
-                                <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                                <br />
-                                <strong>Central Asia 2020: Challenges</strong>
+                                <strong>
+                                    <a href="#">Central Asia 2020: Challenge</a>
+                                </strong>
+                                <div class="common_article_margin">
+                                    <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                    <time>January 3, 2019 </time>
+                                </div>
                                 <p>
-                                Day Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, dolorem!
+                                    <strong>Venue:</strong> Butwal Multiple Campus Hall
                                 </p>
-                                <strong class="read_more">READ MORE</strong>
                             </article>
                         </div>
                     </div>
