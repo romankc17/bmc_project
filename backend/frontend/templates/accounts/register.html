@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-{%load static%}
-{%load widget_tweaks%}
+<!DOCTYPE html> {%load static%} {%load widget_tweaks%}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,82 +19,101 @@
     <link rel="stylesheet" href="{%static 'accounts/css/signup.css' %}">
     <title>Register Form</title>
 </head>
+
 <body>
-<div class="container  wrap">
-    <h1 class="title">Don't have an account? Signup</h1>
-    <div class="row d-flex justify-content-center">
-        <div class="col-sm-4 ">
-            <!-- form section -->
-            <form method="post">
-                {%csrf_token%}
-                <div class="form-group">
-                    <label for="usr">Name</label>
-                    <!--        <input type="text" class="username" id="usr" required>-->
-                    {{profile_form.name|add_class:"username"|attr:"id:usr"}}
-                    <span></span>
-                </div>
+    <div class="container  wrap">
+        <div class="row d-flex justify-content-center small-container">
+            <div class="col-xl-5 col-lg-6 col-md-7 col-sm-9 register-card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="title">Hi BMC Csitan, Doesn't have account yet? Signup</h1>
+                    </div>
+                    <!-- form section -->
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="usr">Name</label>
+                                <!-- <input type="text" class="username" id="usr" required> -->
+                                {{profile_form.name|add_class:"username"|attr:"id:usr"}}
+                                <span></span>
+                            </div>
 
-                <div class="form-group">
-                    <label for="eml">Email</label>
-                    <!--        <input type="email" class="email" id="eml" required>-->
-                    {{user_form.email|add_class:"email"|attr:"id:eml"}}
-                    <span></span>
-                </div>
+                            <div class="form-group">
+                                <label for="eml">Email</label>
+                                <!-- <input type="email" class="email" id="eml" required> -->
+                                {% render_field user_form.email class="email", id="eml" %}
+                                <span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="rollno">Roll No</label>
+                                <div class="select">
+                                    <!-- <input type="number" class="rollNo" id="rollno" required> -->
+                                    {{profile_form.roll_no|add_class:"rollNo"|attr:"id:rollno"}}
 
-                <div class="form-group">
-                    <label for="rollno">Roll No</label>
-                    <!--        <input type="number" class="rollNo" id="rollno" required>-->
-                    {{profile_form.roll_no|add_class:"rollNo"|attr:"id:rollno"}}
-                </div>
+                                    <!-- <select class="form-select" aria-label="Default select example" style="color: gray;border-radius: 4px;cursor: pointer;">
+                                        <option selected>Section</option>
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+    
+                                    </select> -->
+                                    {% render_field profile_form.sec class="form-select" aria-label="Default select example" style="color: gray;border-radius: 4px;cursor: pointer;" %}
+                                </div>
+                            </div>
 
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Upload your ID card photo</label>
-                </div>
+                            <div class="form-group">
+                                <div class="row mt-4">
+                                    <div class="col-6"><label for="cars">Choose your batch</label></div>
+                                    <div class="col-6">
+                                        <!-- <select name="cars" class="custom-select select" required>
+                                            <option selected>2074</option>
+                                            <option value="2075">2075</option>
+                                            <option value="2076">2076</option>
+                                            <option value="2077">2077</option>
+                                        </select> -->
 
-                <div class="form-group">
-                    <div class="row mt-4">
-                        <div class="col-6"><label for="cars">Choose your batch</label></div>
-                        <div class="col-6">
-                            <!--                <select name="cars" class="custom-select select" required>-->
-                            <!--                    <option selected>2074</option>-->
-                            <!--                    <option value="2075">2075</option>-->
-                            <!--                    <option value="2076">2076</option>-->
-                            <!--                    <option value="2077">2077</option>-->
-                            <!--                </select>-->
-                            {{profile_form.batch}}
-                        </div>
+                                        <!-- <input type="number" class="batch" name="batch" id="batch" placeholder="Eg. 2074" required>  -->
+                                        {% render_field profile_form.batch class="batch success", name="batch", id="batch", value=nepali_current_year %}
+                                        <span></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pwd">Password</label>
+                                <!-- <input type="password" class="password" id="pwd" required>  -->
+                                {{user_form.password1|add_class:"password"|attr:"id:pwd"}}
+                                <span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cpwd">Confirm Password</label>
+                                <!-- <input type="password" class="cpassword" id="cpwd" required> -->
+                                {{user_form.password2|add_class:"cpassword"|attr:"id:cpwd"}}
+                                <span></span>
+                            </div>
+
+                            <div class="custom-file">
+                                <input type="file" style="padding: 0.2rem 2rem; background-color: rebeccapurple;" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose the photo</label>
+                            </div>
+                            <p class="info_id_photo">Upload Id card or admission bill(photo) for verification</p>
+                            <button type="submit" class="btn btn-primary btn-block my-btn">SIGN UP</button>
+                        </form>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="pwd">Password</label>
-                    <!--        <input type="password" class="password" id="pwd" required>-->
-                    {{user_form.password1|add_class:"password"|attr:"id:pwd"}}
-                    <span></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="cpwd">Confirm Password</label>
-                    <!--        <input type="password" class="cpassword" id="cpwd" required>-->
-                    {{user_form.password2|add_class:"cpassword"|attr:"id:cpwd"}}
-                    <span></span>
-                </div>
-
-                <input type="submit" class="btn btn-primary btn-block my-btn">
-
-            </form>
+            </div>
         </div>
-    </div>
-</div>
-<script>
-    //code for the appearance of filename after upload
-    $(".custom-file-input").on("change", function () {
-        var fileName = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    });
+        <script>
+            //code for the appearance of filename after upload
+            // $(".custom-file-input").on("change", function() {
+            //     var fileName = $(this).val().split("\\").pop();
+            //     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            // });
+        </script>
+        <script src="{%static 'accounts/js/signup.js'%}"></script>
 
-</script>
-<script src="{%static 'accounts/js/signup.js'%}"></script>
+
 </body>
-</html> 
+
+</html>
