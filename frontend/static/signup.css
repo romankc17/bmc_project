@@ -81,6 +81,7 @@ input.error {
 }
 
 @media screen and (max-width: 500px) {
+ 
   .wrap {
     padding: 8px;
   }
