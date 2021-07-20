@@ -1,10 +1,9 @@
-from django.contrib.auth import authenticate
-from django.db import reset_queries
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import auth
 from django.contrib import messages
 from .forms import ExtendedUserCreationForm, UserProfileForm
 import nepali_datetime
+from .verifies import send_mail
 
 
 # Create your views here.
@@ -22,11 +21,17 @@ def register(request):
             roll_no = profile_form.cleaned_data['roll_no']
             if len(str(roll_no).strip())==1:
                 roll_no = int('0'+str(roll_no).strip())
+            profile.roll_no = roll_no
+            
             user.username = f'{profile.batch}-{profile.roll_no}'
-
+            user.is_active = False
             user.save()
+            
             profile.user = user
             profile.save()
+            
+            send_mail(request, user)
+            
             messages.success(request, f"YOUR USERNAME IS '{user.username}'")
             return redirect('login')
         else:
@@ -42,6 +47,7 @@ def register(request):
                'profile_form': profile_form,
                'nepali_current_year':nepali_current_year}
     return render(request, 'accounts/register.html', context)
+
 
 
 def login(request):

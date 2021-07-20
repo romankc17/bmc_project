@@ -7,7 +7,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: url("../template/imgs/csit.jpg");
+  background: url("../imgs/csit.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;

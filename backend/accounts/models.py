@@ -11,6 +11,7 @@ SEC_CHOICES = [
 ]
 
 class UserProfile(models.Model):
+    email_confirmed = models.BooleanField(default=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     roll_no = models.IntegerField()

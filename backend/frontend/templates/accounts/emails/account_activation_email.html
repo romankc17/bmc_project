@@ -1,0 +1,4 @@
+Hello {{user.userprofile.name}} You registered an account on CSIT Association of Butwal Multiple Campus website with your username "{{user.username}}", before being able to use your account you need to verify that this is your email address by clicking
+here: http://{{ domain }}{% url 'activate' uidb64=uid token=token %} 
+
+<p>Kind Regards, Butwal Multiple Campus</p>
