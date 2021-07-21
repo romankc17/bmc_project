@@ -25,3 +25,8 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+class VerificationImage(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='accounts/verification')
+    

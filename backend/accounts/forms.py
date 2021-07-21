@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import UserProfile
+from .models import UserProfile,VerificationImage
 
 SEC_CHOICES = [
     ('','SECTION'),
@@ -27,3 +27,9 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('name','batch', 'roll_no','sec')
+
+class VerificationImageForm(forms.ModelForm):
+    class Meta:
+        model=VerificationImage
+        fields=('image',)
+        
