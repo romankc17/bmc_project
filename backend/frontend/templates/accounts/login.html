@@ -24,15 +24,24 @@
 
 <body>
 
-    {% if messages %} {%for message in messages%}
-    <div style="font-size:16px;text-align:center;font-weight:bold;z-index: 1;margin-top:-10px;" class="container alert alert-warning alert-dismissible fade show alert-{{message.tags}}" role="alert">
-        {{message}}
-        <button style="padding:0;background:white;padding:1px 20px;" type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span style="font-size:30px;font-weight:bold;" aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {%endfor%} {%endif%}
-    <div class="overlay"></div>
+    {% if messages %} 
+        {%for message in messages%}
+            <div style="font-size:16px;text-align:center;font-weight:bold;z-index: 1;margin-top:-10px;" class="container alert alert-warning alert-dismissible fade show alert-{{message.tags}}" role="alert">
+                {{message}}
+                <button style="padding:0;background:white;padding:1px 20px;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span style="font-size:30px;font-weight:bold;" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {%endfor%} 
+    {%endif%}
+
+    {% if form.errors %}
+        <div class="alert alert-danger" role="alert">   
+            Please enter a correct username and password. Note that both fields may be case-sensitive.
+        </div>
+    {% endif %}
+
+    <!-- <div class="overlay"></div> -->
 
     <div class="container d-flex justify-content-center mt-5 wrap">
         <div class="circle">
