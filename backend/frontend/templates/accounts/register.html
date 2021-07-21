@@ -108,7 +108,7 @@
 
                             <div class="custom-file">
                                 <!-- <input type="file" style="padding: 0.2rem 2rem; background-color: rebeccapurple;" class="custom-file-input" id="customFile"> -->
-                                {% render_field verification_image_form.image style="padding: 0.2rem 2rem; background-color: rebeccapurple;" class="custom-file-input" id='id_image' %}
+                                {% render_field verification_image_form.image style="padding: 0.2rem 2rem; background-color: rebeccapurple;" class="custom-file-input" id+='customFile' %}
                                 <!-- {{verification_image_form}} -->
                                 <label class="custom-file-label" for="customFile">Choose the photo</label>
                             </div>
@@ -122,10 +122,10 @@
         </div>
         <script>
             //code for the appearance of filename after upload
-            // $(".custom-file-input").on("change", function() {
-            //     var fileName = $(this).val().split("\\").pop();
-            //     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-            // });
+            $(".custom-file-input").on("change", function() {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
         </script>
         <script src="{%static 'accounts/js/signup.js'%}"></script>
 
