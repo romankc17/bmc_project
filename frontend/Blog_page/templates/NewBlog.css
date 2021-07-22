@@ -21,6 +21,7 @@
 .textarea {
   font-size: 2rem;
   margin-bottom: 2rem;
+  height: 30vh;
 }
 #div_id_image label {
   font-size: 2rem;
