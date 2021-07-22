@@ -68,9 +68,9 @@
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="newForm.html">General Form</a></li>
+                                        <li><a href="newForm.html">Create Event</a></li>
                                        
-                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                      
                                        
                                     </ul>
                                 </li>
@@ -211,12 +211,33 @@
 
             <!-- page content -->
             <div class="right_col" role="main">
+                <h2 class="text-center" style="color: #34495e;">Create an Event</h2>
 
-
-
-
-
-
+                <div class="container" style="width: 70%;">
+                <form>
+                <div class="form-group" >
+                    <label for="title">Event Title</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                    <div class="form-group">
+                        <label for="edate">Date</label>
+                        <input type="date" class="form-control" id="edate">
+                    </div>
+                    <div class="form-group">
+                        <label for="etime">Time</label>
+                        <input type="time" class="form-control" id="etime">
+                    </div>
+                    <div class="form-group">
+                        <label for="edate">Venue</label>
+                        <input type="url" class="form-control" id="edate">
+                    </div>
+                    <div class="form-group ">
+                      <textarea name="" class="form-control" id="edesc" cols="30" rows="10" placeholder="Event description here..." style="resize: none;"></textarea>
+                     
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm" style="width: 200px;">Submit</button>
+                </form>
+                </div>
             </div>
 
         </div>
