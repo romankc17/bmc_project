@@ -27,5 +27,7 @@
   font-size: 2rem;
 }
 .btn {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  width: 150px;
+  padding: 5px;
 }
