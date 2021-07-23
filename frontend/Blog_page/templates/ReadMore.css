@@ -97,7 +97,7 @@
 .featured-image img {
   width: 80%;
   vertical-align: middle;
-
+  border-radius: 10px;
   transform: scale(1);
 
   transition: 0.3s ease-in-out;

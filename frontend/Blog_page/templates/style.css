@@ -138,6 +138,12 @@
   border: none !important;
   font-size: 2rem;
 }
+.btn:hover {
+  background-color: #ce4445 !important;
+}
+.blog_btn:hover {
+  color: #fff;
+}
 .btn2 {
   margin-left: 40px !important;
 }
