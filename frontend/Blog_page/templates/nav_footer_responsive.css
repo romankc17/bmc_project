@@ -472,3 +472,11 @@
     right: 1%;
   }
 }
+
+.foot-logo img {
+  background-color: white;
+  border-radius: 0px 20px 20px 0px;
+  height: 80px;
+  width: 150px !important;
+  padding: 10px;
+}
