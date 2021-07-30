@@ -13,6 +13,7 @@ body,html{
   width: 100vw;
   
     overflow-x: hidden;
+    font-family: 'Philosopher', sans-serif;
     /* background-color: #ccc; */
 }
 
@@ -63,6 +64,9 @@ body,html{
 }
 .top-wrapper .login-btn a{
     font-size: 2rem;
+    text-decoration: none;
+    color: white
+    ;
    
 }
 .login-btn{
@@ -72,6 +76,7 @@ body,html{
     padding: 0.5rem 2rem;
     display: flex;
     align-items: center;
+  
 }
 
 .login-btn i{
@@ -147,17 +152,17 @@ margin-left:40px;
 
   #carousel .carousel-item.boat{
     background-image:url("../assets/slider/s1\ \(1\).JPG");
-    background-attachment: fixed;
+   
   }
   #carousel .carousel-item.sea{
     background-image:url("../assets/slider/s1\ \(2\).JPG");
-    background-attachment: fixed;
+    
     
    
   }
   #carousel .carousel-item.river{
     background-image:url("../assets//slider/s4.jpg");
-    background-attachment: fixed;
+    
    
   } 
   
@@ -276,6 +281,7 @@ margin-left:40px;
   /* Why CSIT  */
   .whyCsit-wrapper{
     margin-top: 100px;
+    width: 100vw;
   }
   #vedio-play-card{
     height:78.5vh;
@@ -299,16 +305,36 @@ margin-left:40px;
     left: 0;
     backface-visibility: hidden;
   }
-
+  .dark-lays::before{
+    content: "";
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    background:black;
+    opacity: 0.7;
+    height: 100%;
+  
+    width: 100%;
+  }
   .card-front{
    
-    background: url('../assets/slider/slider4.jpg');
+    background: url('../assets/slider/slider4.jpg'),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     background-repeat: no-repeat;
     background-size: cover;
+    background-blend-mode: overlay;
+    border-radius: 10px;
+    /* filter: brightness(0.4); */
    
    
  
 
+  }
+  .fa-play{
+    color: white;
+  border: 5px solid #ffffff;
+  padding: 0.7rem;
+  border-radius: 50%;
   }
   /* when vedio play card section hoverd then card front rotate */
   #vedio-play-card:hover .card-front{
@@ -325,6 +351,13 @@ margin-left:40px;
   #vedio-play-card:hover .card-back{
     transform: rotateY(0deg);
   }
+  #videoModal span{
+    font-size: 30px;
+    color: red;
+  }
+
+
+  
   .tab{
     display: flex;
   
@@ -351,7 +384,7 @@ margin-left:40px;
     top: 0;
     left: 0;
     background: #ccc;
-    opacity: 0.7;
+    opacity: 0.8;
     height: 100%;
   
     width: 100%;
@@ -362,7 +395,7 @@ margin-left:40px;
     background-image: url('../assets/logo.png');
     width: 100%;
     height:70vh;
-    background-position:750px 20px;
+    background-position:650px 20px;
     background-repeat: no-repeat;
     background-size: 300px 200px;
      overflow: hidden;
@@ -370,7 +403,8 @@ margin-left:40px;
   }
   .tabConn{
     color: black;
-    padding: 5rem 20rem;
+    padding: 5rem 15rem;
+    font-weight: 500;
    
   }
   .tabConn p{
@@ -379,19 +413,104 @@ margin-left:40px;
   
 
   /*ACCORDION*/
-  .about{
-    font-size: 24px;
-    text-align: center;
-  }
+ 
   .fa-arrow-circle-down{
       font-size: 25px;
+  }
+  .why-csit .card{
+    box-shadow: 0 2px 20px 0 rgba(110, 130, 208, 0.18);
+    margin-bottom: 2px;
+  }
+   .card .card-header{
+   
+    background-color: transparent !important ;
+    border: none !important;
+    padding: 0 !important;
+    position: relative;
+    
+  
+  
+    
+   
+  }
+
+  /* .why-csit .card .card-header .btn-link{
+    font-size: 24px;
+    height:30px;
+    text-align: left !important;
+  } */
+ .card-body{
+ 
+    background-color: #808bb1;
+    font-size: 1.7rem;
+  }
+  .why-csit .btn-link{
+ color: black;
+  }
+  
+  .btn-link{
+    color: black;
+    width: 100%;
+   
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+    height: 5rem;
+    background-color:#3a52a0 ;
+
+    
+  }
+  .btn-link:before{
+    content: '';
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color:#3a52a0 ;
+    transform: rotate(45deg);
+    left: 25px;
+    top: 37px;
+    z-index: 1;
+  }
+  .btn-link::after{
+    content: "\2212";
+    font: normal normal normal 24px/1 FontAwesome;
+   font-weight: bold;
+   
+  padding: 0rem 0.5rem;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute ;
+    right: 15px;
+    top: 11px;
+    background-color: #970F0F;
+    color: white;
+   
+  }
+  .btn-link.collapsed::after{
+    content: "\002B";
+  }
+
+
+ /* .why-csit .card .card-header .btn{
+ 
+  font-size: 30px !important;
+ } */
+  .btn:hover{
+    color: black !important;
+    text-decoration: none;
+  }
+.btn:focus{
+    box-shadow: none !important;
+  }
+  .btn{
+  font-size: 1.8rem;
   }
 
 
   /* about our collage */
   .aboutClz{
     /* background-color: #1B3792; */
-    background-color:#3a52a0; ;
+    background-color:#3a52a0 ;
    
     /* background-color: #ccc; */
     padding: 4rem 8rem;
@@ -575,7 +694,7 @@ margin-left:40px;
     height: 40rem;
    
   }
-  .showcase h1{
+  .showcase h1 span{
     font-size: 5.5rem;
   }
   .showcase h2{
@@ -690,15 +809,12 @@ margin-left: 1.5rem;
   font-family: 'Akaya Kanadaka', cursive;
 }
 /* positioning prev and next button */
-.achivers .owl-nav{
+/* .achivers .owl-nav{
   position: absolute;
   top: -70px;
   right: 100px;
-  
-
-  
-  
-}
+ 
+} */
 
 .achivers .owl-nav button {
  

@@ -8,6 +8,9 @@
   
       
     }
+    .tabcontents{
+      background-position: 580px 18px;
+    }
   }
     @media (max-width:1260px) {
         .aboutClz{
@@ -44,6 +47,15 @@
     .learnMore{
       margin: 0.5rem 0;
     }
+    .tabConn{
+      
+      padding: 5rem 11rem;
+      
+     
+    }
+    .tabcontents{
+      background-position: 450px 18px;
+    }
 }
 
 /* 1150px */
@@ -62,6 +74,12 @@
 @media (max-width:1040px) {
   .latest-News-Event{
     padding:10rem 2rem;
+  }
+  .tabConn{   
+    padding: 3rem 10rem; 
+  }
+  .tabcontents{
+    background-position: 380px 18px;
   }
 }
 @media (max-width:1024px) {
@@ -221,11 +239,35 @@
           
         
        }
+      
 
        /* ul.dropdown-menu>li {
         text-align:center !important;
       }
        */
+}
+@media (max-width:960px) {
+  .tabConn{
+    padding: 5rem 8rem;
+  }
+  .tabcontents{
+    background-position: 350px 18px;
+  }
+  
+}
+@media (max-width:825px) {
+  .tab button{
+    padding: 17px 15px;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .tabConn{
+    padding: 5rem 5rem;
+  }
+  .tabcontents{
+    background-position: 200px 18px;
+  }
+  
 }
 
 
@@ -244,6 +286,19 @@
          
         }
 
+}
+@media (min-width:771px) {
+  #carousel .carousel-item.boat{
+    background-attachment: fixed;
+  }
+  #carousel .carousel-item.sea{
+    background-attachment: fixed;
+  }
+  #carousel .carousel-item.river{
+    background-attachment: fixed;
+   
+  } 
+  
 }
 @media (max-width:770px) {
   .news-wrapper
@@ -317,7 +372,39 @@
     margin-bottom: 0.5rem;
    
   }
+  .whyCsit-wrapper{
+    margin-top: 30px;
+   
+  }
+  
 }
+@media (max-width:767px) {
+  #vedio-play-card{
+    height:30vh;
+    width:99.9%;
+   
+  }
+  .card-front{
+     background-attachment: fixed;
+
+  }
+  /* when vedio play card section hoverd then card front rotate */
+  #vedio-play-card:hover .card-front{
+    
+ transform:none;
+  }
+  .card-back{
+   
+    transform:none;
+    background-image:none ;
+
+
+  }
+  #vedio-play-card:hover .card-back{
+    transform:none !important;
+  }
+}
+
 @media (max-width:670px) {
   .aboutClz{
     padding: 1rem 1.5rem;
@@ -362,18 +449,13 @@
   .showcase .volunters i{
     font-size: 5rem;
   }
-  .showcase h1{
-    font-size: 4.8rem;
+  .showcase h1 span{
+    font-size: 3rem;
   }
-  .showcase h2{
-    font-size: 3.5rem;
+  .showcase h2 span{
+    font-size: 3rem;
   }
-  .achivers .owl-nav{
-    position: absolute;
-    top: -70px;
-    right: 40px;
-    
-  }
+
     }
 
 /* 575px */
@@ -388,27 +470,95 @@
     
       }
   }
+@media (min-width:601px) {
+  .achivers .owl-nav{
+   
+      position: absolute;
+      top: -70px;
+      right: 100px;
+  
+    } 
+  
+}
+  @media (max-width:600px) {
+   
+    
+    .achivers .owl-nav .owl-prev{
+      position:absolute;
+      left:3px;
+      top: 20%;
+     
+    } 
+    .achivers .owl-nav .owl-next{
+      position:absolute;
+      right: 8px;
+      top: 20%;
+     
+    } 
+    .achivers .owl-carousel{
+      padding: 2rem 0.3rem;
+     
+    }
+    /* .achivers .achivers-para{
+      font-size: 2.1rem;
+      padding:3rem 1rem;
+     
+    } */
+    .achivers h1{
 
-  @media (max-width:555px) {
-    .achivers{
-      position: relative;
+      
+        font-size: 2.5rem;
+        padding: 0rem 2rem;
+     
+      }
+      .achivers .achivers-para{
+        font-size: 1.7rem;
+      }
+    .achivers .position{
+      padding: 0.3rem 2rem;
+    }
+    .achivers .position .achivers-name{
+      font-size: 2.3rem;
+     
+    }
+    .achivers .position .achivers-skill{
+      font-size: 2rem;
+     
+    }
+    .achivers .position .read-more button{
+      font-size: 1.5rem;
+     
+      padding: 0.3rem 1rem;
+      
     }
    
-    .achivers .owl-nav{
-      position: absolute;
-      top: -75px;
-      right: 20px;
+   
+   
       
     
       
       
-    }
+    
     
   }
   @media (max-width:520px) {
+    /* .achivers .owl-nav{
+      position: none !important;
+      top:none;
+      right:none;
+      
     
+      
+      
+    } */
   }
   @media (max-width:490px) {
+    .card-front h1{
+      font-size: 2rem;
+    }
+    .achivers .owl-nav button .nav-button i{
+      margin: 0.7rem !important;
+    }
    
   }
 /* phone-Landscape& + portrait */
@@ -557,6 +707,26 @@
     .showcase h2{
       font-size: 3rem;
     }
+    .achivers .achivers-para{
+      font-size: 1.5rem;
+    }
+    .achivers .position{
+      padding: 0.3rem 2rem;
+    }
+    .achivers .position .achivers-name{
+      font-size: 2rem;
+     
+    }
+    .achivers .position .achivers-skill{
+      font-size: 1.7rem;
+     
+    }
+    .achivers .position .read-more button{
+      font-size: 1.2rem;
+      /* border-radius: 100px; */
+      padding: 0.3rem 0.7rem;
+      
+    }
   }
 
   @media ( max-width:360px) {
@@ -593,6 +763,17 @@
       top: 46.5%;
       right: 1%;
      
+    }
+    .achivers h1{
+      font-size: 2.1rem;
+      font-weight: bold;
+    }
+    .achivers .position{
+     
+    
+     
+     margin-top: -2rem;
+      
     }
   }
  
