@@ -37,7 +37,14 @@ def register(request):
                     user.save()
                 except Exception as e:
                     messages.error(request, "Already SignUped with this roll number and batch")
-                    return redirect('register')
+                    context = {
+                        'user_form': user_form, 
+                        'profile_form': profile_form,
+                        'verification_image_form': verification_image_form,
+                        'nepali_current_year':nepali_current_year
+                    }
+
+                    return render(request, 'accounts/register.html', context)
                 
                 profile.user = user
                 profile.save()
@@ -46,8 +53,10 @@ def register(request):
                 verification_image.user = user
                 verification_image.save()
                 
-                
-                send_mail(request, user)
+                try:
+                    send_mail(user) 
+                except Exception as e:  
+                    messages.error(request, "Sending verification mail failed")
                 
                 messages.success(request, f"YOUR USERNAME IS '{user.username}'")
                 return redirect('login')
