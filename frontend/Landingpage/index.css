@@ -85,7 +85,7 @@ body,html{
 
 /* navbar */
 .navs{
-    padding:0 4.5%;
+    padding:0 4.8%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     /* height: 10rem; */
     
@@ -182,7 +182,7 @@ margin-left:40px;
   width: 80%;
   position: relative;
   top: 50%;
-  left:18%;
+  left:16%;
   word-spacing: 3px;
   line-height: 1.5;
   text-align: start;
@@ -196,6 +196,7 @@ margin-left:40px;
   .carousel-item .carousel-caption p{
     font-size: 14px;
   }
+  
   .delicious-btn{
     display: flex;
     justify-content: center;

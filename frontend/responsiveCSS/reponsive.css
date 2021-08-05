@@ -1,4 +1,17 @@
 /* for tablets */
+
+@media (min-width:1346px) {
+  .carousel-control-prev-icon{
+    position: relative;
+    left: -80px;
+   }
+  .carousel-control-next-icon{
+    position: relative;
+    right: -60px;
+   
+  }
+  
+}
 @media (max-width:1345px) {
   .collegeImg .clzImg{
       width: 40%;
@@ -10,6 +23,15 @@
     }
     .tabcontents{
       background-position: 580px 18px;
+    }
+    .carousel-control-prev-icon{
+      position: relative;
+      left: -40px;
+     }
+    .carousel-control-next-icon{
+      position: relative;
+      right: -50px;
+     
     }
   }
     @media (max-width:1260px) {
@@ -174,6 +196,37 @@
   .dropdown:hover .dropdown-menu{
     display: block;
     
+}
+#carousel .carousel-item .carousel-caption {
+ 
+ 
+  left:13%;
+  word-spacing: 3px;
+  line-height: 1.5;
+  text-align: start;
+   /* border: 5px solid red; */
+  }
+ 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  
+  background-image:none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 80px;
+  color: white;
+  background-color: transparent;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 80px;
+  color:white;
 }
 
   
