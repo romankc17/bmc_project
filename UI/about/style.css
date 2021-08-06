@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 .container-fluid {
@@ -85,6 +87,7 @@ header h1 {
 .intro-text {
   display: grid;
   place-items: center;
+  padding: 10px;
 }
 .intro-text h2 {
   color: #130f40;
@@ -225,6 +228,61 @@ header h1 {
   left: 35%;
 }
 
+/* activeMembers */
+
+.activeGroups {
+  background: url("../about/imgs/memberBackground.jpg") no-repeat center
+    center/cover;
+  width: 100%;
+  height: auto;
+  position: relative;
+  height: 30rem;
+  color: white;
+}
+/* .blue-overlays::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #001147;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+} */
+
+.active-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #001147;
+  opacity: 0.7;
+}
+
+.showcase {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  height: 40rem;
+  z-index: 1;
+}
+.showcase h1 span {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+.showcase h2 {
+  font-size: 3rem;
+}
+
 @media screen and (max-width: 768px) {
   .member {
     width: 200px;
@@ -248,3 +306,23 @@ header h1 {
     left: 3%;
   }
 }
+
+/* @media screen and (max-width: 770px) {
+  .activeGroups {
+    background: url("../about/imgs/memberBackground.jpg") no-repeat center
+      center/cover;
+    width: 100%;
+    height: auto;
+    position: relative;
+    height: 30rem;
+  }
+
+  .showcase {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    height: 30rem;
+  }
+} */
