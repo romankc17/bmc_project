@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&family=Unna&display=swap");
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: "Philosopher";
 }
 
 .blog_header {
@@ -9,7 +14,7 @@
   background-position: center center;
   padding: 148px 0px;
   background-repeat: no-repeat;
-  background-image: url("assets/blog/bcg.jpg");
+  background-image: url("../assets/bcg.jpg");
   overflow-x: hidden;
   width: 100%;
 }
@@ -69,11 +74,12 @@
   text-align: center;
 }
 
-.blog_title {
-  color: #000000;
-  font-size: 150%;
+.blog_title h1 {
+  color: #000;
+  font-size: 3rem;
   font-weight: bolder;
   margin-left: 2%;
+  font-weight: bold;
 }
 .share-and-featured-image {
   display: flex;
@@ -87,10 +93,16 @@
   justify-content: center;
   align-items: center;
 }
-
+.para {
+  font-size: 2rem;
+}
 .featured-image img {
   width: 80%;
   vertical-align: middle;
+  border-radius: 10px;
+  transform: scale(1);
+
+  transition: 0.3s ease-in-out;
 }
 .my-blog-text {
   padding: 4px 24px;
@@ -105,9 +117,12 @@
   flex-direction: row;
   list-style: none;
   margin-top: 50px;
-  margin-left: 20px;
+  margin-left: 35px;
 }
 
+.featured-image img:hover {
+  transform: scale(1.1);
+}
 .writer {
   list-style: none;
   margin-right: 5px;
@@ -138,18 +153,20 @@
   border-radius: 25px;
   margin-top: -10px;
 }
-
+.square {
+  height: 45px;
+}
 .day {
   margin-left: 22px;
   font-weight: bold;
   margin-top: -21px !important;
 }
 .comment {
-  float: left;
-  margin-left: 100px;
+  margin-left: 10rem;
 }
 .no_of_comment {
   font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .dates {
@@ -182,13 +199,51 @@
 
 .textarea {
   resize: none;
+  font-size: 1.5rem;
 }
 
 .post_btn {
   background-color: #213d97;
   color: #fff;
+  margin-left: 1rem;
 }
 .cancel_btn {
   background-color: #213d97;
   color: #fff;
+}
+.btn {
+  font-size: 1.5rem;
+}
+.comment-section {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 500px) {
+  .blog_title h1 {
+    font-size: 15px;
+  }
+  .row {
+    padding: 0px 0px 0px 10px !important;
+  }
+  .blog_writer_details {
+    margin-left: 0px !important;
+  }
+  .edit_del {
+    margin-left: -35px !important;
+  }
+  .featured-image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .para {
+    font-size: 16px !important;
+  }
+  .featured-image img {
+    width: 100%;
+  }
+  .blog_title h1 {
+    font-size: 2rem;
+  }
 }

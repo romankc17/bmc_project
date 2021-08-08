@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&family=Unna&display=swap");
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: "Philosopher", "sans-serif";
 }
 
 .blog_header {
@@ -9,10 +14,11 @@
   background-position: center center;
   padding: 148px 0px;
   background-repeat: no-repeat;
-  background-image: url("assets/blog/bcg.jpg");
+  background-image: url("../assets/bcg.jpg");
   overflow-x: hidden;
   width: 100%;
 }
+
 .blog_overlay {
   position: relative;
   z-index: 0;
@@ -23,7 +29,6 @@
   font-weight: 600;
   margin-bottom: 0;
   text-transform: capitalize;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .blog_overlay::before {
   position: absolute;
@@ -84,10 +89,13 @@
   margin-top: 50px;
 }
 .para {
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
+}
+p {
 }
 .para_section {
-  margin-left: 2rem;
+  margin-left: 3.2rem;
 }
 
 .writer {
@@ -107,7 +115,6 @@
   font-weight: bold;
 }
 .day {
-  margin-top: -19px !important;
   font-size: 12px;
 }
 .user_image {
@@ -122,9 +129,9 @@
 }
 
 .day {
-  margin-left: 22px;
+  margin-left: 25px;
   font-weight: bold;
-  margin-top: -21px !important;
+  margin-top: -20px !important;
 }
 .btn {
   margin-left: 70px;
@@ -133,6 +140,12 @@
   outline: none;
   border: none !important;
   font-size: 2rem;
+}
+.btn:hover {
+  background-color: #ce4445 !important;
+}
+.blog_btn:hover {
+  color: #fff;
 }
 .btn2 {
   margin-left: 40px !important;
@@ -145,7 +158,7 @@
   cursor: pointer;
 }
 .button {
-  margin-left: 15rem;
+  margin-left: 20rem;
   font-size: 15px;
 }
 .blog_image img {
@@ -191,6 +204,7 @@
 @media screen and (max-width: 1300px) {
   .blog_row {
     flex-direction: row-reverse;
+    flex-wrap: nowrap !important;
   }
   .blog_image img {
     margin-left: -30px;
@@ -212,23 +226,25 @@
   .blog_image {
     margin-top: 20px;
     margin-left: 10px;
+    padding-right: 0px;
   }
 }
 
 @media screen and (max-width: 415px) {
   .button {
-    margin-left: -310px !important;
+    margin-left: -300px !important;
     margin-top: 60px;
   }
-  .btn2 {
-    margin-left: 50px !important;
+  #btn2 {
+    margin-left: 60px !important;
   }
   .para_section {
     margin-left: 0 !important;
+    margin-top: -15px;
   }
 }
 .btn2 {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .blog_btn {
@@ -236,8 +252,8 @@
   margin-left: 0px;
   padding-bottom: 8px;
   border-radius: 2px;
-  font-size: 15px;
-  margin-top: 1rem;
+  font-size: 17px;
+  margin-top: 1.6rem;
 }
 .fa-rss {
   margin-right: 5px;
@@ -255,4 +271,8 @@
 }
 .page-link span {
   font-size: 2rem;
+}
+.page-link:hover {
+  background-color: #213d97;
+  color: #fff;
 }
