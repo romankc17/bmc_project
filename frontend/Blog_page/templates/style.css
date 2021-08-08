@@ -6,7 +6,6 @@
   list-style: none;
   text-decoration: none;
   font-size: 10px;
-  font-family: "Philosopher", "sans-serif";
 }
 
 .blog_header {
@@ -17,6 +16,7 @@
   background-image: url("../assets/bcg.jpg");
   overflow-x: hidden;
   width: 100%;
+  font-family: "Philosopher", "sans-serif";
 }
 
 .blog_overlay {
@@ -96,6 +96,7 @@ p {
 }
 .para_section {
   margin-left: 3.2rem;
+  font-family: "Philosopher", "sans-serif";
 }
 
 .writer {
