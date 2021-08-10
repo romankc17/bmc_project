@@ -1,10 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import Http404
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 from .forms import CommentForm
 from .models import Blog, Comment
 from django.contrib.auth.models import User
+
+import datetime
 
 from django.views.generic import (
     ListView,
@@ -38,6 +41,7 @@ class BlogDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         form = CommentForm()
         context['comment_form']=form
+        print(context)
         return context
 
 
@@ -73,18 +77,20 @@ class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         blog = self.get_object()
         return self.request.user == blog.author
     
-
-def create_comment(request,slug):
+@login_required
+def create_comment(request,blog_slug):
     if request.method == 'POST':
-        blog = Blog.objects.get(slug = slug)
+        blog = Blog.objects.get(slug = blog_slug)
         form = CommentForm(request.POST)
 
         if form.is_valid():
             comment = form.save(commit=False)
             comment.blog = blog
+            comment.user=request.user
+            comment.commented_at = datetime.datetime.now()
             comment.save()
 
-        return redirect("blog_detail",slug=slug)
+        return redirect("blog_detail",slug=blog_slug)
 
     else:
         return Http404("Invalid Operation")

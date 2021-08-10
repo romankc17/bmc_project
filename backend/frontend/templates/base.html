@@ -54,7 +54,11 @@
             </ul>
           </div>
           <div class="login-btn">
-            <a class="" href="../../../"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+            {%if user.is_authenticated%}
+            <a class="" href="{%url 'logout' %}"><i class="fas fa-sign-in-alt"></i>&nbsp;Logout</a>
+            {%else%}
+            <a class="" href="{%url 'login' %}"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+            {%endif%}
           </div>
         </div>
 

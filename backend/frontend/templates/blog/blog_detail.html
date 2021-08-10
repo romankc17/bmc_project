@@ -1,15 +1,14 @@
 {%extends 'base.html'%} 
+
 {%load static%} 
+{% load widget_tweaks %} 
 
 {%block head%}
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="{%static 'blog/blog_detail.css' %}">
- {%endblock%} 
-
+<link rel="stylesheet" href="{%static 'blog/blog_detail.css' %}"> 
+{%endblock%} 
 
 {%block content%}
-
-
 <!-- start of blog section -->
 <section id="Blog">
     <div class="container">
@@ -26,7 +25,7 @@
             </div>
             <div class="row" data-aos="zoom-in-up" data-aos-duration="3000" style="word-break: break-word; padding: 0px 50px;">
                 <p style="font-size:16px;" class="para mt-5">
-                   {{object.content|safe|linebreaksbr}}
+                    {{object.content|safe|linebreaksbr}}
                 </p>
 
 
@@ -46,31 +45,33 @@
 
 
             </ul>
-            <ul>
-                <div class="container mt-3">
-                    <div class="d-flex justify-content-center row">
-                        <div class="col-md-12">
-                            <div class="d-flex flex-column">
-                                <div class="p-2">
 
-                                    <div class="mt-2 ml-2 edit_del text-left">
-                                        <a href="{%url 'blog_update' object.slug %}"><button  class="btn  btn-sm shadow-none post_btn" data-aos="fade-left" data-aos-duration="1500" type="button">Edit</button></a>
-                                        <a href="{%url 'blog_delete' object.slug %}"><button class="btn  btn-sm ml-3 shadow-none cancel_btn" type="button">Delete</button></a>
-                                    </div>
+            {%if user.username == object.author.username %}
+
+            <div class="container mt-3">
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-12">
+                        <div class="d-flex flex-column">
+                            <div class="p-2">
+
+                                <div class="mt-2 ml-2 edit_del text-left">
+                                    <a href="{%url 'blog_update' object.slug %}"><button  class="btn  btn-sm shadow-none post_btn" data-aos="fade-left" data-aos-duration="1500" type="button">Edit</button></a>
+                                    <a href="{%url 'blog_delete' object.slug %}"><button class="btn  btn-sm ml-3 shadow-none cancel_btn" type="button">Delete</button></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
-        </ul>
-    </div>
+            </div>
 
+            {%endif%}
+
+        </div>
     </div>
 
     <div class="comment">
         <span>
-            <span class="no_of_comment">0 Comments</span>
+            <span class="no_of_comment">{{object.comments.count}} Comments</span>
         </span>
     </div>
     <!-- commentor section -->
@@ -78,14 +79,23 @@
         <div class="d-flex justify-content-center row">
             <div class="col-md-12">
                 <div class="d-flex flex-column comment-section">
-                    <div class="p-1">
-                        <div class="d-flex flex-row align-items-start"><img class="square mr-4" src="{{object.}}" width="50" height="60"><textarea class="form-control ml-1 shadow-none textarea">Write a Comment...</textarea></div>
-                        <div class="mt-2 text-right"><button class="btn  btn-sm shadow-none post_btn" type="button">Post comment</button><button class="btn  btn-sm ml-1 shadow-none cancel_btn" type="button">Cancel</button></div>
-                    </div>
+                    <form class="p-1" method="post" action="{% url 'create_blog_comment' blog_slug=object.slug %}">
+                        {%csrf_token%}
+                        <div class="d-flex flex-row align-items-start">
+                            <img class="square mr-4" src="{{object.author.userprofile.image.url}}" width="50" height="60">
+                            <!-- <input type='text' style="height:60px;" class="form-control ml-1 shadow-none textarea" placeholder='Write a Comment...'> -->
+                            {{comment_form.comment|add_class:"form-control ml-1 shadow-none textarea"|append_attr:"style:height:60px;"|append_attr:"placeholder:Write a Comment..."}}
+                            
+                        </div>
+                        <div  class="mt-2 text-right">
+                            <button class="btn  btn-sm shadow-none post_btn" type="submit">Post comment</button>
+                            <button class="btn  btn-sm ml-1 shadow-none cancel_btn" type="button">Cancel</button>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>
 
