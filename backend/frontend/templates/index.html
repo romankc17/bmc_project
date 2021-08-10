@@ -1,780 +1,1078 @@
-{%extends 'base.html' %}
-{%load static%}
+{%extends "base.html" %}
+{% load static %}
+
 
 {%block head%}
-<link rel="stylesheet" href="{%static 'home/css/index.css' %}">
+
+
+  <!-- animate css link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!--bootstrap css file -->
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+
+  <!-- another family -->
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+  <!-- font family for everyone -->
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+
+  
+
+<!-- owl carousel styling CDN link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" 
+/>
+
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" 
+/>
+
+
+<link rel="stylesheet" href="{%static 'index.css'%}">
 {%endblock%}
 
+{%block title %}HOME{% endblock %}
+
+
 {%block content%}
-<!-- Showcase -->
+  <!-- Showcase -->
 
-<div class="container-fluid p-0">
+  <div class="container-fluid p-0">
     <div id="carousel" class="carousel slide hero-slides" data-ride="carousel">
-        <!-- <ol class="carousel-indicators">
-          <li class="active" data-target="#carousel" data-slide-to="0"></li>
-          <li data-target="#carousel" data-slide-to="1"></li>
-          <li data-target="#carousel" data-slide-to="2"></li>
+      <!-- <ol class="carousel-indicators">
+            <li class="active" data-target="#carousel" data-slide-to="0"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
 
-        </ol> -->
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item drk active boat">
-                <div class="container-fluid h-100 d-md-block">
-                    <div class="row align-items-center h-100">
-                        <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-8">
-                            <div class="carousel-caption">
-                                <h2 class="display-4 animate__animated animate__fadeInDown animate__delay-1s animate__repeat-1">
-                                    Boat Excursions</h2>
-                                <p class="animate__animated animate__fadeInLeft animate__delay-2s">Lorem ipsum dolor sit
-                                    amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin.
-                                    Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
-                                <a class=" delicious-btn animate__animated animate__fadeIn animate__delay-3s animate__repeat-0"
-                                   href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
+          </ol> -->
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item drk active boat">
+          <div class="container-fluid h-100 d-md-block">
+            <div class="row align-items-center h-100">
+              <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-sm-8">
+                <div class="carousel-caption">
+                  <h2 class="display-4 animate__animated animate__fadeInDown animate__delay-1s animate__repeat-1">
+                    Our Mission</h2>
+                  <p class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    
+                 To work for the betterment of CSIT pursuing  students and create platforms for 
+                 individuals to understand the implications of science and technology and implement
+                  them to find solutions to real-life problems.
+                  </p>
+                  <a class=" delicious-btn animate__animated animate__fadeInUp animate__delay-3s animate__repeat-0"
+                    href="#">Learn more</a>
                 </div>
+              </div>
             </div>
-            <div class="carousel-item drk  sea">
-                <div class="container-fluid h-100 d-md-block">
-                    <div class="row d-flex align-items-center  h-100">
-                        <div class="col-12 col-md-6 col-lg-6 col-xl-6col-sm-8">
-                            <div class="carousel-caption">
-                                <h2 class="display-4">Boat Excursions</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae
-                                    luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu
-                                    varius.</p>
-                                <a class=" delicious-btn " href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item drk  river">
-                <div class="container-fluid h-100 w-100 d-md-block">
-                    <div class="row d-flex align-items-center  h-100">
-                        <div class="col-12 col-md-6 col-lg-6 col-xl-6col-sm-8">
-                            <div class="carousel-caption">
-                                <h2 class="display-4">Boat Excursions</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae
-                                    luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu
-                                    varius.</p>
-                                <a class=" delicious-btn text-decoration-none" href="#">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-item drk  sea">
+          <div class="container-fluid h-100 d-md-block">
+            <div class="row d-flex align-items-center  h-100">
+              <div class="col-12 col-md-6 col-lg-6 col-xl-6col-sm-8">
+                <div class="carousel-caption">
+                  <h2 class="display-4 animate__animated animate__fadeInDown animate__delay-1s animate__repeat-1">Our
+                    Vision
+                  </h2>
+                  <p class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    Focus  for the empowerment of Csit students to the IT industries via bootcamps. 
+                    Conference,.digital programs, mentorship programs ,events like Amplify and many
+                     more.Academic program is never sufficient for IT students so,we believe more in
+                      practical learning than that of theoretical learning.
+ 
+                  </p>
+                  <a class=" delicious-btn animate__animated animate__fadeInUp animate__delay-3s animate__repeat-0"
+                    href="#">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item drk  river">
+          <div class="container-fluid h-100 w-100 d-md-block">
+            <div class="row d-flex align-items-center  h-100">
+              <div class="col-12 col-md-6 col-lg-6 col-xl-6col-sm-8">
+                <div class="carousel-caption">
+                  <h2 class="display-4 animate__animated animate__fadeInDown animate__delay-1s animate__repeat-1">Our
+                    Goal</h2>
+                  <p class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    To maintain two biggest needs in today's world.
+                        To Bridge the gap between academic and professional life 
+                              Girls active participation in the tech world..</p>
+                  <a class=" delicious-btn text-decoration-none animate__animated animate__fadeInUp animate__delay-3s animate__repeat-0"
+                    href="#">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-</div>
+  </div>
 
 
-<!-- Why to choose CSIT -->
-<!-- Why to choose CSIT -->
-<div class="container-fluid  whyCsit-wrapper">
-    <div class="row no-gutters">
-        <div class="col-md-3">
-            <section>
-
-                <div class="row ">
-
-                    <div id="vedio-play-card">
-                        <div class="vedio-card card-front">
-
-                            <h1>You want to know more about CSIT?</h1>
-                        </div>
-
-                        <div class="vedio-card card-back">
-                            <a href="#" class="video" data-video="https://www.youtube.com/embed/QvgaCWrVdyw"
-                               data-toggle="modal" data-target="#videoModal">
-                                <i class="fas fa-play fa-3x"></i></a>
-                            <h1>See About CSIT</h1>
-                        </div>
-                    </div>
 
 
-                    <!-- video Modal -->
-                    <div class="modal fade" id="videoModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <button class="close" data-dismiss="modal">
-                                        <span>&times;</span>
-                                    </button>
-                                    <iframe src=" " frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+  <!-- Why to choose CSIT -->
+  <!-- Why to choose CSIT -->
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="whyCsit-wrapper">
+    <div class="container-fluid ">
+      <div class="row no-gutters">
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <section>
+
+
+            <div class="row">
+              <div id="vedio-play-card">
+
+
+                <div class="vedio-card card-front">
+
+                  <!-- <div class="dark-lays"> -->
+
+                  <h1>You want to know more about CSIT?
+
+                  </h1>
+                  <div class=" d-lg-none d-md-none d-sm-flex">
+                    <a href="#" class="video" data-video="https://www.youtube.com/embed/QvgaCWrVdyw" data-toggle="modal"
+                      data-target="#videoModal">
+                      <i class="fas fa-play fa-2x"></i></a>
+                  </div>
+
+
+
+                  <!-- </div> -->
+
                 </div>
-            </section>
+
+                <div class="vedio-card card-back d-none d-lg-flex d-md-flex">
+<!-- 
+                 <h1 class="More_details">Click Button For More Details</h1> -->
+                  <a href="#" class="video" data-video="https://www.youtube.com/embed/QvgaCWrVdyw" data-toggle="modal"
+                    data-target="#videoModal">
+                    <i class="fas fa-play fa-2x"></i></a>
+                </div>
+              </div>
+
+
+
+              <!-- video Modal -->
+              <div class="modal fade" id="videoModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                      </button>
+                      <iframe src=" " frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
+
+
+
+
+
 
 
         <!-- another -->
 
-        <div class="col-md-9 d-none d-lg-block d-xl-block">
+        <div class="col-lg-9 col-md-8 d-none d-lg-block d-md-block d-xl-block">
 
-            <div class="row no-gutters">
-
-
-                <div class="col-md-9">
-                    <div class="tab">
-
-                        <button class="tablinks" onclick="openCity(event, '1')" id="defaultOpen">Benefits</button>
+          <div class="row no-gutters">
 
 
-                        <button class="tablinks" onclick="openCity(event, '2')">Self Development</button>
+
+            <div class="col-lg-9 col-md-12">
+              <div class="tab">
+
+                <button class="tablinks" onclick="openCity(event, '1')" id="defaultOpen">Benefits</button>
 
 
-                        <button class="tablinks" onclick="openCity(event, '3')">Sprituality</button>
+                <button class="tablinks" onclick="openCity(event, '2')">Self Development</button>
 
 
-                        <button class="tablinks" onclick="openCity(event, '4')">Alumina</button>
+                <button class="tablinks" onclick="openCity(event, '3')">Sprituality</button>
 
 
-                    </div>
-                </div>
+                <button class="tablinks" onclick="openCity(event, '4')">Alumina</button>
+
+
+              </div>
             </div>
+          </div>
 
 
-            <div class="tabcontents">
+          <div class="tabcontents">
 
 
-                <div class="dark-overlays">
-                    <div class="row">
+            <div class="dark-overlays">
+              <div class="row">
 
-                        <div class="col-md-12 tabConn">
+                <div class="col-md-12 tabConn">
 
-                            <div id="1" class="tabcontent">
+                  <div id="1" class="tabcontent">
 
-                                <h1 class="py-4">Why Choose CSIT?</h1>
-                                <p class="py-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
-                                    aperiam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, dolore
-                                    numquam! Consectetur, excepturi porro repellendus officiis expedita ipsum ducimus
-                                    dolorem.</p>
-
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum repellat iure ipsum
-                                    id, asperiores pariatur repudiandae minus ut mollitia perspiciatis obcaecati
-                                    voluptatem illum voluptate vero accusamus commodi odio architecto sint. Quod
-                                    delectus quos magni, sint ipsam, aliquid voluptates eaque velit error non deleniti
-                                    eveniet laboriosam repudiandae atque, ea accusamus voluptate!</p>
-                            </div>
-
-                            <div id="2" class="tabcontent">
-
-                                <h3>hello 2</h3>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, aperiam.</p>
-                            </div>
-
-                            <div id="3" class="tabcontent">
-
-                                <h3>hello 3</h3>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, aperiam.</p>
-                            </div>
+                    <h1 class="py-4">Why Choose CSIT?</h1>
+                    <p class="py-4">There are so many colleges that offer BSc.CSIT programs in Nepal which make it quite
+                      difficult for students to select the best
+                      college to pursue the highly decorated BSc.CSIT program and kickstart their journey in IT
+                      career.Choosing the right course is
+                      a big decision and it is important to get it right, as it can both
+                      impact your future success.
+                    <p>This course combines both computer science and information technology
+                      that involves a great deal of practical and project works in addition to conventional lectures.
+                    </p>
+                    </p>
 
 
-                            <div id="4" class="tabcontent">
+                  </div>
 
-                                <h3>hello 4</h3>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, aperiam.</p4>
-                            </div>
-                        </div>
-                    </div>
+                  <div id="2" class="tabcontent">
+
+                    <h1 class="py-4">Self Development</h1>
+                    <p>Get necessary knowledge in the field of functional knowledge of hardware systems and the computer
+                      software system.</p>
+                  </div>
+
+                  <div id="3" class="tabcontent">
+
+                    <h1 class="py-4">Sprituality</h1>
+                    <p>
+                      Involvement in co-operative working through group projects.</p>
+                  </div>
+
+
+                  <div id="4" class="tabcontent">
+
+                    <h1 class="py-4">Alumina</h1>
+                    <p>
+                      Practical skills along with theoretical knowledge of established techniques of analysis,
+                      design and system development in the global market
+                      .</p4>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
         <!-- row -->
+      </div>
+      <!-- container -->
     </div>
-    <!-- container -->
-</div>
+    <!-- why-csit -->
+  </div>
 
 
-<!-- Collapse only shows in small screen -->
-<div id="accordion ">
-    <h3 class="display-4 text-center my-3 d-lg-none d-md-none bg-info">Why Csit?</h3>
-    <!-- Benefits -->
-    <div class="card d-lg-none d-md-none">
-        <div class="card-header">
-            <h5 class="mb-0">
-                <div class="about" href="#collapse1" data-toggle="collapse" data-parent="#accordion">
-                    <i class="fas fa-arrow-circle-down"></i>&nbsp;Benefits
-                </div>
-            </h5>
+
+  <!-- Collapse only shows in small screen -->
+  <div class="accordion why-csit d-lg-none d-md-none" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left text-white" type="button" data-toggle="collapse"
+            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" show>
+            Benefits
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body  text-white">
+          There are so many colleges that offer BSc.CSIT programs in Nepal which make it quite
+          difficult for students to select the best
+          college to pursue the highly decorated BSc.CSIT program and kickstart their journey in IT
+          career.Choosing the right course is
+          a big decision and it is important to get it right, as it can both
+          impact your future success.
         </div>
-        <div id="collapse1" class="collapse show">
-            <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolorem fugit eligendi porro molestiae fuga
-                inventore nihil earum deserunt eius facere culpa dolor, placeat eaque totam quisquam nulla maxime.
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- Self Development -->
-    <div class="card d-lg-none d-md-none">
-        <div class="card-header">
-            <h5 class="mb-0">
-                <div class="about" href="#collapse2" data-toggle="collapse" data-parent="#accordion">
-                    <i class="fas fa-arrow-circle-down"></i>&nbsp;Self Development
-                </div>
-            </h5>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left  text-white collapsed" type="button" data-toggle="collapse"
+            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Self Development
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body  text-white">
+          Get necessary knowledge in the field of functional knowledge of hardware systems and the computer
+            software system.
         </div>
-        <div id="collapse2" class="collapse ">
-            <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolorem fugit eligendi porro molestiae fuga
-                inventore nihil earum deserunt eius facere culpa dolor, placeat eaque totam quisquam nulla maxime.
-            </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed  text-white" type="button" data-toggle="collapse"
+            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Sprituality
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body  text-white">
+          Involvement in co-operative working through group projects.
         </div>
+      </div>
     </div>
 
-    <!-- Sprituality -->
-    <div class="card d-lg-none d-md-none">
-        <div class="card-header">
-            <h5 class="mb-0">
-                <div class="about" href="#collapse3" data-toggle="collapse" data-parent="#accordion">
-                    <i class="fas fa-arrow-circle-down"></i>&nbsp;Sprituality
-                </div>
-            </h5>
-        </div>
-        <div id="collapse3" class="collapse ">
-            <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolorem fugit eligendi porro molestiae fuga
-                inventore nihil earum deserunt eius facere culpa dolor, placeat eaque totam quisquam nulla maxime.
-            </div>
-        </div>
-    </div>
     <!-- Alumini -->
-    <div class="card d-lg-none d-md-none">
-        <div class="card-header">
-            <h5 class="about mb-0">
-                <div class="about" href="#collapse4" data-toggle="collapse" data-parent="#accordion">
-                    <i class="fas fa-arrow-circle-down "></i>&nbsp;Alumini
-                </div>
-            </h5>
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed  text-white" type="button" data-toggle="collapse"
+            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Alumina
+          </button>
+        </h2>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body  text-white">
+          Practical skills along with theoretical knowledge of established techniques of analysis,
+                      design and system development in the global market
         </div>
-        <div id="collapse4" class="collapse ">
-            <div class="card-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolorem fugit eligendi porro molestiae fuga
-                inventore nihil earum deserunt eius facere culpa dolor, placeat eaque totam quisquam nulla maxime.
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
+  <!-- About Our collage -->
 
-<!-- About Our collage -->
-
-<section class="aboutClz">
+  <section class="aboutClz">
     <div class="row">
-        <div class="col-lg-7 col-md-12 not-slider">
-            <div class="collegeImg text-md-center">
-                <img src="{%static 'home/pexels-element-digital-1370298.jpg' %}" alt="Photo1" class="clzImg clzImg-1">
-                <img src="{%static 'home/pexels-meliani-driss-2982449.jpg' %}" alt="Photo2" class="clzImg clzImg-2">
-                <img src="{%static 'home/pexels-pixabay-289740.jpg' %}" alt="Photo3" class="clzImg clzImg-3">
-            </div>
+      <div class="col-lg-7 col-md-12 not-slider">
+        <div class="collegeImg text-md-center">
+          <img src="{%static 'assets/pexels-element-digital-1370298.jpg' %}" alt="Photo1" class="clzImg clzImg-1">
+          <img src="{%static 'assets/pexels-meliani-driss-2982449.jpg' %}" alt="Photo2" class="clzImg clzImg-2">
+          <img src="{%static 'assets/pexels-pixabay-289740.jpg' %}" alt="Photo3" class="clzImg clzImg-3">
+        </div>
+
+      </div>
+      <div class="col-12 d-none show-slider ">
+        <div class="owl-carousel owl-carousel3 owl-theme">
+
+          <div class="item active"><img src="{%static 'assets/pexels-meliani-driss-2982449.jpg' %}" alt="Photo2"
+              class="clzImg clzImg-1"></div>
+
+          <div class="item">
+            <img src="{%static 'assets/pexels-element-digital-1370298.jpg' %}" alt="Photo1" class="clzImg clzImg-2">
+          </div>
+
+
+
+          <div class="item"><img src="{%static 'assets/pexels-pixabay-289740.jpg' %}" alt="Photo3" class="clzImg clzImg-3"></div>
 
         </div>
-        <div class="col-12 d-none show-slider ">
-            <div class="owl-carousel owl-carousel3 owl-theme">
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <div class="clzDescription">
+          <h1>ABOUT OUR COLLEGE </h1>
 
-                <div class="item active"><img src="{%static 'home/pexels-meliani-driss-2982449.jpg' %}" alt="Photo2"
-                                              class="clzImg clzImg-1"></div>
+          <p>Butwal Multiple Campus is one of the biggest campus of Lumbini Zone and a first government college in
+            Rupandehi,
+            affiliated to Tribhuvan University (TU), Nepal.It offers different Bachelors and Masters programs with
+            affiliation
+            from Tribhuvan University . It was established in estd 2030, Since its establishment, the college has been
+            running
+            various programmes in the disciplines of Arts, Science, Commerce, Law ,ITetc .
 
-                <div class="item">
-                    <img src="{%static 'home/pexels-element-digital-1370298.jpg' %}" alt="Photo1"
-                         class="clzImg clzImg-2"></div>
+            The college is located at the heart of Butwal valley,Golpark.This college has spacious
+            grounds along with seminar hall required for each and every academic and extracurricular
+            activities.We always welcome the new and creative ideas of students and plan and work to create practical.
 
 
-                <div class="item"><img src="{%static 'home/pexels-pixabay-289740.jpg' %}" alt="Photo3"
-                                       class="clzImg clzImg-3">
-                </div>
-
-            </div>
+            The aim of the College is to provide<span id="dots">...</span><span id="more">quality education and
+              produce competent graduates.
+              The establishment of this Campus has helped a lot of students to pursue their bachelor
+              and masters from a small village to a modern town in Nepal,Students are highly encouraged
+              in their areas of interest by providing hi-tech facilities backed by faculty support.
+              The institute places highest priority on innovative programs that include both traditional
+              classroom theory and professional skills training.It is producing qualified students who
+              are the backbone of the development of the nation.</span> </p>
         </div>
-        <div class="col-lg-5 col-md-12">
-            <div class="clzDescription">
-                <h1>ABOUT OUR COLLEGE </h1>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam hic, iste molestias fuga
-                    aliquam, culpa placeat corporis vero quasi tempore voluptatem tempora expedita, officiis
-                    necessitatibus ipsam quia sit? Non aspernatur iusto quia illo asperiores nesciunt consequatur
-                    inventore dolore totam, ipsa, excepturi, cupiditate similique laborum dolores magnam molestias
-                    commodi incidunt Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptatum neque
-                    expedita odit atque, est unde culpa! Vel, excepturi dignissimos. Lorem ipsum dolor, sit amet
-                    consectetur adipisicing elit. Dignissimos, iste. ?</p>
-            </div>
-
-            <div class="learnMore ">
-                <span><i class="fas fa-book-reader"></i><a class="ml-3" href="#">Learn More About BMC</a></span>
-            </div>
-
-
+        <div class="learnMore " onclick="myFunctions()" id="myBtn">
+          <span><i class="fas fa-book-reader"></i><a class="ml-3" href="#" >Learn More About BMC</a></span>
         </div>
+
+
+      </div>
     </div>
 
 
-</section>
+  </section>
 
 
-<!-- latest News Event -->
+
+  <!-- latest News Event -->
 
 
-<div class="latest-News-Event">
+  <div class="latest-News-Event">
     <div class="container-fluid">
 
 
-        <!-- Latest News -->
-        <div class="row">
+
+      <!-- Latest News -->
+      <div class="row">
 
 
-            <div class="col-lg-4 col-md-6 news-wrapper">
+        <div class="col-lg-4 col-md-6 news-wrapper">
 
-                <div class="latest-News">
-                    <header>
-                        <ul class="latest-News_Top d-flex justify-content-between w-100">
-                            <li>Latest News</li>
-                            <li><a href="#" class="btn btn-outline-info">VIEW ALL NEWS</a></li>
-                        </ul>
-                    </header>
-                    <section>
+          <div class="latest-News">
+            <header>
+              <ul class="latest-News_Top d-flex justify-content-between w-100">
+                <li>Latest News</li>
+                <li><a href="#" class="btn btn-outline-danger">VIEW ALL NEWS</a></li>
+              </ul>
+            </header>
+            <section>
 
-                    </section>
+            </section>
 
+          </div>
+
+          <!-- news Grid -->
+          <div class="row">
+            <div class="news-Grid ml-2 ml-md-1">
+
+
+              <div class="col-lg-12 mt-5">
+                <div class="row no-gutters">
+                  <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
+                    <img src="{%static 'assets/slider/slider3.jpg' %}" alt="">
+                  </div>
+                  <div class="col-lg-7 col-md-6">
+                    <!-- Date Section -->
+                    <section class="news_Grid-Date">August 1,2021</section>
+
+                    <!-- demo news word -->
+                    <section class="news_Grid-Describe">B.Sc. CSIT I Semester Exam Result</section>
+                  </div>
                 </div>
 
-                <!-- news Grid -->
-                <div class="row">
-                    <div class="news-Grid ml-2 ml-md-1">
+              </div>
+              <!-- another news -->
+              <div class="col-lg-12 mt-3 ">
+                <div class="row no-gutters">
+                  <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
+                    <img src="{%static 'assets/slider/slider4.jpg' %}" alt="">
+                  </div>
+                  <div class="col-lg-7 col-md-6">
+                    <!-- Date Section -->
+                    <section class="news_Grid-Date">July 27,2021</section>
 
-
-                        <div class="col-lg-12 mt-5">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
-                                    <img src="{%static 'home/slider/slider4.jpg' %}" alt="">
-                                </div>
-                                <div class="col-lg-7 col-md-6">
-                                    <!-- Date Section -->
-                                    <section class="news_Grid-Date">July 22,2021</section>
-
-                                    <!-- demo news word -->
-                                    <section class="news_Grid-Describe">LondonMet International Scholarship
-                                        Shortlisted Nominees
-                                    </section>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- another news -->
-                        <div class="col-lg-12 mt-3 ">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
-                                    <img src="{%static 'home/slider/slider4.jpg' %}" alt="">
-                                </div>
-                                <div class="col-lg-7 col-md-6">
-                                    <!-- Date Section -->
-                                    <section class="news_Grid-Date">July 22,2021</section>
-
-                                    <!-- demo news word -->
-                                    <section class="news_Grid-Describe">LondonMet International Scholarship
-                                        Shortlisted Nominees
-                                    </section>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    <!-- demo news word -->
+                    <section class="news_Grid-Describe">M.Sc. CSIT II Semester Exam Result</section>
+                  </div>
                 </div>
+
+              </div>
             </div>
-
-            <!-- lastest Events -->
-            <div class="col-lg-7 col-md-6">
-                <div class="latest-Events">
-
-                    <header>
-                        <ul class="latest-Events_Top d-flex justify-content-between w-100">
-                            <li> Events</li>
-                            <li><a href="#" class="btn btn-outline-danger">VIEW ALL EVENTS</a></li>
-                        </ul>
-                    </header>
-                    <section>
-
-                    </section>
-                </div>
-                <!-- Latest Event Grid -->
-                <div class="events-Grid pl-4 ">
-                    <div class="row no-gutters">
-
-                        <div class="col-lg-6 col-md-12 mt-5 d-lg-block">
-                            <img src="{%static 'home/slider/slider1.jpg' %}" alt="">
-                            <!-- Date Section -->
-                            <section class="news_Grid-Date">July 20,2021</section>
-
-                            <!-- demo news word -->
-                            <section class="news_Grid-Describe">LondonMet International Scholarship
-                                Shortlisted Nominees
-                            </section>
-
-                        </div>
-                        <!-- another -->
-                        <div class="col-lg-6 col-md-6 d-lg-block  d-md-none mt-5">
-                            <img src="{%static 'home/slider/slider1.jpg' %}" alt="">
-                            <!-- Date Section -->
-                            <section class="news_Grid-Date">July 22,2021</section>
-
-                            <!-- demo news word -->
-                            <section class="news_Grid-Describe">LondonMet International Scholarship
-                                Shortlisted Nominees
-                            </section>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- another -->
-
-
-            </div>
+          </div>
         </div>
+
+        <!-- lastest Events -->
+        <div class="col-lg-8 col-md-6 ">
+          <div class="latest-Events">
+
+            <header>
+              <ul class="latest-Events_Top d-flex justify-content-between w-100">
+                <li> Events</li>
+                <li><a href="#" class="btn btn-outline-danger">VIEW ALL EVENTS</a></li>
+              </ul>
+            </header>
+            <section>
+
+            </section>
+          </div>
+          <!-- Latest Event Grid -->
+          <div class="events-Grid pl-4 ">
+            <div class="row no-gutters">
+
+              <div class="col-lg-6 col-md-12 mt-5 d-lg-block">
+                <img src="{%static 'assets/events/event1.jpg' %}" alt="">
+                <!-- Date Section -->
+                <section class="news_Grid-Date">Aug 8,2021</section>
+
+                <!-- demo news word -->
+                <section class="news_Grid-Describe">-Just a month ago we had executed a virtual event on ASP.NET for two days.</section>
+
+              </div>
+              <!-- another -->
+              <div class="col-lg-6 col-md-6 d-lg-block  d-md-none mt-5">
+                <img src="{%static 'assets/events/event2.jpg" alt="">
+                <!-- Date Section -->
+                <section class="news_Grid-Date">Aug 2,2021</section>
+
+                <!-- demo news word -->
+                <section class="news_Grid-Describe">Career counselling and roadmap to IT</section>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- another -->
+
+
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
-<!-- Members volunters patners .... -->
-<div class="activeGroups">
+  <!-- Members volunters patners .... -->
+  <div class="activeGroups">
 
     <div class="blue-overlays">
-        <div class="container">
+      <div class="container">
 
-            <div class="row">
-                <div class="col-md-12 showcase">
+        <div class="row">
+          <div class="col-md-12 showcase">
 
 
-                    <section class="volunters ">
-                        <i class="fas fa-people-carry fa-7x"></i>
-                        <h1 class="display-3">&nbsp;&nbsp;300+</h1>
-                        <h2 class="display-4">Volunters</h2>
-                    </section>
-                    <section class="volunters ">
-                        <i class="fas fa-users fa-7x"></i>
-                        <h1 class="display-3">&nbsp;&nbsp;300+</h1>
-                        <h2 class="display-4">Participants</h2>
-                    </section>
-                    <section class="volunters">
-                        <i class="fas fa-user-friends fa-7x"></i>
-                        <h1 class="display-3">&nbsp;&nbsp;300+</h1>
-                        <h2 class="display-4">Members</h2>
-                    </section>
 
-                    <section class="volunters">
-                        <i class="fas fa-handshake fa-7x"></i>
-                        <h1 class="display-3">&nbsp;&nbsp;300+</h1>
-                        <h2 class="display-4">Patners</h2>
-                    </section>
-                </div>
-            </div>
+            <section class="volunters ">
+              <i class="fas fa-people-carry fa-7x"></i>
+              <h1 class="display-3 ">&nbsp;&nbsp;<span class="count">200 </span> <span>+</span></h1>
+              <h2 class="display-4">Volunters</h2>
+            </section>
+            <section class="volunters ">
+              <i class="fas fa-users fa-7x "></i>
+              <h1 class=" display-3">&nbsp;&nbsp;<span class="count">150 </span><span>+</span></h1>
+              <h2 class="display-4">Participants</h2>
+            </section>
+            <section class="volunters">
+              <i class="fas fa-user-friends fa-7x"></i>
+              <h1 class=" display-3">&nbsp;&nbsp;<span class="count">500 </span><span>+</span></h1>
+              <h2 class="display-4">Members</h2>
+            </section>
+
+            <section class="volunters">
+              <i class="fas fa-handshake fa-7x"></i>
+              <h1 class="display-3">&nbsp;&nbsp;<span class="count">50 </span><span>+</span></h1>
+              <h2 class="display-4">Patners</h2>
+            </section>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
-<!-- MESSAGE FROM ACHIVERS -->
-<div class="container-fluid achivers p-0">
+
+
+
+
+  <!-- MESSAGE FROM ACHIVERS -->
+  <div class="container-fluid achivers p-0">
     <div class="achivers-head">
-        <h1>Message From Great Achivers</h1>
+      <h1>Message From Great Achivers</h1>
     </div>
 
 
     <div class="owl-carousel owl-carousel1 owl-theme">
 
 
-        <div class="item">
-            <div class="row">
+        <!-- Software Engg Bikram Neupane -->
+      <div class="item">
+        <div class="row">
 
 
-                <!-- <div class="col-lg-2 offset-lg-0 offset-md-5 offset-sm-4 offset-3 offset-0"> -->
-                <div class="col-lg-2 img-row">
+          <!-- <div class="col-lg-2 offset-lg-0 offset-md-5 offset-sm-4 offset-3 offset-0"> -->
+          <div class="col-lg-2 img-row">
 
 
-                    <div class="achivers-image">
 
-                        <img src="{%static 'home/developers/roman.png' %}" alt="img">
-                        <figcaption class="achivers-caption">
-                            <i class="fab fa-facebook-square"></i>
+            <div class="achivers-image">
 
-                            <i class="fab fa-github-square"></i>
-                            <i class="fab fa-linkedin"></i>
-                        </figcaption>
-                    </div>
+              <img src="{%static 'assets/Achivers/bikram.jpg' %}" alt="bikram-neupane">
+              <figcaption class="achivers-caption">
+                <a href="https://www.facebook.com/itsmebikram" target="_blank"><i class="fab fa-facebook-square"></i></a> 
 
-                </div>
-                <div class="col-lg-10 col-md-12">
-                    <p class="achivers-para">
-                        <i class="fas fa-quote-left"></i>
-                        Butwal Multiple Campus (BMC) is the non private engineering college, affiliated
-                        to Tribhuvan University. It represents a broad and dynamic spectrum of interest,
-                        background and approaches. Our college community is committed to make the college a
-                        place that promotes freedom of thought, innovation and creativity. BMC continuing
-                        commitment to articulate, reinforce and reflect moral and ethical values along with
-                        technical skills in its students.<i class="fas fa-quote-right"></i>
-                    </p>
-                </div>
+          <a href="#" target="_blank"><i class="fab fa-github-square"></i></a>
+             <a href="https://www.linkedin.com/in/itsmebikram" target="_blank"><i class="fab fa-linkedin"></i></a>
+              </figcaption>
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="position">
-                        <div>
-                            <p class="achivers-name">Mr. Darsan Sharma</p>
-                        </div>
-                        <div>
-                            <p class="achivers-skill">Python Developer</p>
-                        </div>
+          </div>
+          <div class="col-lg-10 col-md-12">
+            <p class="achivers-para">
+              <i class="fas fa-quote-left"></i>
 
-                        <div class="read-more">
-                            <button href="#" class="btn btn-outline-danger">Read The Full Message</button>
-                        </div>
+              Finding the proper path to success at the right moment is critical, and I chose BMC for that purpose. At
+              BMC, I became a competent individual because of the welcoming environment and systematic approach to
+              instruction. The diverse choice of activities, as well as BMC's assistance, are extremely beneficial to my
+              future.
+
+              <br />
+              <br />
 
 
-                    </div>
-                </div>
-
-            </div>
+              At BMC,We were given training for our placements, and as a result, I was placed in a reputable company for
+              my internship. Because of everything I learned at BMC as well as my own effort, I am now a Senior Software
+              Engineer at Aqore Software Pvt. Ltd. I must say, BMC has allowed me to discover and learn new things in
+              both personal and professional areas. I hope this department continues to do amazing things and assist
+              students in achieving their goals.
+              <br />
+              <br />
+              <span id="read_more">...</span><span id="read_mores" class="achivers-para">
+                In addition to traditional lectures, the BSc CSIT curriculum includes a significant amount of practical
+                and project work. The curriculum teaches the fundamentals of both computer science and information
+                technology, as well as how to apply these ideas to real-world situations. This program will help to
+                acquire the abilities needed as a computer professional or an IT specialist.<i
+                  class="fas fa-quote-right"></i>
+              </span>
+            </p>
+          </div>
         </div>
-        <!-- <div class="col-md-8"> -->
-        <div class="item"><h4>2</h4></div>
-        <div class="item"><h4>3</h4></div>
-        <div class="item"><h4>4</h4></div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="position">
+              <div>
+                <p class="achivers-name">Mr. Bikram Neupane</p>
+              </div>
+              <div>
+                <p class="achivers-skill">Senior Software Engineer at Aqore</p>
+              </div>
+
+              <div class="read-more">
+                <button href="#" class="btn btn-outline-danger" onclick="myFunction()" id="read_more_btn">Read The Full
+                  Message</button>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="col-md-8"> -->
+         <!-- software engg sabita neupane -->
+      <div class="item">
+        <div class="row">
+
+
+         
+          <div class="col-lg-2 img-row">
+
+
+
+            <div class="achivers-image">
+
+              <img src="{%static 'assets/Achivers/sabita.jpg' %}" alt="Sabita-neupane">
+              <figcaption class="achivers-caption">
+                <a href="https://www.facebook.com/SabitaNeupaneOfficial" target=" _blank"><i class="fab fa-facebook-square"></i></a> 
+
+             
+
+                   <a href="#" target="_blank"><i class="fab fa-github-square"></i></a>
+                   <a href="https://www.linkedin.com/in/imsabitaneupane/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              </figcaption>
+            </div>
+
+          </div>
+          <div class="col-lg-10 col-md-12">
+            <p class="achivers-para">
+              <i class="fas fa-quote-left"></i>
+
+            It was an awesome experience while learning BSc. CSIT from Butwal Multiple Campus.As technology and IT sector are evolving every seconds, CSIT course sertvers best for the students who want to pursue their career in the IT field. </br>
+            </br>
+            And being the first CSIT Batch of Butwal Multiple Campus ,I am glad to graduate from this college.
+            <i class="fas fa-quote-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="position">
+              <div>
+                <p class="achivers-name">Ms. Sabita Neupane</p>
+              </div>
+              <div>
+                <p class="achivers-skill">Software Engineer at cloudFactory</p>
+              </div>
+
+              <div class="read-more">
+                <button href="#" class="btn btn-outline-danger" >Read The Full
+                  Message</button>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- software engg ashim -->
+      <div class="item">
+        <div class="row">
+
+
+          <!-- <div class="col-lg-2 offset-lg-0 offset-md-5 offset-sm-4 offset-3 offset-0"> -->
+          <div class="col-lg-2 img-row">
+
+
+
+            <div class="achivers-image">
+
+              <img src="{%static 'assets/Achivers/ashim.jpg' %}" alt="ashim-magar">
+              <figcaption class="achivers-caption">
+                <a href="https://www.facebook.com/sminmgr" target="_blank"><i class="fab fa-facebook-square"></i></a> 
+
+                <a href="https://github.com/AsminBudha/
+                " target="_blank"><i class="fab fa-github-square"></i></a>
+                   <a href="https://www.linkedin.com/in/asminbudha/" target=" _blank"><i class="fab fa-linkedin"></i></a>
+              </figcaption>
+            </div>
+
+          </div>
+          <div class="col-lg-10 col-md-12">
+            <p class="achivers-para">
+              <i class="fas fa-quote-left"></i>
+
+            
+
+             
+             BSc.CSIT is an in-dept course that teaches you about core computer science which will help you in the tech industry.
+
+              <br />
+              Some might find it difficult but self-learning is the key.And, Butwal Multiple Campus(BMC) will teach you that rather than spoon-feeding you.In addition,BMC has a friendly environment,you truly will neet lifelong friends and might get inspired by their learning attitude.
+              <br />
+              Glad to be connected with supportive teachers.
+              <i class="fas fa-quote-right"></i>
+              
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="position">
+              <div>
+                <p class="achivers-name">Mr. Asmin Buddha Magar</p>
+              </div>
+              <div>
+                <p class="achivers-skill">Software Engineer at Leapfrog</p>
+              </div>
+
+              <div class="read-more">
+                <button href="#" class="btn btn-outline-danger">Read The Full
+                  Message</button>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+
+     
+     
+
 
 
     </div>
-</div>
+  </div>
 
 
-<!-- dEVELOPERS TEAM -->
-<div class="container-fluid developers">
+
+  <!-- dEVELOPERS TEAM -->
+  <div class="container-fluid developers">
     <h1 class="thanks">THANKS TO DEVELOPERS</h1>
 
     <div class="owl-carousel owl-carousel2 owl-theme">
-        <!-- shrish karki -->
-        <div class="item ">
-            <div class="wrapper">
+      <!--  developer kisan -->
+      <div class="item">
+        <div class="wrapper">
 
 
-                <div class="developer-img-wrapper">
-                    <div class="developer-img img-1">
-                        <img src="{%static 'home/developers/shrish.png' %}" alt="shrish">
-                    </div>
-                </div>
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-3">
+              <img src="{%static 'assets/developers/kisan.png' %}" alt="kisan pic">
             </div>
-            <h2 class="developer-name">Shrish Karki</h2>
-            <h3 class="developer-skill">Frontend Developer</h3>
-            <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui
-                sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus
-                reiciendis beatae hic quibusdam?</p>
-
-
-            <div class="developer-socialMedia">
-                <i class="fab fa-facebook-square"></i>
-
-                <i class="fab fa-github-square"></i>
-                <i class="fab fa-linkedin"></i>
-            </div>
+          </div>
         </div>
+        <h2 class="developer-name">Kisan Basyal</h2>
+        <h3 class="developer-skill">Frontend Developer
+          & UI/UX Designer</h3>
+        <p class="about-dev">Kisan is a professional web-designer,
+          who brings up innovative ideas and concepts for creating a unique outlook for every website.
+          He is better with the codes (HTML, CSS, Bootstrap ,SASS and React.Js) and has the potential
+          to give every scratch a clean figure in his site. His skills in blending unique colors with a variety
+          of shapes assist him in creating an attractive and user-friendly interface</p>
 
+        <div class="developer-socialMedia">
+         <a href="https://www.facebook.com/kisan.basyal.7" target="_blank"><i class="fab fa-facebook-square"></i></a> 
 
-        <!-- 2nd developer -->
-        <div class="item">
-            <div class="wrapper">
+          <a href="https://github.com/kisan977" target="_blank"><i class="fab fa-github-square"></i></a>
+             <a href="https://www.linkedin.com/mwlite/in/kisan-basyal" target="_blank"><i class="fab fa-linkedin"></i></a>
 
-
-                <div class="developer-img-wrapper">
-                    <div class="developer-img img-2">
-                        <img src="{%static 'home/developers/anjana.png' %}" alt="anjana">
-                    </div>
-                </div>
-            </div>
-            <h2 class="developer-name">Anjana Poudel</h2>
-            <h3 class="developer-skill">Frontend Developer</h3>
-            <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui
-                sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus
-                reiciendis beatae hic quibusdam?</p>
-
-            <div class="developer-socialMedia">
-                <i class="fab fa-facebook-square"></i>
-
-                <i class="fab fa-github-square"></i>
-                <i class="fab fa-linkedin"></i>
-
-            </div>
         </div>
-
-        <!-- 3rd developer -->
-        <div class="item">
-            <div class="wrapper">
+      </div>
 
 
-                <div class="developer-img-wrapper">
-                    <div class="developer-img img-3">
-                        <img src="{%static 'home/developers/kisan.png' %}" alt="kisan pic">
-                    </div>
-                </div>
+
+      <!-- 2nd developer -->
+      <div class="item">
+        <div class="wrapper">
+
+
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-2">
+              <img src="{%static 'assets/developers/anjana.png' %}" alt="anjana">
             </div>
-            <h2 class="developer-name">Kisan Basyal</h2>
-            <h3 class="developer-skill">Frontend Developer
-                & UI/UX Designer</h3>
-            <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui
-                sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus
-                reiciendis beatae hic quibusdam?</p>
-
-            <div class="developer-socialMedia">
-                <i class="fab fa-facebook-square"></i>
-
-                <i class="fab fa-github-square"></i>
-                <i class="fab fa-linkedin"></i>
-
-            </div>
+          </div>
         </div>
+        <h2 class="developer-name">Anjana Poudel</h2>
+        <h3 class="developer-skill">Frontend Developer</h3>
+        <p class="about-dev">Anjana Poudel is a self-taught frontend developer with a keen eye for creating clean and engaging web designs. She loves coding and turning user's view into reality. 
+          Here is her skillset: HTML, CSS(Bootstrap, SASS), Js(React.js)</p>
 
-        <!-- 4th developer -->
-        <div class="item">
-            <div class="wrapper">
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com/anjana.poudel.7146" target="_blank"><i class="fab fa-facebook-square"></i></a>
 
+         <a href="https://github.com/anzana000" target="_blank"><i class="fab fa-github-square"></i></a> 
+          <a href="https://www.linkedin.com/in/anzana-poudel-980413212/" target="_blank"><i class="fab fa-linkedin"></i></a>
 
-                <div class="developer-img-wrapper">
-                    <div class="developer-img img-4">
-                        <img src="{%static 'home/developers/samir.png' %}" alt="kisan pic">
-                    </div>
-                </div>
-            </div>
-            <h2 class="developer-name">Samir Thapa</h2>
-            <h3 class="developer-skill">Frontend Developer &
-                Backend Developer</h3>
-            <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui
-                sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus
-                reiciendis beatae hic quibusdam?</p>
-
-            <div class="developer-socialMedia">
-                <i class="fab fa-facebook-square"></i>
-
-                <i class="fab fa-github-square"></i>
-                <i class="fab fa-linkedin"></i>
-
-            </div>
         </div>
-        <!-- 5th developer -->
-        <div class="item">
-            <div class="wrapper">
+      </div>
+      <!-- content Designer -->
+      <div class="item ">
+        <div class="wrapper">
 
 
-                <div class="developer-img-wrapper">
-                    <div class="developer-img img-5">
-                        <img src="{%static 'home/developers/roman.png' %}" alt="developers pic">
-                    </div>
-                </div>
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-7">
+              <img src="{%static 'assets/developers/zaya.png' %}" alt="zaya">
             </div>
-            <h2 class="developer-name">Roman K.C</h2>
-            <h3 class="developer-skill">Python Developer</h3>
-            <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui
-                sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus
-                reiciendis beatae hic quibusdam?</p>
-
-            <div class="developer-socialMedia">
-                <a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a>
-
-
-                <a href=""><i class="fab fa-github-square"></i></a>
-                <a href=""><i class="fab fa-linkedin"></i></a>
-            </div>
+          </div>
         </div>
-
-        <!-- 6th developer -->
-        <div class="item">
-            <div class="wrapper">
-
-
-                <div class="developer-img-wrapper">
-                    <div class="developer-img img-6">
-                        <img src="{%static 'home/developers/darsan.png' %}" alt="developers pic">
-                    </div>
-                </div>
-            </div>
-            <h2 class="developer-name">Darsan Sharma</h2>
-            <h3 class="developer-skill">Python Developer</h3>
-            <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui
-                sit, mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus
-                reiciendis beatae hic quibusdam?</p>
-
-            <div class="developer-socialMedia">
-                <a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+        <h2 class="developer-name">Zaya Pangeni</h2>
+        <h3 class="developer-skill">Content Designer</h3>
+        <p class="about-dev">Jaya Pangeni, is a fresh content writer for many IT organizations .She is  a Bachelor's degree student in Science and technology.There’s no easily available real-life link to summon, so people struggle to bond. Well, she likes reading! She took a creative writing idea and loved that! So writing must be fun for her, even more if she gets to do it at home! </p>
 
 
-                <a href=""><i class="fab fa-github-square"></i></a>
-                <a href=""><i class="fab fa-linkedin"></i></a>
-            </div>
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com/pangeni.zaaya/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+          <a href="https://github.com/zaya-pangeni" target="_blank"><i class="fab fa-github-square"></i></a>
+         <a href="https://www.linkedin.com/in/zaya-pangeni-9285231b1" target="_blank"><i class="fab fa-linkedin"></i></a> 
         </div>
+      </div>
+
+      <!--developer shrish karki -->
+      <div class="item ">
+        <div class="wrapper">
+
+
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-1">
+              <img src="{%static 'assets/developers/shrish.png' %}" alt="shrish">
+            </div>
+          </div>
+        </div>
+        <h2 class="developer-name">Shrish Karki</h2>
+        <h3 class="developer-skill">Frontend Developer</h3>
+        <p class="about-dev">Shrish Karki is a self taught "Code Enthusiast".As he is Frontend Developer, he loves to
+          works with the the layouts provided by UI/UX designer & transform static interface images into a fully
+          functional web app client-side by using HTML5,CSS,JS & many other frontend libraries & frameworks(Bootstrap,
+          Semantic UI, React JS).He makes sure that the product looks great on any device as well as works stable on any
+          browser. </p>
+
+
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com/profile.php?id=100006548911495" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+          <a href="https://github.com/shrishkarki" target="_blank"><i class="fab fa-github-square"></i></a>
+          <a href="https://www.linkedin.com/in/shrish-karki-606069190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+
+
+      <!-- 4th developer -->
+      <div class="item">
+        <div class="wrapper">
+
+
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-4">
+              <img src="{%static 'assets/developers/samir.png' %}" alt="kisan pic">
+            </div>
+          </div>
+        </div>
+        <h2 class="developer-name">Samir Thapa</h2>
+        <h3 class="developer-skill">Frontend Developer &
+          Backend Developer</h3>
+        <p class="about-dev">Mr. Samir is a well-skilled fresh web developer and student of Computer science/Information technology. Highly versatile and highly technological adaptability. Especially he is an expert at frontend Javascript libraries and frameworks, Full Stack React developer, and also knowledge on SQL and NoSQL databases with express.js. Highly interested in complex web dev functionality, swimming, and volleyball and he loves it.</p>
+
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com/samir.thapam100/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+          <a href="https://github.com/thapasamirm577" target="_blank"><i class="fab fa-github-square"></i></a>
+         <a href="https://www.linkedin.com/in/thapasamirm577/" target="_blank"><i class="fab fa-linkedin"></i></a> 
+
+        </div>
+      </div>
+      <!-- 5th developer -->
+      <div class="item">
+        <div class="wrapper">
+
+
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-5">
+              <img src="{%static 'assets/developers/roman.png' %}" alt="developers pic">
+            </div>
+          </div>
+        </div>
+        <h2 class="developer-name">Roman K.C</h2>
+        <h3 class="developer-skill">Python Developer</h3>
+        <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit,
+          mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis
+          beatae hic quibusdam?</p>
+
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+
+
+          <a href=""><i class="fab fa-github-square"></i></a>
+          <a href=""><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- 6th developer -->
+      <div class="item">
+        <div class="wrapper">
+
+
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-6">
+              <img src="{%static 'assets/developers/darsan.png' %}" alt="developers pic">
+            </div>
+          </div>
+        </div>
+        <h2 class="developer-name">Darsan Sharma</h2>
+        <h3 class="developer-skill">Python Developer</h3>
+        <p class="about-dev">Darshan is a Python developper with experience in web framework like Django .
+          He is hardworking ,posseses extensive problem solving skills and loves implementing a general algorithmic approach .
+          He is a life-long learner and is looking forward to work on exciting and challenging projects .</p>
+
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com/darshan.sharma.57/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+          <a href="https://github.com/nepaleseboy1" target="_blank"><i class="fab fa-github-square"></i></a>
+         <a href="https://www.linkedin.com/in/darshan-sharma-21a977199/" target="_blank"><i class="fab fa-linkedin"></i></a> 
+        </div>
+      </div>
 
     </div>
 
-</div>
+  </div>
 
+
+
+
+
+
+
+ 
+
+
+  
+
+  <!-- testing -->
+
+
+
+
+
+
+
+  
 
 {%endblock%}
 
-{%block script%}
+{%block scripts%}
 
+
+<script src="{%static 'indexTabs.js' %}"></script>
 
 <script>
-     $('.carousel').carousel({
-       interval:6300,
-       pause:false,
+$('.carousel').carousel({
+  interval: 6300,
+  pause: false,
 
-     });
-
-
-    //  hover in dropdown
-    $(document).ready(function(){
-    $(".dropdown").hover(function(){
-        var dropdownMenu = $(this).children(".dropdown-menu");
-        if(dropdownMenu.is(":visible")){
-            dropdownMenu.parent().toggleClass("open");
-        }
-    });
 });
 
 
-   // Video Play
-   $(function () {
-      // Auto play modal video
-      $(".video").click(function () {
-        var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal + ' button.close').click(function () {
-          $(theModal + ' iframe').attr('src', videoSRC);
-        });
-      });
+//  hover in dropdown
+$(document).ready(function () {
+  $(".dropdown").hover(function () {
+    var dropdownMenu = $(this).children(".dropdown-menu");
+    if (dropdownMenu.is(":visible")) {
+      dropdownMenu.parent().toggleClass("open");
+    }
+  });
+});
+
+
+// Video Play
+$(function () {
+  // Auto play modal video
+  $(".video").click(function () {
+    var theModal = $(this).data("target"),
+      videoSRC = $(this).attr("data-video"),
+      videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+    $(theModal + ' iframe').attr('src', videoSRCauto);
+    $(theModal + ' button.close').click(function () {
+      $(theModal + ' iframe').attr('src', videoSRC);
     });
-
-
+  });
+});
 </script>
+
 
 
 <!-- CDN link for owl carousel -->
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!-- cdn link for mousewheel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"
+integrity="sha512-rCjfoab9CVKOH/w/T6GbBxnAH5Azhy4+q1EXW5XEURefHbIkRbQ++ZR+GBClo3/d3q583X/gO4FKmOFuhkKrdA=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 <!-- no need to insert the jquery file as we already insert bootstrap jquery  -->
@@ -782,29 +1080,30 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 
+
 <!-- OWL CAROUSEL FOR MESSAGE FROM GREATE ACHIVERS  -->
 <script>
-   $('.owl-carousel1').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    // autoplay:true,
-    dots:false,
+$('.owl-carousel1').owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: true,
+  // autoplay:true,
+  dots: false,
 
-    navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
+  navText: ["<div class='nav-button owl-prev'><i class='far fa-arrow-alt-circle-left'></i></div>", "<div class='nav-button owl-next'><i class='far fa-arrow-alt-circle-right'></i></div>"],
 
 
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 1
     }
+  }
 })
 
 
@@ -820,17 +1119,83 @@
 //     }
 //     e.preventDefault();
 // });
+</script>
+
+<!-- OWL CAROUSEL FOR DEVELOPERS TEAM -->
+
+<script>
+$('.owl-carousel2').owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: true,
+  dots: false,
+
+  navText: ["<div class='nav-button owl-prev'><i class='fas fa-long-arrow-alt-left'></i></div>", "<div class='nav-button owl-next'><i class='fas fa-long-arrow-alt-right'></i></div>"],
 
 
+
+
+
+  responsive: {
+    0: {
+      items: 1
+    },
+    700: {
+      items: 2
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+
+// for about clz section
+
+$('.owl-carousel1').owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: true,
+  // autoplay:true,
+  dots: false,
+
+
+
+
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 1
+    }
+  }
+})
+
+
+
+// for mousewheel
+// var owl = $('.owl-carousel1');
+
+// owl.on('mousewheel', '.owl-stage', function (e) {
+//     if (e.deltaY>0) {
+//         owl.trigger('next.owl');
+//     } else {
+//         owl.trigger('prev.owl');
+//     }
+//     e.preventDefault();
+// });
 </script>
 
 <!-- OWL CAROUSEL3 FOR DEVELOPERS TEAM -->
 
 <script>
-  $('.owl-carousel3').owlCarousel({
-   loop:true,
-   margin:10,
-   nav:false,
+$('.owl-carousel3').owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: false,
   //  stagePadding:50,
   //  dots:false,
 
@@ -840,24 +1205,68 @@
 
 
 
-   responsive:{
-       0:{
-           items:1
-       },
-       600:{
-           items:1
-       },
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
 
-   }
+  }
 })
-
-
-
 </script>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 
-<script src="{%static 'home/js/indexTabs.js' %}"></script>
+<!-- counter script -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- <script src="jquery.counterup.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script>
+$(document).ready(function () {
+  $('.count').counterUp({
+    delay: 10,
+    time: 1200
+  })
+})
+</script>
+<!-- for read more and read less -->
+<script>
+function myFunctions() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<script>
+function myFunction() {
+  var dot = document.getElementById("read_more");
+  var moreTexts = document.getElementById("read_mores");
+  var btnTexts = document.getElementById("read_more_btn");
+
+  if (dot.style.display === "none") {
+    dot.style.display = "inline";
+    btnTexts.innerHTML = "Read Full Message";
+
+    moreTexts.style.display = "none";
+  } else {
+    dot.style.display = "none";
+    btnTexts.innerHTML = "Read less message";
+    moreTexts.style.display = "inline";
+  }
+}
+</script>
 {%endblock%}
-
-

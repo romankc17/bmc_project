@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&family=Unna&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: "Philosopher";
+}
+
+
+
+.overlay_text h3 {
+  font-size: 50px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.blog_overlay::before {
+  position: absolute;
+  content: "";
+  background: -moz-linear-gradient(
+    left,
+    #213d97 0%,
+    #213d97 24%,
+    rgba(124, 185, 233, 0) 96%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #213d97 0%,
+    #213d97 24%,
+    rgba(124, 185, 233, 0) 96%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  background: linear-gradient(
+    to right,
+    #213d97 0%,
+    #213d97 24%,
+    rgba(124, 185, 233, 0) 96%,
+    rgba(125, 185, 232, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#213d97', endColorstr='#007db9e8',GradientType=1 );
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 1;
+}
+
+.blog_details_container {
+  background: #f2f2f2;
+  box-shadow: 12px 12px 10px rgb(5 4 4 / 3%);
+  margin: 12px 0px;
+  padding: 24px;
+}
+
+.title_row {
+  text-align: center;
+}
+
+.blog_title h1 {
+  color: #000;
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-left: 2%;
+  font-weight: bold;
+}
+.share-and-featured-image {
+  display: flex;
+  margin-top: 40px;
+}
+
+.featured-image {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.para {
+  font-size: 2rem;
+}
+.featured-image img {
+  width: 80%;
+  vertical-align: middle;
+  border-radius: 10px;
+  transform: scale(1);
+
+  transition: 0.3s ease-in-out;
+}
+.my-blog-text {
+  padding: 4px 24px;
+  font-family: "Roboto";
+  font-size: 115%;
+  text-align: justify;
+}
+
+.blog_writer_details {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-top: 50px;
+  margin-left: 35px;
+}
+
+.featured-image img:hover {
+  transform: scale(1.1);
+}
+.writer {
+  list-style: none;
+  margin-right: 5px;
+  list-style-type: none;
+}
+.fa {
+  font-size: 20px !important;
+  color: #213d97;
+}
+.name {
+  margin-top: -38px !important;
+  margin-left: 50px !important;
+  margin-right: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.day {
+  margin-top: -19px !important;
+  font-size: 12px;
+}
+.user_image {
+  height: 40px;
+  width: 40px;
+}
+.user_image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  margin-top: -10px;
+}
+.square {
+  height: 45px;
+}
+.day {
+  margin-left: 22px;
+  font-weight: bold;
+  margin-top: -21px !important;
+}
+.comment {
+  margin-left: 10rem;
+}
+.no_of_comment {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.dates {
+  font-size: 11px;
+}
+
+.comment-text {
+  font-size: 12px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+.names {
+  color: #007bff;
+}
+
+.cursor:hover {
+  color: blue;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: none;
+  font-size: 1.5rem;
+}
+
+.post_btn {
+  background-color: #213d97;
+  color: #fff;
+  margin-left: 1rem;
+}
+.cancel_btn {
+  background-color: #213d97;
+  color: #fff;
+}
+.btn {
+  font-size: 1.5rem;
+}
+.comment-section {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 500px) {
+  .blog_title h1 {
+    font-size: 15px;
+  }
+  .row {
+    padding: 0px 0px 0px 10px !important;
+  }
+  .blog_writer_details {
+    margin-left: 0px !important;
+  }
+  .edit_del {
+    margin-left: -35px !important;
+  }
+  .featured-image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .para {
+    font-size: 16px !important;
+  }
+  .featured-image img {
+    width: 100%;
+  }
+  .blog_title h1 {
+    font-size: 2rem;
+  }
+}

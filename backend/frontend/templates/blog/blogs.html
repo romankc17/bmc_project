@@ -1,0 +1,123 @@
+{%extends "base.html" %} 
+{%load static%} 
+
+{%block head%}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="{%static 'blog/blogs.css' %}" /> 
+{%endblock%} 
+
+{% block content %}
+<!-- start of blog section -->
+<section id="Blog">
+    <!-- overlay_section -->
+    {%if not page_obj.has_previous %}
+    <div class="blog_header blog_overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="overlay_text">
+                        <h3>BLOG SECTION</h3>
+                        <a href="{%url 'blog_create' %}">
+                            <button class="btn blog_btn"> <i class="fa fa-rss"></i>Write a new blog</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endif%}
+
+    <!-- first Blog post -->
+    <div class="container mb-4">
+        {% for blog in blogs %}
+        <div class="row blog_row mb-5" data-aos="zoom-in-up" data-aos-duration="1500">
+            <div class="col-md-7 para_section">
+                <div class="blog_details">
+                    <div class="blog_title">
+                        <a href="{{blog.get_absolute_url}}">{{blog.title}}</a>
+                    </div>
+                    <div class="blog_content" style="word-wrap: break-word;">
+                        <p class="para">
+                            {{blog.content|slice:":255"}}
+                        </p>
+                    </div>
+                    <ul class="blog_writer_details">
+                        <li class="writer">
+                            <div class="user_image">
+                                <img src="{{blog.author.userprofile.image.url}}" alt="first_user">
+                            </div>
+                            <p class="name">{{blog.author.userprofile.name}}</p>
+                        </li>
+                        <li class="date">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <p class="day">{{blog.created_at.date}}</p>
+                        </li>
+                        <li class="button">
+                            <a href="{{blog.get_absolute_url}}"><button class="btn btn-primary">Read Blog</button></a>
+                        </li>
+                        <li class="line"></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1 mid-line">
+            </div>
+            <div class="col-md-4" style="padding-right: 0%!important; display:flex; align-items:center;">
+                <div class="blog_image">
+                    <img src="{{blog.image.url}}" alt="">
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+
+
+
+    </div>
+
+    <!-- pagination -->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+          <li class="page-item">
+
+              {%if page_obj.has_previous%}
+              <a class="page-link" href="?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              {%endif%}
+
+          </li>
+
+          {%for i in page_obj.paginator.page_range %}
+              {%if page_obj.number == i%}
+                  <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+              {%else%}
+                  <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+              {%endif%}
+          {%endfor%}
+
+          {%if page_obj.has_next%}
+              <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                  </a>
+              </li>
+          {%endif%}
+      </ul>
+  </nav>
+</section>
+
+
+{%endblock%} {%block scripts%}
+<!-- js boot file -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+{%endblock%}

@@ -54,8 +54,9 @@ def register(request):
                 verification_image.save()
                 
                 try:
-                    send_mail(user) 
-                except Exception as e:  
+                    send_mail(request,user) 
+                except Exception as e:
+                    print(e)  
                     messages.error(request, "Sending verification mail failed")
                 
                 messages.success(request, f"YOUR USERNAME IS '{user.username}'")

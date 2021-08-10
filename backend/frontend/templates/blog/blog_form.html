@@ -1,0 +1,55 @@
+{%extends "base.html" %} 
+{%block title%}Blog-create{%endblock%} 
+{% load crispy_forms_tags %} 
+{%load static%} 
+{%load widget_tweaks%}
+
+
+{%block head%}
+<link rel="stylesheet" href="{%static 'blog/blog_create.css' %}" /> {%endblock %} {%block content%}
+<div class="container">
+    <form method='POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Blog Post</legend>
+            <div id="div_id_title" class="form-group">
+                <label for="id_title" class=" requiredField">
+                           Title<span class="asteriskField">*</span> 
+                   </label>
+
+                <div class="title_input">
+                    <!-- <input type="text" name="title" maxlength="100" class="textinput textInput form-control" required="" id="id_title"> -->
+                    {% render_field form.title maxlength="100" class="textinput textInput form-control"%}
+                </div>
+            </div>
+
+            <div class="widget_section mb-2">
+
+                <!-- <textarea class="form-control ml-1 shadow-none textarea">Details about blog...</textarea> -->
+                {% render_field form.content class="form-control ml-1 shadow-none textarea" placeholder="Details about blog..."%}
+            </div>
+
+            <div id="div_id_image" class="form-group"> <label for="id_image" class="">
+                      Image
+                  </label>
+                <div class=""> 
+                    <!-- <input type="file" name="image" accept="image/*" class="clearablefileinput form-control-file" id="id_image">  -->
+                    {% render_field form.image class="clearablefileinput form-control-file"%}
+                </div>
+            </div>
+
+
+        </fieldset>
+        <div class="form-group">
+            <button class="btn" style="background-color: #213d97 !important; color: #fff !important" type="submit">Post</button>
+        </div>
+    </form>
+</div>
+{%endblock%}
+
+{% block script %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+  {%endblock %}
