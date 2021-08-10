@@ -6,10 +6,7 @@
   list-style: none;
   text-decoration: none;
   font-size: 10px;
-<<<<<<< HEAD:backend/frontend/statics/blog/style.css
   font-family: "Philosopher", "sans-serif";
-=======
->>>>>>> 5b37be2b9e409e3437afa9d0ad42a401cbae8557:backend/frontend/statics/blog/blogs.css
 }
 
 .blog_header {
@@ -17,11 +14,7 @@
   background-position: center center;
   padding: 148px 0px;
   background-repeat: no-repeat;
-<<<<<<< HEAD:backend/frontend/statics/blog/style.css
-  background-image: url("../assets/bcg.jpg");
-=======
   background-image: url("./assets/bcg.jpg");
->>>>>>> 5b37be2b9e409e3437afa9d0ad42a401cbae8557:backend/frontend/statics/blog/blogs.css
   overflow-x: hidden;
   width: 100%;
   font-family: "Philosopher", "sans-serif";
@@ -104,10 +97,7 @@ p {
 }
 .para_section {
   margin-left: 3.2rem;
-<<<<<<< HEAD:backend/frontend/statics/blog/style.css
-=======
   font-family: "Philosopher", "sans-serif";
->>>>>>> 5b37be2b9e409e3437afa9d0ad42a401cbae8557:backend/frontend/statics/blog/blogs.css
 }
 
 .writer {

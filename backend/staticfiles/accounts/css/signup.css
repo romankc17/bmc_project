@@ -36,6 +36,8 @@ body {
   color: #3498db;
 }
 
+
+
 .form-group input {
   display: block;
   width: 100%;
@@ -99,7 +101,6 @@ input.error {
 
 @media screen and (max-width: 500px) {
   .rollNo {
-    background-color: #3498db;
     width: 10px;
   }
   .select {
