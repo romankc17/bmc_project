@@ -73,7 +73,7 @@ class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         blog = self.get_object()
         return self.request.user == blog.author
     
-@login_required()
+
 def create_comment(request,slug):
     if request.method == 'POST':
         blog = Blog.objects.get(slug = slug)
