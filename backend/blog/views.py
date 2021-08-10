@@ -17,7 +17,7 @@ from django.views.generic import (
 
 class BlogListView(ListView):
     model = Blog
-    template_name = "blog/index.html"
+    template_name = "blog/blogs.html"
     context_object_name = "blogs"
     paginate_by = 5
 
@@ -53,7 +53,8 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
 
 class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Blog
-    success_url = "/blog"
+    fields = ['title', 'content', 'image']
+    success_url = "/blogs"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -66,13 +67,13 @@ class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Blog
-    success_url = "/blog"
+    success_url = "/blogs"
 
     def test_func(self):
         blog = self.get_object()
         return self.request.user == blog.author
     
-
+@login_required()
 def create_comment(request,slug):
     if request.method == 'POST':
         blog = Blog.objects.get(slug = slug)

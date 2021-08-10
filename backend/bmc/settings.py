@@ -50,6 +50,9 @@ INSTALLED_APPS = [
     'association',
     'accounts',
     'notes',
+    
+    'crispy_forms',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

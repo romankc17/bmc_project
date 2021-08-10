@@ -1,53 +1,33 @@
-{%extends 'base.html'%}
-{%load static%}
+{%extends 'base.html'%} 
+{%load static%} 
 
 {%block head%}
-<title>CSIT ASSOCIATION OF BMC</title>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="{%static 'blog/ReadMore.css' %}"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-{%endblock%}
+<link rel="stylesheet" href="{%static 'blog/blog_detail.css' %}">
+ {%endblock%} 
+
 
 {%block content%}
-<section id="Blog">
-    <!-- overlay_section -->
-    <div class="blog_header blog_overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="overlay_text">
-                        <h3>BLOG DETAILS</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+
+<!-- start of blog section -->
+<section id="Blog">
     <div class="container">
         <div class="blog_details_container" style="word-wrap: break-word;">
             <div class="title_row">
-                <div class="blog_title">{{object.title}}</div>
+                <div class="blog_title">
+                    <h1>{{object.title}}</h1>
+                </div>
             </div>
             <div class="share-and-featured-image">
                 <div class="featured-image">
-                    <img src="{{object.image.url}}">
+                    <img src="{{object.image.url}}" alt="">
                 </div>
             </div>
-            <div class="row" style="word-break: break-word; padding: 0px 34px;">
-                <p class="para mt-5">{{object.content}}</p>>
-<!--                <div class="share-and-featured-image">-->
-<!--                    <div class="featured-image">-->
-<!--                        <img src="../assets/bcg2.jpg">-->
-<!--                    </div>-->
-<!--                </div>-->
-
-
-<!--                <p class="para mt-5">-->
-<!--                </p>-->
-
-<!--                </p>-->
+            <div class="row" data-aos="zoom-in-up" data-aos-duration="3000" style="word-break: break-word; padding: 0px 50px;">
+                <p style="font-size:16px;" class="para mt-5">
+                   {{object.content|safe|linebreaksbr}}
+                </p>
 
 
             </div>
@@ -64,8 +44,27 @@
                 </li>
 
 
+
             </ul>
+            <ul>
+                <div class="container mt-3">
+                    <div class="d-flex justify-content-center row">
+                        <div class="col-md-12">
+                            <div class="d-flex flex-column">
+                                <div class="p-2">
+
+                                    <div class="mt-2 ml-2 edit_del text-left">
+                                        <a href="{%url 'blog_update' object.slug %}"><button  class="btn  btn-sm shadow-none post_btn" data-aos="fade-left" data-aos-duration="1500" type="button">Edit</button></a>
+                                        <a href="{%url 'blog_delete' object.slug %}"><button class="btn  btn-sm ml-3 shadow-none cancel_btn" type="button">Delete</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
+        </ul>
+    </div>
 
     </div>
 
@@ -79,36 +78,22 @@
         <div class="d-flex justify-content-center row">
             <div class="col-md-12">
                 <div class="d-flex flex-column comment-section">
-                    <div class="p-2">
-                        <div class="d-flex flex-row align-items-start"><img class="square mr-4"
-                                                                            src="{{object.author.userprofile.image.url}}" width="50"
-                                                                            height="60"><textarea
-                                class="form-control ml-1 shadow-none textarea">Write a Comment...</textarea></div>
-                        <div class="mt-2 text-right">
-                            <button class="btn  btn-sm shadow-none post_btn" type="button">Post comment</button>
-                            <button class="btn  btn-sm ml-1 shadow-none cancel_btn" type="button">Cancel</button>
-                        </div>
+                    <div class="p-1">
+                        <div class="d-flex flex-row align-items-start"><img class="square mr-4" src="{{object.}}" width="50" height="60"><textarea class="form-control ml-1 shadow-none textarea">Write a Comment...</textarea></div>
+                        <div class="mt-2 text-right"><button class="btn  btn-sm shadow-none post_btn" type="button">Post comment</button><button class="btn  btn-sm ml-1 shadow-none cancel_btn" type="button">Cancel</button></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-
-
 </section>
 
 
-<!-- start of footter -->
-<!-- end of footer -->
 
-
-{%endblock%}
-
-{%block script%}
+{% endblock %} {% block script %}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
-
 </script>
-{%endblock%}
+{%endblock %}
