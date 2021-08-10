@@ -14,27 +14,15 @@ from .tokens import account_activation_token
 
 import threading
 
-class EmailThread(threading.Thread):
-    def __init__(self, subject, message, user):
-        self.subject = subject
-        self.message = message
-        self.user = user
-        threading.Thread.__init__(self)
+# class EmailThread(threading.Thread):
+#     def __init__(self, subject, message, user):
+#         self.subject = subject
+#         self.message = message
+#         self.user = user
+#         threading.Thread.__init__(self)
 
-    def run (self):
-        self.user.email_user(self.subject, self.message)
-
-def send_mail(request,user):
-    current_site = get_current_site(request)
-    subject = 'Activate Your CSIT Association of BMC Account'
-    message = render_to_string('accounts/emails/account_activation_email.html', {
-    'user': user,
-    'domain': current_site.domain,
-    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-    'token': account_activation_token.make_token(user),
-    })
-    
-    EmailThread(subject, message, user).start()
+#     def run (self):
+#         self.user.email_user(self.subject, self.message)
 
 # def send_mail(request,user):
 #     current_site = get_current_site(request)
@@ -45,9 +33,21 @@ def send_mail(request,user):
 #     'uid': urlsafe_base64_encode(force_bytes(user.pk)),
 #     'token': account_activation_token.make_token(user),
 #     })
-#     user.email_user(subject, message)
+    
+#     EmailThread(subject, message, user).start()
 
-#     messages.success(request, ('Please Confirm your email to complete registration.'))
+def send_mail(request,user):
+    current_site = get_current_site(request)
+    subject = 'Activate Your CSIT Association of BMC Account'
+    message = render_to_string('accounts/emails/account_activation_email.html', {
+    'user': user,
+    'domain': current_site.domain,
+    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+    'token': account_activation_token.make_token(user),
+    })
+    user.email_user(subject, message)
+
+    messages.success(request, ('Please Confirm your email to complete registration.'))
     
             
 class ActivateAccount(View):
@@ -70,3 +70,5 @@ class ActivateAccount(View):
         else:
             messages.warning(request, ('The confirmation link was invalid, possibly because it has already been used.'))
             return redirect('home')
+        
+
