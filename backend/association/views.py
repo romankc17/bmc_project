@@ -15,30 +15,28 @@ tz = pytz.timezone('Asia/Kathmandu')
 
 
 # render all past events and upcomin events
-def events(request, events_type):
+def events(request):
     now = tz.localize(datetime.today())
-    if events_type == 'past':
-        events = Event.objects.filter(
-            date__range=[
-                now - timedelta(days=1000), now
-            ]
-        ).order_by('-date')
-    elif events_type == 'upcoming':
-        events = Event.objects.filter(
-            date__range=[
-                now, now + timedelta(days=1000)
-            ]
-        ).order_by('-date')
+    
+    past_events = Event.objects.filter(
+        date__range=[
+            now - timedelta(days=1000), now
+        ]
+    ).order_by('-date')
+        
+    
+    upcoming_events = Event.objects.filter(
+        date__range=[
+            now, now + timedelta(days=1000)
+        ]
+    ).order_by('-date')
 
-    elif events_type == 'all':
-        events = Event.objects.all().order_by('-date')
+    contents = {
+        'past_events': past_events,
+        'upcoming_events': upcoming_events,
+    }
 
-    else:
-        return HttpResponse('<h1>Page was not found</h1>')
-
-    contents = {'events': events}
-
-    return render(request, 'association/events.html', contents)
+    return render(request, 'event/events.html', contents)
 
 
 def create_event(request):

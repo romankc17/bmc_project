@@ -8,7 +8,7 @@ const eventFilterContent = document.querySelectorAll(".filter_content");
 filter.addEventListener("click", e => {
     const id = e.target.dataset.id
     const idContent = e.target.dataset.id+"Content";
-   
+    
     if(id){
         btns.forEach( btn => {
             btn.classList.remove("filter_btn_visited");
@@ -17,11 +17,12 @@ filter.addEventListener("click", e => {
          })
          filterDateName.forEach( dateName => {
             dateName.classList.remove("filter_content_visited");
+           
          })
          
          eventFilterContent.forEach( filterContent => {
             filterContent.classList.remove("filter_content_visited");
-
+           
          }) 
          const filterDate = document.getElementById(id);
          const bottom = document.getElementById(idContent);

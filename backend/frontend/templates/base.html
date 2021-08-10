@@ -27,12 +27,13 @@
 
 
   
-{%block head%}{% endblock %}
+
 
 
   <!-- linking CSS file -->
   <link rel="stylesheet" href="{%static 'base.css'%}">
   <link rel="stylesheet" href="{%static 'reponsive.css' %}">
+  {%block head%}{% endblock %}
   
     <title>{%block title%}{%endblock%} | CSIT Association of BMC</title>
 </head>
@@ -91,7 +92,7 @@
 
           <!-- Events -->
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'events' events_type='all'%}">Events</a>
+            <a class="nav-link" href="{%url 'events'%}">Events</a>
           </li>
 
           <!-- notes -->
