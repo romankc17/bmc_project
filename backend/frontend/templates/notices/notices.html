@@ -1,0 +1,83 @@
+{%extends 'base.html'%} 
+
+{%load static%} 
+{% load widget_tweaks %} 
+
+{%block head%}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="{%static 'blog/blog_detail.css' %}"> 
+<link rel="stylesheet" href="{%static 'blog/blogs.css' %}" /> 
+{%endblock%} 
+
+{%block content%}
+<!-- start of blog section -->
+<section class="container" id="Blog">
+        {%for notice in notices%}
+            <div class="blog_details_container" style="word-wrap: break-word;">
+                <div class="title_row">
+                    <div class="blog_title">
+                        <h1>{{notice.title}}</h1>
+                    </div>
+                </div>
+                <div class="share-and-featured-image">
+                    <div class="featured-image">
+                        <img src="{{notice.image.url}}" alt="">
+                    </div>
+                </div>
+                <div class="row" data-aos="zoom-in-up" data-aos-duration="3000" style="word-break: break-word; padding: 0px 50px;">
+                    <p style="font-size:16px;" class="para mt-5">
+                        {{notice.content|safe|linebreaksbr}}
+                    </p>
+                </div>
+
+                <ul class="blog_writer_details">
+                    <li class="date">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <p class="day">{{notice.created_at}}</p>
+                    </li>
+                </ul>
+            </div>
+        {%endfor%}
+
+
+        <!-- pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+  
+                {%if page_obj.has_previous%}
+                <a class="page-link" href="?page={{page_obj.previous_page_number}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                {%endif%}
+  
+            </li>
+  
+            {%for i in page_obj.paginator.page_range %}
+                {%if page_obj.number == i%}
+                    <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                {%else%}
+                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                {%endif%}
+            {%endfor%}
+  
+            {%if page_obj.has_next%}
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            {%endif%}
+        </ul>
+    </nav>    
+</section>
+{% endblock %} 
+
+{% block scripts %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+{%endblock %}

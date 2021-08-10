@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
 
-    'widget_tweaks',
     'blog',
-    'college',
     'association',
     'accounts',
     'notes',
+    'notices',
+    
+    'widget_tweaks',
     'crispy_forms',
 ]
 
