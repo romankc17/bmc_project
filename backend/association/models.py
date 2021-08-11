@@ -23,7 +23,7 @@ class Event(models.Model):
 
 
 class Team(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    user = models.OneToOneField(User,on_delete=models.CASCADE,null=True,blank=True)
     CATEGORY_CHOICES = (
         ("G","General Member"),
         ("B","Board Member"),

@@ -4,14 +4,14 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-size: 10px;
+    
   }
   body,
   html {
     margin: 0;
     padding: 0;
     width: 100vw;
-  
+    font-size: 10px;
     overflow-x: hidden;
     font-family: Poppins, sans-serif;
     /* background-color: #ccc; */

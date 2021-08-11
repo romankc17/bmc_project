@@ -22,20 +22,18 @@ body,html{
     width: 100%;
     height: 28.8rem;
     padding-top: 3.2rem;
-    background-image: url("./assets/464334.jpg");
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/464334.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
-    filter: brightness(0.45);
-    -webkit-filter: brightness(0.45);
+    /* filter: brightness(0.45);
+    -webkit-filter: brightness(0.45); */
     
 }
 .header__container{
     width: 100%;
     text-align: center;
     color: var(--colorWhite);
-    position: absolute;
-    top: 3.2rem;
     filter: brightness(2);
     height: 25.6rem;
     
@@ -146,6 +144,9 @@ body,html{
 }
 .filter_date_name > strong{
     color: var(--colorDenseBlue);
+    font-size: 3.2rem;
+}
+.filter_date_name > strong > strong{
     font-size: 3.2rem;
 }
 .filter_date_name > span > span > input[type=date]{
@@ -264,9 +265,13 @@ body,html{
     height: 6.4rem;
     background-color: var(--colorWhite);
     color: var(--colorDenseBlue);
-    font-size: 1.92rem;
     padding: 1.76rem 1.6rem;
 }
+.view_all_events_bottom_bar > strong,
+.view_all_events_bottom_bar > span > .fa-external-link-alt{
+    font-size: 2rem;
+}
+
 .view_all_events_bottom_bar > span{
     float: right;
     cursor: pointer;

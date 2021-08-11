@@ -19,19 +19,21 @@
     <div class="parent__container">
 
         <!---------------header--------------->
-        <header class="events__header"></header>
-        <div class="header__container">
-            <strong data-aos="zoom-in" data-aos-duration="1500">EVENTS@BMC</strong>
-            <p data-aos="zoom-in" data-aos-duration="1500">Events and important dates from across campus</p>
-            
-            <!---------------------------Event Filter large width----->
-            <div class="container">
-                <div class="filter_btn_container" id="filter_btn_container_frst">
-                    <input type="button" data-id="upcoming" class="events_filter_btn filter_btn_visited" value="Upcoming Events" />
-                    <input type="button" data-id="prev" class="events_filter_btn" value="Previous Events" />
+        <header class="events__header">
+            <div class="header__container">
+                <strong data-aos="zoom-in" data-aos-duration="1500">EVENTS@BMC</strong>
+                <p data-aos="zoom-in" data-aos-duration="1500">Events and important dates from across campus</p>
+                
+                <!---------------------------Event Filter large width----->
+                <div class="container">
+                    <div class="filter_btn_container" id="filter_btn_container_frst">
+                        <input type="button" data-id="upcoming" class="events_filter_btn filter_btn_visited" value="Upcoming Events" />
+                        <input type="button" data-id="prev" class="events_filter_btn" value="Previous Events" />
+                    </div>
                 </div>
             </div>
-        </div>
+        </header>
+        
 
         <!-------------------------------Main section ------------------->
         <main class="main_parent_container">
@@ -135,10 +137,14 @@
 {%block scripts%}
  <!-----------------vanilla js------------->
     <script src="{%static 'event/eventcontrol.js' %}"></script>
-<!-----------------jquery, popper.js, bootstrap.js------------>
 
+ <!-----------------jquery, popper.js, bootstrap.js------------>
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
-        AOS.init();
-    </script>
+ <script>
+     AOS.init();
+ </script>
 {%endblock %}
