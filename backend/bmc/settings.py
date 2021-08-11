@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'accounts',
     'notes',
     'notices',
+    'dashboard',
     
     'widget_tweaks',
     'crispy_forms',

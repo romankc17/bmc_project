@@ -27,6 +27,7 @@ urlpatterns = [
     path('notes/', include('notes.urls')),
     path('blogs/', include('blog.urls')),
     path('notices/',include('notices.urls')),
+    path('dashboard/',include('dashboard.urls')),
 ]
 # serving during development
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
