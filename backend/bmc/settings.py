@@ -88,13 +88,26 @@ WSGI_APPLICATION = 'bmc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        "CLIENT": {
+           "name": 'csit_db',
+           "host": 'mongodb+srv://roman:pas123@cluster0.oxndg.mongodb.net/csit_db?retryWrites=true&w=majority',
+           "username": 'roman',
+           "password": 'pass123',
+           "authMechanism": "SCRAM-SHA-1",
+        },
     }
+    
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
