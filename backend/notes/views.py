@@ -8,6 +8,7 @@
 
 from django.core import serializers
 from django.http import HttpResponseRedirect, JsonResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .forms import NoteModelForm
 from .models import Note
@@ -25,9 +26,11 @@ def notes_view_list(request):
 
 
 # create note
+@login_required(login_url="/accounts/login/")
 def notes(request):
     obj1 = Note.objects.all()
     template = "notes/notes_create_view.html"
+    
     if request.method == 'POST':
         form = NoteModelForm(request.POST, request.FILES)
         if form.is_valid():

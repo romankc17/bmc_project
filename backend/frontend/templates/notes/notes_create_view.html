@@ -94,7 +94,7 @@
         <header class="notes__display__header">
             
         </header>
-        <header class="notes__display__header__container"> aoigweoajfoeasifjoawiefias
+        <header class="notes__display__header__container">
             <strong data-aos="fade-down" data-aos-duration="1500">Notes | Bsc CSIT</strong>
             <br />
             <section class="notes__display__form">
@@ -204,6 +204,7 @@
                                 <span class="note__display__title">{{ note.title }}</span>
                                 | {{ note.subject }}
                             </strong>
+                            {% if request.user.username == note.user.username %}  
                             <span>
                                 <button class="edit-btn" data-id="edit1" data-sid="{{note.id}}">
                                     <i style="color: darkblue; cursor: pointer; font-size: 1.6rem;" class="fas fa-edit"></i>
@@ -212,10 +213,11 @@
                                     <i style="color: red; cursor:pointer; font-size: 1.6rem;" class="fas fa-trash-alt"></i>
                                 </button>
                             </span>
+                            {% endif %}
                         </header>
                         <section class="individual__note__body">
                             <div class="author_note">
-                                <strong><i style="font-size: 1.8rem;" class="fas fa-user-circle"></i> {{ note.user.userprofile.name }}</strong> | <time>{{ note.timestamp }}</time>
+                                <strong><i style="font-size: 1.8rem;" class="fas fa-user-circle"></i>{{ note.user.userprofile.name }}</strong> | <time>{{ note.timestamp }}</time>
                             </div>
                             <div class="notes__display__description">
                                 {{ note.description }}
@@ -346,50 +348,147 @@
                 console.log(data);
 
                 $.ajax({
-                   url: `{% url "note_edit_save" %}`,
-                   method: "POST",
-                   processData: false,
-                   contentType: false,
-                   data: data,
-                   success: function(response){
-                       if( response.status == 200){
-                           console.log("data edited successfully");
-                           let nd = response.noteData;
-                           console.log(nd)
-                           var temp =
-                           `
-                               <header class="individual__note__title">
-                               <strong>
-                                  <span class="note__display__title">${nd.title}</span>
-                                  | ${nd.subject}
-                               </strong>
-                               <span>
-                                   <button class="edit-btn" data-id="edit1" data-sid="${nd.id}">
-                                      <i style="color: darkblue; cursor: pointer;" class="fas fa-edit"></i>
-                                   </button>
-                                   <button class="delete-btn" data-id="delete1" data-sid="${nd.id}">
-                                      <i style="color: red; cursor:pointer" class="fas fa-trash-alt"></i>
-                                   </button>
-                               </span>
-                               </header>
-                               <section class="individual__note__body">
-                               <div>
-                                   <strong><i class="fas fa-user-circle"></i> ${ nd.author_name }</strong> | <time>${ nd.timestamp }</time>
-                               </div>
-                               <div class="notes__display__description">
-                                   ${ nd.description }
-                               </div>
-                               <div>
-                                   <button><a href="/document/${ nd.file }">View</a> </button>
-                                   <button><a href="/document/${ nd.file }" download>Download</a></button>
-                               </div>
-                              </section>
-                           `
+                    url: `{% url "note_edit_save" %}`,
+                    method: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: data,
+                    success: function(response){
+                         
 
-                           $(`#${noteId}`).html(temp);
-                         //  $('#dynamic_note').html(noteList);
-                       }
-                   }
+                        if( response.status == 200){
+                            console.log("data edited successfully");
+                            let nd = response.noteData;
+
+                            const date = new Date(nd.timestamp);
+
+                            let minute, day, month, year, ampm;
+
+                            year = date.getFullYear();
+
+                            let hour = date.getHours();
+                            
+
+                            if( hour < 12 ){
+                                $("#ampm").text("a.m.");
+                                ampm = "a.m."
+                            }else{
+                                $("#ampm").text("p.m.");
+                                ampm = "p.m."
+                            }
+
+                            if( hour > 12 ){
+                                $("#hour").text(hour - 12);
+                                hour = hour -1;
+                            }else{
+                                $("#hour").text(hour);
+                                hour = hour;
+                            }
+
+                            $("#minute").text(date.getMinutes());
+                            minute = date.getMinutes()
+                            day = date.getDay()
+                            
+                            
+                            $("#day").text(date.getDay());
+                            switch (date.getMonth()) {
+                                case 0:
+                                    $("#month").text("Jan")
+                                    month = "Jan"
+                                    break;
+                                case 1:
+                                    $("#month").text("Feb")
+                                    month = "Feb"
+                                    break;
+                                case 2:
+                                    $("#month").text("Mar")
+                                    month = "Mar"
+                                    break;
+
+                                case 3:
+                                    $("#month").text("Apr")
+                                    month = "Apr"
+                                    break;
+
+                                case 4:
+                                    $("#month").text("May");
+                                    month = "May"
+                                    break;
+                                case 5:
+                                    $("#month").text("Jun")
+                                    month = "Jun"
+                                    break;
+                                case 6:
+                                    $("#month").text("Jul")
+                                    month = "Jul"
+                                    break;
+                                case 7:
+                                    $("#month").text("Aug")
+                                    month = "Aug"
+                                    break;
+
+                                case 8:
+                                    $("#month").text("Sep")
+                                    month = "Sep"
+                                    break;
+
+                                case 9:
+                                    $("#month").text("Oct");
+                                    month = "Oct"
+                                    break;
+                                case 10:
+                                    $("#month").text("Nov")
+                                    month = "Nov"
+                                    break;
+                                case 11:
+                                    $("#month").text("Dec");
+                                    month = "Dec"
+                                    break;
+                                default: 
+                                    console.log("Error in Month")
+                                    break;
+                            }
+
+                            console.log(nd)
+                            editTimestamp = `${month}. ${day}, ${year}, ${hour}:${minute} ${ampm}`
+
+
+                            var temp =
+                            `
+                                <header class="individual__note__title">
+                                <strong>
+                                   <span class="note__display__title">${nd.title}</span>
+                                   | ${nd.subject}
+                                </strong>
+                                <span>
+                                    <button class="edit-btn" data-id="edit1" data-sid="${nd.id}">
+                                       <i style="color: darkblue; cursor: pointer; font-size: 1.6rem;" class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="delete-btn" data-id="delete1" data-sid="${nd.id}">
+                                       <i style="color: red; cursor:pointer; font-size: 1.6rem;" class="fas fa-trash-alt"></i>
+                                    </button>
+                                </span>
+                                </header>
+                                <section class="individual__note__body">
+                                
+                                <div class="author_note">
+                                    <strong><i class="fas fa-user-circle"></i> ${ nd.author_name }</strong> | 
+                                    <time id="note__time">${editTimestamp}</time>
+                                </div>
+                                <div class="notes__display__description">
+                                    ${ nd.description }
+                                </div>
+                                <div>
+                                    <button><a href="/media/${ nd.file }">View</a> </button>
+                                    <button><a href="/media/${ nd.file }" download>Download</a></button>
+                                </div>
+                               </section>
+                            `
+ 
+                            $(`#${noteId}`).html(temp);
+                          //  $('#dynamic_note').html(noteList);
+                        }
+                    }
                })
                $('.editNotehere').removeClass("active");
             })
