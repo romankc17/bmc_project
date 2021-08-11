@@ -54,6 +54,23 @@ def create_event(request):
         form = EventForm()
     return render(request, 'association/create_event.html', {'form': form})
 
+def event_detail(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    latest_events = Event.objects.order_by('-date')[:5]    
+    
+    context = {
+        'event': event,
+        'latest_events': latest_events,
+    }
+    print(timezone.now())
+    if event.date > timezone.now():
+        print(True)
+        context['is_upcoming'] = True
+    else:
+        print('Fas')
+        context['is_upcoming'] = False
+        
+    return render(request, 'event/event_detail.html',context)
 
 class EventUpdateView(UpdateView):
     model = Event
@@ -115,7 +132,7 @@ def update_team(request, username):
 
 def about(request):
     context = {
-        # 'president':Team.objects.filter(position='President')[0],
+        'president':Team.objects.filter(position='President')[0],
         'members' : Team.objects.exclude(position="President").order_by('rank')
     }
         

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{%extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--------------bootstrap css--------------->
+{%load static%}
+
+{%block head %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <!---------------------fontAwesome--------------------->
@@ -13,12 +10,14 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-------------------Aos fade animation---------------->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>Event Title | Event CSIT</title>
+    <link rel="stylesheet" href="{%static 'event/eventDetailstyle.css' %}"/>
 
-    <link rel="stylesheet" href="eventDetailstyle.css" />
-</head>
+{%endblock%}
 
-<body>
+{%block title%}Event Detail{%endblock%}
+
+
+{%block content%}
     <div class="event__details__parent container my-5">
         <div class="event___details card">
         
@@ -26,10 +25,14 @@
         <div class="card-header">
             <header>
                 <div class="event__route">
-                    Home / Events / Past / Central Asia 2020: Challenges
+                    {% if is_upcoming %}
+                        Home / Events / Upcoming / {{event.title}}
+                    {% else %}
+                         Home / Events / Past / {{event.title}}
+                    {% endif %}
                 </div>
                 <div class="event_details_title">
-                    <strong>Central Asia 2020: Challenges</strong>
+                    <strong>{{event.title}}</strong>
                     <span><i style="font-size: 1.8rem" class="fas fa-calendar-alt"></i>
                         Published Date | <time>Jan 10, 2021</time>
                         <!-- <i class="fas fa-user"></i> Wen Chiang -->
@@ -70,13 +73,10 @@
                 </div>
             </div> -->
             <div class="img__section">
-                <img src="./assets/events.jpg" alt="event image" />
+                <img src="{{event.image.url}}" alt="event image" />
             </div>
             <div class="event_desc_section">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, officia illum quidem quod ex dolore id corporis, nisi nulla eum, dolores dolorem modi quis dolorum culpa provident? Laborum nisi tempore voluptatum 
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, velit. Optio ipsam debitis, veniam reprehenderit ipsa illum ea architecto soluta totam. Minus, nobis illo. Eaque optio eveniet itaque quibusdam blanditiis atque sapiente saepe! Odio reiciendis esse maiores voluptatum praesentium? Quaerat ullam modi itaque totam accusantium deserunt blanditiis praesentium tempora necessitatibus.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, velit. Optio ipsam debitis, veniam reprehenderit ipsa illum ea architecto soluta totam. Minus, nobis illo. Eaque optio eveniet itaque quibusdam blanditiis atque sapiente saepe! Odio reiciendis esse maiores voluptatum praesentium? Quaerat ullam modi itaque totam accusantium deserunt blanditiis praesentium tempora necessitatibus.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, velit. Optio ipsam debitis, veniam reprehenderit ipsa illum ea architecto soluta totam. Minus, nobis illo. Eaque optio eveniet itaque quibusdam blanditiis atque sapiente saepe! Odio reiciendis esse maiores voluptatum praesentium? </p>
+                {{event.description}}
             </div>
         </section>
         <div class="event_details_main">
@@ -85,21 +85,21 @@
                 <table>
                     <tr>
                         <td class="individual_detail_key">Venue:</td>
-                        <td class="individual_detail">Butwal, Mtabletle Campus</td>
+                        <td class="individual_detail">{{event.venue}}</td>
                     </tr>
                     <tr>
                         <td class="individual_detail_key">Title:</td>
                         <td class="individual_detail">
-                            Central Asia 2020: Challenges
+                            {{event.title}}
                         </td>
                     </tr>
                     <tr>
                         <td class="individual_detail_key">Proposed Day:</td>
-                        <td class="individual_detail">Jan 23, 2021, Saturday</td>
+                        <td class="individual_detail">{{event.date|date:"M d, Y"}}</td>
                     </tr>
                     <tr>
                         <td class="individual_detail_key">Time:</td>
-                        <td class="individual_detail">07AM - 10AM</td>
+                        <td class="individual_detail">{{event.date|time}}</td>
                     </tr>
                 </table>
             </div>
@@ -112,29 +112,24 @@
                 <div class="card-body">
                     <strong>Recent Events:</strong>
                     <ul>
+                        {%for ev in latest_events%}
                         <li>
-                            <a href="#">
-                               Central Asia 2020: Challenges
+                            <a href="{{ev.get_absolute_url}}">
+                               {{ev.title}}
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                                Beatae officia tempora
-                            </a> 
-                        </li>
+                        {%endfor%}
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+        
+{%endblock%}
 
 
-
-
-    <script>
-        AOS.init();
-    </script>
-</body>
-
-</html>
+{%block scripts %}
+<script>
+    AOS.init();
+</script>
+{%endblock%}

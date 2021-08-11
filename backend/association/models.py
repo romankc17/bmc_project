@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 
+from django.urls import reverse
+
 
 def get_img_upload_path(instance, filename):
     slug_title=slugify(instance.title)
@@ -20,6 +22,9 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('event_detail',kwargs={'event_id':self.id})
 
 
 class Team(models.Model):

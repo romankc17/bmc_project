@@ -445,7 +445,7 @@
             <header>
               <ul class="latest-News_Top d-flex justify-content-between w-100">
                 <li>Latest News</li>
-                <li><a href="#" class="btn btn-outline-danger">VIEW ALL NEWS</a></li>
+                <li><a href="{%url 'notices' %}" class="btn btn-outline-danger">VIEW ALL NEWS</a></li>
               </ul>
             </header>
             <section>
@@ -458,38 +458,24 @@
           <div class="row">
             <div class="news-Grid ml-2 ml-md-1">
 
+              {%for notice in notices%}
+                <div class="col-lg-12 mt-5">
+                  <div class="row no-gutters">
+                    <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
+                      <img src="{{notice.image.url}}" alt="">
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                      <!-- Date Section -->
+                      <section class="news_Grid-Date">{{notice.created_at}}</section>
 
-              <div class="col-lg-12 mt-5">
-                <div class="row no-gutters">
-                  <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
-                    <img src="{%static 'assets/slider/slider3.jpg' %}" alt="">
-                  </div>
-                  <div class="col-lg-7 col-md-6">
-                    <!-- Date Section -->
-                    <section class="news_Grid-Date">August 1,2021</section>
-
-                    <!-- demo news word -->
-                    <section class="news_Grid-Describe">B.Sc. CSIT I Semester Exam Result</section>
+                      <!-- demo news word -->
+                      <section class="news_Grid-Describe">{{notice.title}}</section>
+                    </div>
                   </div>
                 </div>
-
-              </div>
+              {%endfor%}
               <!-- another news -->
-              <div class="col-lg-12 mt-3 ">
-                <div class="row no-gutters">
-                  <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
-                    <img src="{%static 'assets/slider/slider4.jpg' %}" alt="">
-                  </div>
-                  <div class="col-lg-7 col-md-6">
-                    <!-- Date Section -->
-                    <section class="news_Grid-Date">July 27,2021</section>
-
-                    <!-- demo news word -->
-                    <section class="news_Grid-Describe">M.Sc. CSIT II Semester Exam Result</section>
-                  </div>
-                </div>
-
-              </div>
+              
             </div>
           </div>
         </div>
