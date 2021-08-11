@@ -45,8 +45,8 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
             <h2 class=" team-title">Meet Our Team</h2>
             
             <div class="member mt-5" id="prakash">
-                <div class="image"> <img src="imgs/next.png" alt="Prakash BL Dhakal" /></div>
-                <h2 class="mt-5">Prakash BL Dhakal</h2>
+                <div class="image"> <img src="{{president.user.userprofile.image.url}}" alt="Prakash BL Dhakal" /></div>
+                <h2 class="mt-5">{{president.user.userprofile.name}}</h2>
                 <p>President</p>
                 <div class="social-icons">
                     <a href=""><i class="fab fa-facebook"></i></a>
@@ -124,64 +124,15 @@ $(document).ready(function () {
 
 <script>
 const membersInfo = [
+    {%for member in members%}
+
     {
-        name: "Mahendra Kandel",
-        position: "Vice President",
-        img: "./imgs/next.png"
+        name: '{{member.user.userprofile.name}}',
+        position: "{{member.position}}",
+        img: "{{member.user.userprofile.image.url}}"
     },
-    
-    {
-        name: "Kiran Kafle",
-        position: "Secretary",
-        img: "./imgs/next.png"
-    },
-    {
-        name: "Rabin Pandey",
-        position: "Joint Secretary",
-        img: "./imgs/next.png"
-    },
-   
-    {
-        name: "Manoj Pokharel",
-        position: "Event Manager",
-        img: "./imgs/next.png"
-    },
-    {
-        name: "Aashish Sharma",
-        position: "Graphics Designer",
-        img: "./imgs/next.png"
-    },
-    {
-        name: "Ganga Pandey",
-        position: "Executive Member",
-        img: "./imgs/clipart55403.png"
-    },
-    {
-        name: "Bhisma Chapagain",
-        position: "Executive Member",
-        img: "./imgs/clipart55403.png"
-    },
-    {
-        name: "Santosh Paudel",
-        position: "Executive Member",
-        img: "./imgs/next.png"
-    },
-   
-    {
-        name: "Sushant Banjade",
-        position: "Executive Member",
-        img: "./imgs/next.png"
-    },
-    {
-        name: "Jaya Pangeni",
-        position: "Executive Member",
-        img: "./imgs/clipart55403.png"
-    },
-    {
-        name: "Ganesh Gyawali",
-        position: "Executive Member",
-        img: "./imgs/next.png"
-    }
+
+    {%endfor %}
 ]
 
 const team = document.querySelector(".members");

@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, CreateView
 
+from django.contrib.auth.models import User
+
 from .models import Event, Team
 from .forms import EventForm, TeamForm
 from django.utils import timezone
@@ -70,14 +72,14 @@ class EventUpdateView(UpdateView):
     # def put(self, *args, **kwargs):
 
 
-def create_team(request, profile_id):
+def create_team(request, username):
     if request.method == "POST":
-        profile = get_object_or_404(UserProfile, id=profile_id)
+        user = get_object_or_404(User, username=username)
         form = TeamForm(request.POST)
 
         if form.is_valid():
             obj = form.save(commit=False)
-            obj.profile = profile
+            obj.user = user
             obj.save()
 
             return render(request, 'association/teams.html', teams=Team.objects.all())
@@ -87,8 +89,8 @@ def create_team(request, profile_id):
     return render(request, 'association/create_team.html', {'form': form})
 
 
-def update_team(request, team_id):
-    instance = Team.objects.get(id=team_id)
+def update_team(request, username):
+    instance = Team.objects.get(id=username)
     if request.method == 'GET':
         form = TeamForm(instance=instance)
     else:
@@ -113,6 +115,8 @@ def update_team(request, team_id):
 
 def about(request):
     context = {
-        'members':Team.objects.all()
+        'president':Team.objects.filter(position='President')[0],
+        'members' : Team.objects.exclude(position="President").order_by('rank')
     }
+        
     return render(request, 'about/about.html', context)
