@@ -27,8 +27,9 @@
 
 
   
-{%block head%}{% endblock %}
 
+
+  {%block head%}{% endblock %}
 
   <!-- linking CSS file -->
   <link rel="stylesheet" href="{%static 'base.css'%}">
@@ -49,7 +50,10 @@
             <ul>
               <li><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+977 9867397005</li>
               <li>
-                <i class="fas fa-envelope"></i> <a href="#">&nbsp;csitassociationbmc@gmail.com</a>
+                <i class="fas fa-envelope"></i> 
+                <a href="mailto:csitassociationbmc@gmail.com">
+                  &nbsp;csitassociationbmc@gmail.com
+                </a>
               </li>
             </ul>
           </div>
@@ -91,14 +95,14 @@
 
           <!-- Events -->
           <li class="nav-item">
-            <a class="nav-link" href="{%url 'events' events_type='all'%}">Events</a>
+            <a class="nav-link" href="{%url 'events'%}">Events</a>
           </li>
 
           <!-- notes -->
           <li class="nav-item dropdown">
-            <!-- <a class="nav-link dropdown-toggle d-none d-lg-block" href="{%url 'notes'%}">
+            <a class="nav-link dropdown-toggle d-none d-lg-block" href="{%url 'notes'%}">
               Notes
-            </a> -->
+            </a>
             <a class="nav-link dropdown-toggle d-inline-block d-lg-none" data-toggle="dropdown" href="{%url 'notes'%}">
               Notes
             </a>
@@ -118,9 +122,9 @@
             </a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{%url 'blogs' %}">Blogs</a>
-              
-
+              <a class="dropdown-item" href="{%url 'notices' %}">News</a>
             </div>
+            
           </li>
 
           <li class="nav-item">

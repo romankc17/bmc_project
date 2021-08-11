@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--------------bootstrap css--------------->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!---------------------fontAwesome--------------------->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-------------------Aos fade animation---------------->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Events | BMC</title>
-    <!-----------------css-------------->
-    <link rel="stylesheet" href="./eventstyle.css" >
+{%extends 'base.html'%}
+{%load static%}
 
-</head>
-<body>
+{%block head%}
+<!--------------bootstrap css--------------->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!---------------------fontAwesome--------------------->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<!-------------------Aos fade animation---------------->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'event/eventstyle.css' %}" >
+{%endblock%}
 
+
+{%block title%}Events{%endblock%}
+
+{%block content%}
 <!-------------------------------Main body Event content------------------------------------>
     <div class="parent__container">
 
@@ -29,8 +27,8 @@
             <!---------------------------Event Filter large width----->
             <div class="container">
                 <div class="filter_btn_container" id="filter_btn_container_frst">
-                    <input type="button" data-id="upcoming" class="events_filter_btn filter_btn_visited" value="Upcoming Events" aria-selected="true">
-                    <input type="button" data-id="prev" class="events_filter_btn" value="Previous Events">
+                    <input type="button" data-id="upcoming" class="events_filter_btn filter_btn_visited" value="Upcoming Events" />
+                    <input type="button" data-id="prev" class="events_filter_btn" value="Previous Events" />
                 </div>
             </div>
         </div>
@@ -53,98 +51,66 @@
                         </ul>
                     </div>
                     
-                    <!---------------Filter contaiener----------------->
-                    <article class="filter_date_name filter_content_visited" id="prev">
-                        <strong>Upcoming Events</strong>
-                        <span>
-                            <span>Jump to Day<input type="date" placeholder="Jump to date"></span>
-                            <span>
-                                <i style="color: red; cursor: pointer;" class="fas fa-arrow-circle-left"></i>
-                                <i style="color: red; cursor:pointer" class="fas fa-arrow-circle-right"></i>
-                            </span>
-                        </span>
-                    </article>
-                    <article  class="filter_date_name" id="upcoming">
-                        <strong>Previous Events</strong>
-                        <span>
-                            <span>Jump to Day<input type="date" placeholder="Jump to date"></span>
-                            <span>
-                                <i style="color: red; cursor: pointer;" class="fas fa-arrow-circle-left"></i>
-                                <i style="color: red; cursor:pointer" class="fas fa-arrow-circle-right"></i>
-                            </span>                          
-                        </span>
+                    <!---------------Filter container----------------->
+                    <article class="filter_date_name filter_content_visited" id="upcoming">
+                        <strong><strong>Upcoming</strong> Events</strong>
+                    </article> 
+                    <article  class="filter_date_name" id="prev">
+                        <strong><strong>Previous</strong> Events</strong>
                     </article>                  
                 </div>
 
                 <!-----------------------------------event Detailes---------------------->
                 <div class="events_content_container">
+                    <!-----------------------------upcoming events--------------->
                     <div class="filter_content filter_content_visited"  id="upcomingContent">
+
+                        <!-- Event Section -->
                         <div class="item__flex">
-                        <article class="common__article" >  
-                            <div class="events__img">
-                                <img src="./media/events.jpg" alt="img" />
-                            </div>
-                            <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                            <br />
-                            <strong>Central Asia 2020: Challenges</strong>
-                            <p>
-                               Today content Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            </p>
-                            <strong class="read_more">READ MORE</strong>
-                        </article>
-                        <article  class="common__article">
-                            <div class="events__img">
-                                <img src="./media/events.jpg" alt="img" />
-                            </div>
-                            <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                            <br />
-                            <strong>Central Asia 2020: Challenges</strong>
-                            <p>
-                             Today content Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            </p>
-                            <strong class="read_more">READ MORE</strong>
-                        </article>
+                            {%for upcoming_event in upcoming_events%}
+                                <article class="common__article" >  
+                                    <div class="events__img">
+                                        <img src="{{upcoming_event.image.url}}" alt="img" />
+                                    </div>
+                                    <strong>
+                                        <a href="#">{{upcoming_event.title}}</a>
+                                    </strong>
+                                    <div class="common_article_margin">
+                                        <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                        <time>{{upcoming_event.date}}</time>
+                                    </div>
+                                    <p>
+                                        <strong>Venue:</strong> {{upcoming_event.venue}}
+                                    </p>                         
+                                </article>
+                            {%endfor%}
+                            
                         </div>
                     </div>
 
-                    <!------------------All Events--------------------->
+                    <!------------------Previous events--------------------->
                     <div class="filter_content"  id="prevContent">
                         <div class="item__flex">
-                            <article class="common__article" >
-                                <div class="events__img">
-                                    <img src="./media/events.jpg" alt="img" />
-                                </div>
-                                <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong><br />
-                                <strong>Central Asia 2020: Challenges</strong>
-                                <p>
-                                   Today content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, dolorem!
-                                </p>
-                                <strong class="read_more">READ MORE</strong>
-                            </article>
-                            <article  class="common__article" >
-                                <div class="events__img">
-                                    <img src="./media/events.jpg" alt="img" />
-                                </div>
-                                <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                                <br />
-                                <strong>Central Asia 2020: Challenges</strong>
-                                <p>
-                                    Day Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, dolorem!
-                                </p>
-                                <strong class="read_more">READ MORE</strong>
-                            </article>
-                            <article  class="common__article" >
-                                <div class="events__img">
-                                    <img src="./media/events.jpg" alt="img" />
-                                </div>
-                                <i style="color: white;" class="far fa-calendar-alt"></i> <strong>January 3,2019 </strong>
-                                <br />
-                                <strong>Central Asia 2020: Challenges</strong>
-                                <p>
-                                Day Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, dolorem!
-                                </p>
-                                <strong class="read_more">READ MORE</strong>
-                            </article>
+                            
+                            {%for past_event in past_events%}
+                                <article class="common__article" >
+                                    <div class="events__img">
+                                        <img src="{{past_event.image.url}}" alt="img" />
+                                    </div>
+                                    <strong>
+                                        <a href="#">Central Asia 2020: Challenge</a>
+                                    </strong>
+                                    <div class="common_article_margin">
+                                        <i style="color: white;" class="far fa-calendar-alt"></i> 
+                                        <time>{{past_event.date}}</time>
+                                    </div>
+                                    <p>
+                                        <strong>Venue:</strong> 
+                                        {{past_event.venue}}
+                                    </p>
+                                </article>
+                            {%endfor%}
+                                                            
                         </div>
                     </div>
                 </div>
@@ -160,17 +126,19 @@
     </div>
 
 
-    <!-----------------vanilla js------------->
-    <script src="./eventcontrol.js"></script>
+   
 
-    <!-----------------jquery, popper.js, bootstrap.js------------>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    
+{%endblock%}
+
+{%block scripts%}
+ <!-----------------vanilla js------------->
+    <script src="{%static 'event/eventcontrol.js' %}"></script>
+<!-----------------jquery, popper.js, bootstrap.js------------>
+
 
     <script>
         AOS.init();
     </script>
-</body>
-</html>
+{%endblock %}

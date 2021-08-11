@@ -22,11 +22,11 @@ from .views import home
 urlpatterns = [
     path("", home, name='home'),
     path('admin/', admin.site.urls),
-    path('college/',include('college.urls')),
     path('assoc/',include('association.urls')),
     path('accounts/',include('accounts.urls')),
     path('notes/', include('notes.urls')),
     path('blogs/', include('blog.urls')),
+    path('notices/',include('notices.urls')),
 ]
 # serving during development
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
