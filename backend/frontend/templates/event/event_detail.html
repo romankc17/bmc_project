@@ -1,0 +1,135 @@
+{%extends 'base.html' %}
+
+{%load static%}
+
+{%block head %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!---------------------fontAwesome--------------------->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-------------------Aos fade animation---------------->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{%static 'event/eventDetailstyle.css' %}"/>
+
+{%endblock%}
+
+{%block title%}Event Detail{%endblock%}
+
+
+{%block content%}
+    <div class="event__details__parent container my-5">
+        <div class="event___details card">
+        
+        
+        <div class="card-header">
+            <header>
+                <div class="event__route">
+                    {% if is_upcoming %}
+                        Home / Events / Upcoming / {{event.title}}
+                    {% else %}
+                         Home / Events / Past / {{event.title}}
+                    {% endif %}
+                </div>
+                <div class="event_details_title">
+                    <strong>{{event.title}}</strong>
+                    <span><i style="font-size: 1.8rem" class="fas fa-calendar-alt"></i>
+                        Published Date | <time>Jan 10, 2021</time>
+                        <!-- <i class="fas fa-user"></i> Wen Chiang -->
+                    </span>
+                </div>
+            </header>
+        </div>
+    <div class="card-body">
+        <section class="event_img_desc">
+            <!-- <div class="top_desc_container">
+                <div class="img__section">
+                    <img src="./media/events.jpg" alt="event image" />
+                </div>
+                <div class="event_details_main">
+                    <div>
+                        <h2>Event Details:</h2>
+                        <table>
+                            <tr>
+                                <td class="individual_detail_key">Venue:</td>
+                                <td class="individual_detail">Butwal, Mtabletle Campus</td>
+                            </tr>
+                            <tr>
+                                <td class="individual_detail_key">Title:</td>
+                                <td class="individual_detail">
+                                    Central Asia 2020: Challenges
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="individual_detail_key">Proposed Day:</td>
+                                <td class="individual_detail">Jan 23, 2021, Saturday</td>
+                            </tr>
+                            <tr>
+                                <td class="individual_detail_key">Time:</td>
+                                <td class="individual_detail">07AM - 10AM</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div> -->
+            <div class="img__section">
+                <img src="{{event.image.url}}" alt="event image" />
+            </div>
+            <div class="event_desc_section">
+                {{event.description}}
+            </div>
+        </section>
+        <div class="event_details_main">
+            <div>
+                <h2>Event Details:</h2>
+                <table>
+                    <tr>
+                        <td class="individual_detail_key">Venue:</td>
+                        <td class="individual_detail">{{event.venue}}</td>
+                    </tr>
+                    <tr>
+                        <td class="individual_detail_key">Title:</td>
+                        <td class="individual_detail">
+                            {{event.title}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="individual_detail_key">Proposed Day:</td>
+                        <td class="individual_detail">{{event.date|date:"M d, Y"}}</td>
+                    </tr>
+                    <tr>
+                        <td class="individual_detail_key">Time:</td>
+                        <td class="individual_detail">{{event.date|time}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+        </div>
+        <div class="recent__events">
+            <div class="card">
+                <div class="card-body">
+                    <strong>Recent Events:</strong>
+                    <ul>
+                        {%for ev in latest_events%}
+                        <li>
+                            <a href="{{ev.get_absolute_url}}">
+                               {{ev.title}}
+                            </a>
+                        </li>
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+{%endblock%}
+
+
+{%block scripts %}
+<script>
+    AOS.init();
+</script>
+{%endblock%}

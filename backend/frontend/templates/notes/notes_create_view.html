@@ -91,8 +91,10 @@
 
     <!--------------------------------Note create and Display Section----------------------->
     <section class="notes__display__root__container">
-        <header class="notes__display__header"></header>
-        <header class="notes__display__header__container">
+        <header class="notes__display__header">
+            
+        </header>
+        <header class="notes__display__header__container"> aoigweoajfoeasifjoawiefias
             <strong data-aos="fade-down" data-aos-duration="1500">Notes | Bsc CSIT</strong>
             <br />
             <section class="notes__display__form">
@@ -248,7 +250,7 @@
 
 {% endblock %}
 
-{% block script %}
+{% block scripts %}
 <!-----------------vanilla js------------->
     <script src="{%static 'notes/js/notesDisplayControl.js' %}"></script>
     <script src="{%static 'notes/js/notescrud.js' %}"></script>
@@ -344,7 +346,7 @@
                 console.log(data);
 
                 $.ajax({
-                   url: "{% url "note_edit_save" %}",
+                   url: `{% url "note_edit_save" %}`,
                    method: "POST",
                    processData: false,
                    contentType: false,

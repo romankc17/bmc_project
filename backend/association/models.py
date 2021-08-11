@@ -1,7 +1,9 @@
 from django.db import models
 
-from accounts.models import UserProfile
+from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+
+from django.urls import reverse
 
 
 def get_img_upload_path(instance, filename):
@@ -20,10 +22,13 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('event_detail',kwargs={'event_id':self.id})
 
 
 class Team(models.Model):
-    profile = models.OneToOneField(UserProfile,on_delete=models.CASCADE)
+    user = models.OneToOneField(User,on_delete=models.CASCADE,null=True,blank=True)
     CATEGORY_CHOICES = (
         ("G","General Member"),
         ("B","Board Member"),
@@ -37,6 +42,8 @@ class Team(models.Model):
     position=models.CharField(max_length=25,null=True,blank=True)
     linkdin_url=models.URLField(max_length=100,null=True,blank=True)
     facebook_url=models.URLField(max_length=100,null=True,blank=True)
+    instagram_url=models.URLField(max_length=100,null=True,blank=True)
+    rank=models.IntegerField(default=20)
 
     def __str__(self):
-        return f"Team-{self.category}-{self.profile.user}"
+        return f"Team-{self.category}-{self.user.username}"

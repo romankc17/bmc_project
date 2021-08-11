@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
 
-    'widget_tweaks',
     'blog',
-    'college',
     'association',
     'accounts',
     'notes',
+    'notices',
+    
+    'widget_tweaks',
     'crispy_forms',
 ]
 
@@ -94,6 +95,19 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         "CLIENT": {
+#            "name": 'csit_db',
+#            "host": 'mongodb+srv://roman:pas123@cluster0.oxndg.mongodb.net/csit_db?retryWrites=true&w=majority',
+#            "username": 'roman',
+#            "password": 'pass123',
+#            "authMechanism": "SCRAM-SHA-1",
+#         },
+#     }
+    
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

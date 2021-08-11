@@ -1,70 +1,157 @@
-{%extends 'base.html' %}
+{%extends 'base.html'%}
+
 {%load static%}
 
 {%block head%}
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- font-awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 <link rel="stylesheet" href="{%static 'about/style.css' %}">
-<title>About | CSIT Associatioin of BMC</title>
 {%endblock%}
 
+{%block title%}About{% endblock %}
 
 {%block content%}
+
 <div class="container-fluid">
-    <header class="about-header">
+        <header class='about-header'>
         <div class="overlay"></div>
         <h1>About Us</h1>
-    </header>
+       </header>
 
-    <div class="container mt-5">
+      <div class="container mt-5 ">
         <section class="intro mb-5">
             <div class="intro-text">
-                <div><h2 class='bottom__line__first'>Who We Are?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur animi ipsa modi dolor
-                        deleniti, iste ad
-                        beatae molestias ut nostrum?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-                        animi ipsam a
-                        cupiditate asperiores optio, itaque possimus sit! Aliquam, vitae.
-                    </p>
-                </div>
-                <div>
-                    <h2 class="bottom__line">What We Do?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur animi ipsa modi dolor
-                        deleniti, iste ad
-                        beatae
-                        molestias ut nostrum?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore animi
-                        ipsam a
-                        cupiditate asperiores optio, itaque possimus sit! Aliquam, vitae.
-                    </p>
-                </div>
+               <div><h2>Who We Are?</h2>
+            <p>CSIT Association of Nepal is a non-profitable, non-governmental, non-political, social organization established in 2011
+            by the young energetic students persuading their career in BScCSIT course. The main purpose of establishing CSITAN is to
+            act as a bridge between the faculty, students and IT industries in Nepal. We have been actively involving for the past
+            four years to bridge these gaps. Initiated by the enthusiasm and support of all the CSITANs from all affiliated
+            colleges, we hereby proudly present this association formally among the public.</p></div>
+               <div>
+                    <h2>What We Do?</h2>
+                    <p>We gather the professionals and students of Computer Science and IT to improve upon and
+                    promote the use of information technology, to assist the nation. It is with this goal in mind, abiding by the rules and regulation at present this organization by the name “Computer Science and Information Technology Association of Nepal” has been established.</p>
+               </div>
             </div>
             <div class="intro-image">
-                <img src="{%static 'about/imgs/ion-sipilov-f5j-a8M1KEw-unsplash.jpg' %}" class="img-fluid" alt="">
+                <img src="./imgs/group.jpg" class="img-fluid" alt="">
             </div>
         </section>
 
         <section class="team mb-5">
-            <h2 class="mb-5 meet_title">Meet Our Team</h2>
-            <div class="members">
-
-            {%for member in members%}
-                <div class="member mt-3">
-                    <div class="image">
-                        <img src="{{member.profile.image.url}}" alt="fahsljdfa"/>
-                    </div>
-                    <h2 class="mt-5">{{member.profile.name}}</h2>
-                    <p>{{member.position}}</p>
-                    <div class="social-icons">
-                        <a href="{{member.facebook_url}}"> <i class="fab fa-facebook"></i></a>
-                        <a href="{{member.instagram_url}}"><i class="fab fa-instagram"></i></a>
-                        <a href="{{memeber.github_url}}"> <i class="fab fa-github"></i></a>
-                        <a href="{{member.linkdin_url}}"> <i class="fab fa-linkedin-in"></i></a>
+            <h2 class=" team-title">Meet Our Team</h2>
+            
+            <div class="member mt-5" id="prakash">
+                <div class="image"> <img src="{{president.user.userprofile.image.url}}" alt="Prakash BL Dhakal" /></div>
+                <h2 class="mt-5">{{president.user.userprofile.name}}</h2>
+                <p>President</p>
+                <div class="social-icons">
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="members"></div>
+           
+        </section>
+      </div>
+    <!-- Members volunters patners .... -->
+    <div class="activeGroups">
+     <div class="active-overlay"></div>
+        <div class="blue-overlays">
+            <div class="container">
+    
+                <div class="row">
+                    <div class="col-md-12 showcase">
+    
+    
+    
+                        <section class="volunters ">
+                            <i class="fas fa-people-carry fa-5x"></i>
+                            <h1 class="display-3 ">&nbsp;&nbsp;<span class="count">200 </span> <span>+</span></h1>
+                            <h2 class="display-4">Volunters</h2>
+                        </section>
+                        <section class="volunters ">
+                            <i class="fas fa-users fa-5x "></i>
+                            <h1 class=" display-3">&nbsp;&nbsp;<span class="count">150 </span><span>+</span></h1>
+                            <h2 class="display-4">Participants</h2>
+                        </section>
+                        <section class="volunters">
+                            <i class="fas fa-user-friends fa-5x"></i>
+                            <h1 class=" display-3">&nbsp;&nbsp;<span class="count">500 </span><span>+</span></h1>
+                            <h2 class="display-4">Members</h2>
+                        </section>
+    
+                        <section class="volunters">
+                            <i class="fas fa-handshake fa-5x"></i>
+                            <h1 class="display-3">&nbsp;&nbsp;<span class="count">50 </span><span>+</span></h1>
+                            <h2 class="display-4">Partners</h2>
+                        </section>
                     </div>
                 </div>
-                {%endfor%}
-
-
             </div>
-        </section>
+        </div>
     </div>
+
 </div>
 
+ 
+        
+{%endblock%}
+
+{%block scripts%}
+
+<!-- counter script -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- <script src="jquery.counterup.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+<script>
+$(document).ready(function () {
+    $('.count').counterUp({
+        delay: 10,
+        time: 1200
+    })
+})
+</script>
+
+<script>
+const membersInfo = [
+    {%for member in members%}
+
+    {
+        name: '{{member.user.userprofile.name}}',
+        position: "{{member.position}}",
+        img: "{{member.user.userprofile.image.url}}"
+    },
+
+    {%endfor %}
+]
+
+const team = document.querySelector(".members");
+
+const ourTeam = membersInfo.map(member => {
+    const { name, position, img } = member;
+    return `<div class = "member mt-3">
+    <div class = "image"> <img src = ${img} alt = ${name}/></div>
+    <h2 class ="mt-5">${name}</h2>
+    <p>${position}</p>
+    <div class = "social-icons">
+    <a href = ""><i class="fab fa-facebook"></i></a>
+    <a href = ""><i class="fab fa-instagram"></i></a>
+    <a href = ""><i class="fab fa-github"></i></a>
+    <a href = ""><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    </div>`
+});
+
+team.innerHTML = ourTeam;
+</script>
 {%endblock%}

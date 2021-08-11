@@ -445,7 +445,7 @@
             <header>
               <ul class="latest-News_Top d-flex justify-content-between w-100">
                 <li>Latest News</li>
-                <li><a href="#" class="btn btn-outline-danger">VIEW ALL NEWS</a></li>
+                <li><a href="{%url 'notices' %}" class="btn btn-outline-danger">VIEW ALL NEWS</a></li>
               </ul>
             </header>
             <section>
@@ -458,38 +458,24 @@
           <div class="row">
             <div class="news-Grid ml-2 ml-md-1">
 
+              {%for notice in notices%}
+                <div class="col-lg-12 mt-5">
+                  <div class="row no-gutters">
+                    <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
+                      <img src="{{notice.image.url}}" alt="">
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                      <!-- Date Section -->
+                      <section class="news_Grid-Date">{{notice.created_at}}</section>
 
-              <div class="col-lg-12 mt-5">
-                <div class="row no-gutters">
-                  <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
-                    <img src="{%static 'assets/slider/slider3.jpg' %}" alt="">
-                  </div>
-                  <div class="col-lg-7 col-md-6">
-                    <!-- Date Section -->
-                    <section class="news_Grid-Date">August 1,2021</section>
-
-                    <!-- demo news word -->
-                    <section class="news_Grid-Describe">B.Sc. CSIT I Semester Exam Result</section>
+                      <!-- demo news word -->
+                      <section class="news_Grid-Describe">{{notice.title}}</section>
+                    </div>
                   </div>
                 </div>
-
-              </div>
+              {%endfor%}
               <!-- another news -->
-              <div class="col-lg-12 mt-3 ">
-                <div class="row no-gutters">
-                  <div class="col-lg-4 col-md-5 mr-4 mr-md-3">
-                    <img src="{%static 'assets/slider/slider4.jpg' %}" alt="">
-                  </div>
-                  <div class="col-lg-7 col-md-6">
-                    <!-- Date Section -->
-                    <section class="news_Grid-Date">July 27,2021</section>
-
-                    <!-- demo news word -->
-                    <section class="news_Grid-Describe">M.Sc. CSIT II Semester Exam Result</section>
-                  </div>
-                </div>
-
-              </div>
+              
             </div>
           </div>
         </div>
@@ -501,7 +487,7 @@
             <header>
               <ul class="latest-Events_Top d-flex justify-content-between w-100">
                 <li> Events</li>
-                <li><a href="#" class="btn btn-outline-danger">VIEW ALL EVENTS</a></li>
+                <li><a href="{%url 'events' %}" class="btn btn-outline-danger">VIEW ALL EVENTS</a></li>
               </ul>
             </header>
             <section>
@@ -512,25 +498,26 @@
           <div class="events-Grid pl-4 ">
             <div class="row no-gutters">
 
-              <div class="col-lg-6 col-md-12 mt-5 d-lg-block">
-                <img src="{%static 'assets/events/event1.jpg' %}" alt="">
-                <!-- Date Section -->
-                <section class="news_Grid-Date">Aug 8,2021</section>
+              {% for event in events %}
 
-                <!-- demo news word -->
-                <section class="news_Grid-Describe">-Just a month ago we had executed a virtual event on ASP.NET for two days.</section>
+                <div class="col-lg-6 col-md-12 mt-5 d-lg-block">
+                  <img src="{{event.image.url}}" alt="">
+                  <a href=""> 
+                  <section class="news_Grid-Describe">
+                    {{event.title}} 
+                  </section>
+                </a>
+                  <!-- Date Section -->
+                  <section class="news_Grid-Date">
+                    {{event.date}}
+                  </section>
 
-              </div>
-              <!-- another -->
-              <div class="col-lg-6 col-md-6 d-lg-block  d-md-none mt-5">
-                <img src="{%static 'assets/events/event2.jpg" alt="">
-                <!-- Date Section -->
-                <section class="news_Grid-Date">Aug 2,2021</section>
+                  
 
-                <!-- demo news word -->
-                <section class="news_Grid-Describe">Career counselling and roadmap to IT</section>
+                </div>
 
-              </div>
+              {%endfor%}
+             
             </div>
 
           </div>
@@ -839,7 +826,33 @@
         </div>
       </div>
 
+      <!-- Developer Roman -->
+      <div class="item">
+        <div class="wrapper">
 
+
+          <div class="developer-img-wrapper">
+            <div class="developer-img img-5">
+              <img src="{%static 'assets/developers/roman.png' %}" alt="developers pic">
+            </div>
+          </div>
+        </div>
+        <h2 class="developer-name">Roman K.C</h2>
+        <h3 class="developer-skill">Python Developer</h3>
+        <p class="about-dev">
+          Roman is an inspired and a self-taught Python developer with willingness to learn new things and has a strong interest in the development of software.
+           He is a driven individual with the ability to adapt to any situation and proven potential to grow self and others.
+           He is a good friend of the team and is always available to help. 
+        </p>
+
+        <div class="developer-socialMedia">
+          <a href="https://www.facebook.com/kshetri.roman/" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+
+
+          <a href="https://github.com/romankc17"><i class="fab fa-github-square"></i></a>
+          <a href="https://www.linkedin.com/in/roman-kc-19911a1b0/"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
 
       <!-- 2nd developer -->
       <div class="item">
@@ -918,6 +931,7 @@
       </div>
 
 
+      
 
       <!-- 4th developer -->
       <div class="item">
@@ -943,31 +957,7 @@
 
         </div>
       </div>
-      <!-- 5th developer -->
-      <div class="item">
-        <div class="wrapper">
-
-
-          <div class="developer-img-wrapper">
-            <div class="developer-img img-5">
-              <img src="{%static 'assets/developers/roman.png' %}" alt="developers pic">
-            </div>
-          </div>
-        </div>
-        <h2 class="developer-name">Roman K.C</h2>
-        <h3 class="developer-skill">Python Developer</h3>
-        <p class="about-dev">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates officia vitae qui sit,
-          mollitia quos consectetur? Labore ratione earum neque ullam tempora velit eum? Provident minus reiciendis
-          beatae hic quibusdam?</p>
-
-        <div class="developer-socialMedia">
-          <a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a>
-
-
-          <a href=""><i class="fab fa-github-square"></i></a>
-          <a href=""><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
+      
 
       <!-- 6th developer -->
       <div class="item">
