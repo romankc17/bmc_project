@@ -132,7 +132,7 @@ def update_team(request, username):
 
 def about(request):
     context = {
-        'president':Team.objects.filter(position='President')[0],
+        'president':Team.objects.filter(position='President').first(),
         'members' : Team.objects.exclude(position="President").order_by('rank')
     }
         
