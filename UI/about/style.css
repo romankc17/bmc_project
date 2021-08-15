@@ -119,8 +119,11 @@ header h1 {
 .members {
   display: grid;
   grid-template-columns: 1fr 3fr 3fr 3fr 3fr 2fr;
+  /* grid-template-columns: repeat(3, 1fr); */
   row-gap: 3rem;
   place-items: center;
+  position: relative;
+  left: 4%;
 }
 
 .member {
@@ -225,7 +228,7 @@ header h1 {
 #prakash {
   margin-bottom: 3rem;
   position: relative;
-  left: 35%;
+  left: 38%;
 }
 
 /* activeMembers */
@@ -236,7 +239,7 @@ header h1 {
   width: 100%;
   height: auto;
   position: relative;
-  height: 30rem;
+  height: 35rem;
   color: white;
 }
 /* .blue-overlays::before {
@@ -284,8 +287,34 @@ header h1 {
 }
 
 @media screen and (max-width: 768px) {
+  .container-fluid {
+    overflow-x: hidden;
+  }
   .member {
     width: 200px;
+  }
+
+  .members {
+    position: relative;
+    left: 1.5%;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+  }
+  .showcase {
+    height: 35rem;
+  }
+  .showcase h1 span {
+    font-size: 2rem;
+  }
+
+  .showcase h2 {
+    font-size: 1.5rem;
+  }
+
+  .volunters i.fas {
+    font-size: 4rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -293,9 +322,16 @@ header h1 {
     grid-template-columns: 1fr;
   }
 
+  .intro-text p {
+    font-size: small;
+  }
+
   .members {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    place-items: center;
+    /* place-items: center; */
+    position: relative;
+    left: 6%;
   }
 
   .member {
@@ -303,7 +339,37 @@ header h1 {
   }
 
   #prakash {
-    left: 3%;
+    left: 6%;
+  }
+  .activeGroups {
+    height: 200px;
+  }
+
+  .showcase {
+    width: 100%;
+    height: 200px;
+    padding: 10px 15px;
+    margin: 0;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  div.col-md-12.showcase {
+    padding: 20px;
+    position: absolute;
+    width: 100vw;
+  }
+
+  .showcase h1 span {
+    font-size: 1rem;
+  }
+
+  .showcase h2 {
+    font-size: 14px;
+  }
+
+  .volunters i.fas {
+    font-size: 2rem;
   }
 }
 
@@ -326,35 +392,3 @@ header h1 {
     height: 30rem;
   }
 } */
-
-@media screen and (max-width: 500px) {
-  .activeGroups {
-    height: 200px;
-  }
-
-  .showcase {
-    height: 200px;
-    padding: 10px 15px;
-    margin: 0;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  div.col-md-12.showcase {
-    padding: 20px;
-    position: absolute;
-    width: 100vw;
-  }
-
-  .showcase h1 span {
-    font-size: 1rem;
-  }
-
-  .showcase h2 {
-    font-size: 1rem;
-  }
-
-  .volunters i.fas {
-    font-size: 2rem;
-  }
-}
