@@ -2,7 +2,7 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from . import views
 
-from .verifies import ActivateAccount
+from .verifies import ActivateAccount,password_reset_request
 
 urlpatterns = [
     path('register/', views.register, name='register'),
@@ -11,7 +11,7 @@ urlpatterns = [
     path('activate/<uidb64>/<token>/', ActivateAccount.as_view(), name='activate'),
     
     path ('password-reset/',
-     auth_views.PasswordResetView.as_view(template_name = 'accounts/password_reset.html'),
+     password_reset_request,
      name = 'password_reset'),
 
     path ('password-reset/done/',

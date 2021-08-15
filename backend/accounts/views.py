@@ -27,7 +27,7 @@ def register(request):
                 
                 roll_no = profile_form.cleaned_data['roll_no']
                 if len(str(roll_no).strip())==1:
-                    roll_no = int('0'+str(roll_no).strip())
+                    roll_no = str('0'+str(roll_no).strip())
                 profile.roll_no = roll_no
                 
                 user.username = f'{profile.batch}-{profile.roll_no}'
@@ -64,8 +64,7 @@ def register(request):
             
             except Exception as e:
                 messages.error(request, "Something went wrong. Please try again!")
-        else:
-            messages.error(request, "Invalid form")
+        
 
     context = {
         'user_form': user_form, 
@@ -94,4 +93,5 @@ def login(request):
             return redirect('login')
     else:
         return render(request, 'accounts/login.html')
+
 
