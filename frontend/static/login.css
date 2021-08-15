@@ -48,6 +48,17 @@ body {
   opacity: 1;
 }
 
+#message {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 1;
+  margin-top: -10px;
+  position: absolute;
+  top: 5%;
+  left: 8%;
+}
+
 .circle {
   position: absolute;
   top: -10%;
@@ -74,6 +85,7 @@ body {
 }
 .wrap {
   position: relative;
+  top: -5%;
   background: #fff;
   padding: 4rem 0;
   width: 400px;
@@ -168,10 +180,18 @@ body {
 
 @media screen and (max-width: 500px) {
   .wrap {
+    top: 4%;
     width: 300px;
     height: 400px;
   }
 
+  #message {
+    position: absolute;
+    top: 5%;
+    left: 13px;
+
+    width: 300px;
+  }
   .group {
     width: 280px;
   }
@@ -182,5 +202,32 @@ body {
 
   ::placeholder {
     font-size: small;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .wrap {
+    top: 4%;
+  }
+
+  #message {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+
+    width: 350px;
+  }
+}
+@media screen and (min-width: 510px) and (max-width: 768px) {
+  .wrap {
+    top: 4%;
+  }
+
+  #message {
+    position: absolute;
+    top: 3%;
+    left: 5%;
+
+    width: 700px;
   }
 }
