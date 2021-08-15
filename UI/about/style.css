@@ -310,11 +310,24 @@ header h1 {
   }
 
   .showcase h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .volunters i.fas {
-    font-size: 4rem;
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 716px) {
+  .members {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  #prakash {
+    /* left: 20%; */
+    display: grid;
+    place-items: center;
+    
   }
 }
 @media screen and (max-width: 500px) {
