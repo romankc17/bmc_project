@@ -118,12 +118,12 @@ header h1 {
 
 .members {
   display: grid;
-  grid-template-columns: 1fr 3fr 3fr 3fr 3fr 2fr;
-  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-columns: 1fr 3fr 3fr 3fr 3fr 2fr; */
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 3rem;
   place-items: center;
-  position: relative;
-  left: 4%;
+  /* position: relative;
+  left: 4%; */
 }
 
 .member {
@@ -295,8 +295,9 @@ header h1 {
   }
 
   .members {
-    position: relative;
-    left: 1.5%;
+    /* position: relative;
+    left: 1.5%; */
+    grid-template-columns: repeat(3, 1fr);
   }
   .intro {
     display: flex;
@@ -327,7 +328,6 @@ header h1 {
     /* left: 20%; */
     display: grid;
     place-items: center;
-    
   }
 }
 @media screen and (max-width: 500px) {
@@ -341,10 +341,11 @@ header h1 {
 
   .members {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* place-items: center; */
-    position: relative;
+    grid-template-columns: 1fr;
+    place-items: center;
+    /* position: relative;
     left: 6%;
+    */
   }
 
   .member {
@@ -352,7 +353,7 @@ header h1 {
   }
 
   #prakash {
-    left: 6%;
+    left: 12%;
   }
   .activeGroups {
     height: 200px;

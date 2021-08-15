@@ -74,6 +74,7 @@ const ourTeam = membersInfo.map(member => {
     <a href = ""><i class="fab fa-linkedin-in"></i></a>
     </div>
     </div>`
-});
+}).join('');
+
 
 team.innerHTML = ourTeam;
