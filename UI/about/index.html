@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <!-- font-awesome -->
@@ -15,14 +16,112 @@
 
 <body>
 <div class="container-fluid">
-        <header>
+        <header class="header-section">
            
+                <!-- shrish start -->
+                <div class="container-fluid">
+                    <div class="row">
+                
+                        <div class="top-wrapper">
+                
+                            <div class="contact">
+                                <ul>
+                                    <li><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;+977 9867397005</li>
+                                    <li>
+                                        <i class="fas fa-envelope"></i> <a href="#">&nbsp;csitassociationbmc@gmail.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="login-btn">
+                                <a class="" href="../../../"><i class="fas fa-sign-in-alt"></i>&nbsp;Login</a>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+                </div>
+                
+                
+                <!-- navbar -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-white navs ">
+                    <a href="./index.html" class="navbar-brand"><img src="./imgs/logo.png" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Home Link -->
+                            <li class="nav-item">
+                                <a class="nav-link home" href="./index.html">Home </a>
+                            </li>
+                            <!-- About Link with DropDown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link  d-none d-lg-block" href="#">
+                                    About
+                                </a>
+                                <!-- <a class="nav-link dropdown-toggle d-inline-block  d-lg-none" data-toggle="dropdown" href="#">
+                              About
+                            </a> -->
+                
+                                <!-- <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">About</a>
+                              <a class="dropdown-item" href="#">About</a>
+                            </div> -->
+                            </li>
+                
+                            <!-- Events -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Events</a>
+                            </li>
+                
+                            <!-- notes -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-none d-lg-block" href="#">
+                                    Notes
+                                </a>
+                                <a class="nav-link dropdown-toggle d-inline-block d-lg-none" data-toggle="dropdown" href="#">
+                                    Notes
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">1st sem</a>
+                                    <a class="dropdown-item" href="#">2nd sem</a>
+                
+                                </div>
+                            </li>
+                            <!-- Posts -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-none d-lg-block" href="#">
+                                    Posts
+                                </a>
+                                <a class="nav-link dropdown-toggle d-inline-block d-lg-none" data-toggle="dropdown" href="#">
+                                    Posts
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./blog.html">Blogs</a>
+                
+                
+                                </div>
+                            </li>
+                
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Examination</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- shrish end -->
+           
+        
         <div class="overlay"></div>
-        <h1>About Us</h1>
+        <h1>About Us</h1> 
+       
        </header>
 
-      <div class="container mt-5 ">
-        <section class="intro mb-5">
+      <div class="container mt-5 about">
+        <section class="intro mb-5 mt-5">
             <div class="intro-text">
                <div><h2>Who We Are?</h2>
             <p>CSIT Association of Nepal is a non-profitable, non-governmental, non-political, social organization established in 2011
@@ -100,6 +199,84 @@
 
 </div>
 
+<!-- shrish footer start -->
+<footer>
+    <div class="foot-section">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- for logo column -->
+                <div class=" col-lg-4 col-md-6  first-col">
+                    <div class="foot-logo">
+                        <img src="./imgs/logo.png" alt="logo">
+                    </div>
+
+                    <p class="foot-description">CSIT Association of BMC is a non-profitable, non-governmental,
+                        non-political,
+                        social organization
+                        established in 2017 by the young energetic students pursuing their career in BScCSIT.
+                        The main purpose of establishing this association is to act as a bridge between the faculty
+                        students and college Administration.
+                    </p>
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/csit.bmc" target="_blank"><i
+                                class="fab fa-facebook-square"></i></a>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-github-square"></i>
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-3 second-col text-justify">
+                    <h1>Services</h1>
+
+                    <ul class="services-link">
+                        <li><a href="#">Provathons</a> </li>
+                        <li><a href="#">Intership</a></li>
+                        <li><a href="#">Workshops</a></li>
+                        <li><a href="#">Entrance Preparation</a></li>
+                        <li><a href="#">Job Placements</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 second-col text-justify">
+                    <h1>Useful Links</h1>
+
+                    <ul class="services-link">
+                        <li><a href="">About</a> </li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Posts</a></li>
+                        <li><a href="#">Notes</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Our Impact</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 our-location">
+                    <h1>Our Location</h1>
+                    <p><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.211503467195!2d83.4657135146652!3d27.71075528279049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686f71446a4b1%3A0x712e7c86b3c8d75!2sButwal%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1624623063971!5m2!1sen!2snp"
+                            style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-section">
+
+
+        <div class="row">
+            <div class="col-md-12 ">
+                <p>Copyright &copy;<span id="year"></span> All rights reserved by CSIT ASSCOCIATION OF BMC</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>
+<!-- shrish footer end -->
+<!-- go-to-top icon -->
+<button class="gotoTop"><i class="fas fa-arrow-up"></i></button>>
+
 
     <!--  Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -132,6 +309,7 @@
             })
         </script>
     <script src="app.js"></script>
+    <script src="base.js"></script>
 </body>
 
 </html>
